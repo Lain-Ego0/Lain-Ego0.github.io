@@ -1,2 +1,194 @@
-<p>Hello 大家好</p>
-<p>我是Lain-Ego，这是我的个人网站。 </p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>你的名字 | 个人主页</title>
+  <!-- 基础样式（可内嵌或外链CSS） -->
+  <style>
+    /* 全局样式 */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+    a { text-decoration: none; color: #2c3e50; }
+    a:hover { color: #3498db; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 60px 0; }
+    h2 { font-size: 2rem; margin-bottom: 30px; text-align: center; color: #2c3e50; }
+
+    /* 导航栏 */
+    nav { background: #2c3e50; padding: 15px 0; position: sticky; top: 0; z-index: 100; }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { color: white; font-size: 1.5rem; font-weight: bold; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { color: white; }
+    .nav-links a:hover { color: #3498db; }
+
+    /* 个人简介 */
+    .intro { text-align: center; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 40px 20px; }
+    .avatar { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; }
+    .intro h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    .intro p { font-size: 1.2rem; color: #666; max-width: 700px; margin: 0 auto; }
+
+    /* 技能/兴趣 */
+    .skills { background: #f0f4f8; }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .skill-card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .skill-card h3 { color: #3498db; margin-bottom: 15px; }
+
+    /* 项目展示 */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .project-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .project-card:hover { transform: translateY(-5px); }
+    .project-img { width: 100%; height: 200px; object-fit: cover; }
+    .project-info { padding: 20px; }
+    .project-info h3 { margin-bottom: 10px; }
+    .project-info p { color: #666; margin-bottom: 15px; }
+    .project-link { display: inline-block; color: #3498db; font-weight: 500; }
+
+    /* 联系方式 */
+    .contact { background: #2c3e50; color: white; }
+    .contact-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 30px; }
+    .contact-item { text-align: center; }
+    .contact-item i { font-size: 2rem; margin-bottom: 10px; }
+
+    /* 页脚 */
+    footer { text-align: center; padding: 20px; background: #1a252f; color: #bbb; }
+
+    /* 响应式调整（适配手机） */
+    @media (max-width: 768px) {
+      .nav-container { flex-direction: column; gap: 15px; }
+      .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+      .intro h1 { font-size: 2rem; }
+    }
+  </style>
+  <!-- 引入图标（可选，用于社交账号等） -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav>
+    <div class="container nav-container">
+      <div class="logo">你的名字</div>
+      <div class="nav-links">
+        <a href="#intro">首页</a>
+        <a href="#skills">技能/兴趣</a>
+        <a href="#projects">项目</a>
+        <a href="#contact">联系我</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 个人简介 -->
+  <section id="intro">
+    <div class="container">
+      <div class="intro">
+        <img src="avatar.jpg" alt="你的头像" class="avatar"> <!-- 替换为你的头像路径 -->
+        <h1>你好，我是 [你的名字]</h1>
+        <p>机器人开发者 | VRC 改模爱好者 | 生态缸玩家<br>
+          专注于嵌入式系统、机器人控制和创意设计，偶尔分享技术心得和兴趣日常。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技能/兴趣 -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2>技能与兴趣</h2>
+      <div class="skills-grid">
+        <!-- 技能1：机器人开发 -->
+        <div class="skill-card">
+          <h3><i class="fas fa-robot"></i> 机器人开发</h3>
+          <p>熟悉 ROS 机器人操作系统、嵌入式 Linux 开发，擅长使用 C++/Python 实现机器人控制算法，有足式机器人项目经验。</p>
+        </div>
+        <!-- 技能2：VRC 改模 -->
+        <div class="skill-card">
+          <h3><i class="fas fa-paint-brush"></i> VRC 改模</h3>
+          <p>使用 Blender 进行 3D 模型修改与优化，熟悉 VRChat 模型导入规范，擅长角色外观设计与材质调整。</p>
+        </div>
+        <!-- 技能3：生态缸 -->
+        <div class="skill-card">
+          <h3><i class="fas fa-fish"></i> 生态缸造景</h3>
+          <p>爱好水草缸与爬宠生态箱搭建，研究水体循环与环境平衡，分享造景设计与维护经验。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 项目展示 -->
+  <section id="projects">
+    <div class="container">
+      <h2>我的项目</h2>
+      <div class="projects-grid">
+        <!-- 项目1 -->
+        <div class="project-card">
+          <img src="project1.jpg" alt="项目图片" class="project-img"> <!-- 替换为项目图片 -->
+          <div class="project-info">
+            <h3>四足机器人步态控制</h3>
+            <p>基于 ROS 实现的四足机器人稳定步态算法，支持地形自适应调整。</p>
+            <a href="https://github.com/你的用户名/项目仓库" class="project-link">查看 GitHub <i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <!-- 项目2 -->
+        <div class="project-card">
+          <img src="project2.jpg" alt="项目图片" class="project-img">
+          <div class="project-info">
+            <h3>VRC 角色模型优化</h3>
+            <p>轻量化处理的 VRChat 角色模型，降低面数同时保留细节，提升运行流畅度。</p>
+            <a href="https://booth.pm/你的链接" class="project-link">查看详情 <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <!-- 项目3 -->
+        <div class="project-card">
+          <img src="project3.jpg" alt="项目图片" class="project-img">
+          <div class="project-info">
+            <h3>封闭式生态缸设计</h3>
+            <p>无需换水的微型生态系统搭建方案，包含动植物搭配与环境控制细节。</p>
+            <a href="https://你的博客链接" class="project-link">查看教程 <i class="fas fa-book"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系方式 -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>联系我</h2>
+      <div class="contact-links">
+        <div class="contact-item">
+          <i class="fab fa-github"></i>
+          <p><a href="https://github.com/你的用户名" style="color:white">GitHub</a></p>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-bilibili"></i>
+          <p><a href="https://space.bilibili.com/你的ID" style="color:white">B站</a></p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <p><a href="mailto:你的邮箱" style="color:white">邮箱</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 [你的名字] | 用 HTML 搭建的个人主页</p>
+    </div>
+  </footer>
+
+  <!-- 简单交互（平滑滚动） -->
+  <script>
+    // 点击导航链接时平滑滚动到对应区域
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
