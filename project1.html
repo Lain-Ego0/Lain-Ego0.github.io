@@ -11,14 +11,21 @@
     a { text-decoration: none; color: #2c3e50; }
     a:hover { color: #3498db; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    section { padding: 30px 0; }
+    section { padding: 40px 0; }
     h2 { font-size: 2rem; margin-bottom: 30px; text-align: center; color: #2c3e50; }
+    h3 { font-size: 1.5rem; margin-bottom: 15px; color: #2c3e50; }
 
     /* 导航栏 */
     nav { background: #2c3e50; padding: 15px 0; position: sticky; top: 0; z-index: 100; }
     .nav-container { display: flex; justify-content: space-between; align-items: center; }
-    .logo { color: white; font-size: 1.5rem; font-weight: bold; }
-    .nav-links { display: flex; gap: 20px; align-items: center; } /* 新增align-items */
+    .logo { 
+      color: white; 
+      font-size: 1.5rem; 
+      font-weight: bold; 
+      cursor: pointer; 
+    }
+    .logo:hover { color: #3498db; }
+    .nav-links { display: flex; gap: 20px; align-items: center; }
     .nav-links a { color: white; }
     .nav-links a:hover { color: #3498db; }
     /* 语言切换按钮样式 */
@@ -37,29 +44,38 @@
       color: #2c3e50;
     }
 
-    /* 个人简介 */
-    .intro { text-align: center; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 40px 20px; }
-    .avatar { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; }
-    .intro h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    .intro p { font-size: 1.2rem; color: #666; max-width: 700px; margin: 0 auto; }
-
-    /* 项目展示 */
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .project-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s; }
-    .project-card:hover { transform: translateY(-5px); }
-    .project-img { width: 100%; height: 200px; object-fit: cover; }
-    .project-info { padding: 20px; }
-    .project-info h3 { margin-bottom: 10px; }
-    .project-info p { color: #666; margin-bottom: 15px; }
-    .project-link { display: inline-block; color: #3498db; font-weight: 500; }
-
-    /* 快速文章发布 */
-    #quick-publish { background: white; }
-    .publish-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px; }
-    .publish-link { display: inline-block; padding: 12px 24px; background: #3498db; color: white; border-radius: 6px; font-weight: 500; transition: background 0.3s; }
-    .publish-link:hover { background: #2980b9; color: white; }
-    .publish-link.feishu { background: #0078d7; }
-    .publish-link.feishu:hover { background: #005a9e; }
+    /* 文档介绍区 */
+    .docs-section { background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 40px; }
+    .doc-card { margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
+    .doc-card:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    /* 新增图片样式 */
+    .doc-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .doc-meta { display: flex; gap: 20px; margin-bottom: 15px; color: #666; font-size: 0.9rem; }
+    .doc-desc { margin-bottom: 20px; line-height: 1.8; }
+    .doc-links { display: flex; gap: 15px; flex-wrap: wrap; }
+    .doc-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: #3498db;
+      color: white;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+    .doc-link:hover { background: #2980b9; color: white; }
+    .doc-link.github { background: #333; }
+    .doc-link.github:hover { background: #555; }
+    .doc-link.demo { background: #2ecc71; }
+    .doc-link.demo:hover { background: #27ae60; }
 
     /* 联系方式 */
     .contact { background: #2c3e50; color: white; }
@@ -75,8 +91,9 @@
     /* 响应式调整 */
     @media (max-width: 768px) {
       .nav-container { flex-direction: column; gap: 15px; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .intro h1 { font-size: 2rem; }
+      .docs-section { padding: 20px; }
+      .doc-meta { flex-direction: column; gap: 5px; }
+      .doc-img { max-height: 250px; }
     }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -85,57 +102,46 @@
   <!-- 导航栏 -->
   <nav>
     <div class="container nav-container">
-      <div class="logo">Lain's personal database</div>
+      <a href="index.html" class="logo">Lain's personal database</a>
       <div class="nav-links">
-        <a href="#intro" data-i18n="nav.home">Home</a>
-        <a href="#projects" data-i18n="nav.projects">Projects</a>
-        <a href="#quick-publish" data-i18n="nav.documents">Documents</a>
+        <a href="#docs" data-i18n="nav.docs">Documents</a>
         <a href="#contact" data-i18n="nav.contact">Contact Me</a>
-        <!-- 语言切换按钮 -->
         <button class="lang-toggle">中文</button>
       </div>
     </div>
   </nav>
 
-  <!-- 个人简介 -->
-  <section id="intro">
+  <!-- 文档介绍区 -->
+  <section id="docs">
     <div class="container">
-      <div class="intro">
-        <img src="https://raw.githubusercontent.com/Lain-Ego0/Lain-Ego0.github.io/main/Picture/Avatar.jpg" alt="Lain-Ego的头像" class="avatar" data-i18n="intro.avatarAlt">
-        <h1 data-i18n="intro.title">Hello，I'm Lain-Ego</h1>
-        <p data-i18n="intro.desc">MCU Development | Linux Development | Mechanical Drawing | PCB Design | ROS and Robot Simulation<br>
-          Focus on Embedded Systems, Robot Control and Simulation.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 项目展示 -->
-  <section id="projects">
-    <div class="container">
-      <h2 data-i18n="projects.title">我的项目</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <img src="https://raw.githubusercontent.com/Lain-Ego0/Lain-Ego0.github.io/main/Picture/Portfolio-01.png" alt="项目图片" class="project-img" data-i18n="projects.imgAlt">
-          <div class="project-info">
-            <h3 data-i18n="projects.item1.title"></h3>
-            <p data-i18n="projects.item1.desc"></p>
-            <a href="https://github.com/Lain-Ego0/BRS-Parallel-Robot" class="project-link" data-i18n="projects.viewGithub">查看 GitHub <i class="fab fa-github"></i></a>
+      <h2 data-i18n="docs.title">技术文档库</h2>
+      <div class="docs-section">
+        <!-- 文档1：四足机器人开发文档 -->
+        <div class="doc-card">
+          <!-- 新增图片 -->
+          <img 
+            src="https://raw.githubusercontent.com/Lain-Ego0/Lain-Ego0.github.io/main/Picture/Portfolio-01.png" 
+            alt="" 
+            class="doc-img" 
+            data-i18n="docs.item1.imgAlt"
+          >
+          <h3 data-i18n="docs.item1.title"></h3>
+          <div class="doc-meta">
+            <span><i class="far fa-calendar-alt"></i> <span data-i18n="docs.updateTime">更新时间：2025-01-15</span></span>
+            <span><i class="far fa-folder-open"></i> <span data-i18n="docs.category">分类：机器人开发</span></span>
+            <span><i class="far fa-tag"></i> <span data-i18n="docs.tags">标签：四足机器人 | ROS | 力控制</span></span>
           </div>
-        </div>
-        <div class="project-card">
-          <img src="https://raw.githubusercontent.com/Lain-Ego0/Lain-Ego0.github.io/main/Picture/Portfolio-02.png" alt="项目图片" class="project-img" data-i18n="projects.imgAlt">
-          <div class="project-info">
-            <h3 data-i18n="projects.item2.title"></h3>
-            <p data-i18n="projects.item2.desc"></p>
-            <a href="https://booth.pm/你的链接" class="project-link" data-i18n="projects.viewDetail">查看详情 <i class="fas fa-external-link-alt"></i></a>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="https://raw.githubusercontent.com/Lain-Ego0/Lain-Ego0.github.io/main/Picture/Portfolio-03.png" alt="项目图片" class="project-img" data-i18n="projects.imgAlt">
-          <div class="project-info">
-            <h3 data-i18n="projects.item3.title"></h3>
-            <p data-i18n="projects.item3.desc"></p>
-            <a href="https://你的博客链接" class="project-link" data-i18n="projects.viewTutorial">查看教程 <i class="fas fa-book"></i></a>
+          <div class="doc-desc" data-i18n="docs.item1.desc"></div>
+          <div class="doc-links">
+            <a href="https://github.com/Lain-Ego0/BRS-Parallel-Robot" class="doc-link github" target="_blank">
+              <i class="fab fa-github"></i> <span data-i18n="docs.viewCode">查看源码</span>
+            </a>
+            <a href="https://github.com/Lain-Ego0/BRS-Parallel-Robot/blob/main/README.md" class="doc-link" target="_blank">
+              <i class="fas fa-file-alt"></i> <span data-i18n="docs.viewDoc">阅读文档</span>
+            </a>
+            <a href="https://github.com/Lain-Ego0/BRS-Parallel-Robot/tree/main/4.Picture" class="doc-link demo" target="_blank">
+              <i class="fas fa-images"></i> <span data-i18n="docs.viewDemo">查看更多演示图</span>
+            </a>
           </div>
         </div>
       </div>
@@ -178,49 +184,30 @@
   <!-- 页脚 -->
   <footer>
     <div class="container">
-      <p data-i18n="footer.copyright">&copy; 2023-2025 Lain-Ego | 个人主页</p>
+      <p data-i18n="footer.copyright">&copy; 2023-2025 Lain-Ego | 技术文档库</p>
     </div>
   </footer>
 
   <script>
-    // 1. 定义多语言数据（键名与data-i18n对应）
     const langData = {
       en: {
         nav: {
-          home: "Home",
-          projects: "Projects",
-          documents: "Documents",
+          docs: "Documents",
           contact: "Contact Me"
         },
-        intro: {
-          avatarAlt: "Lain-Ego's avatar",
-          title: "Hello, I'm Lain-Ego",
-          desc: "MCU Development | Linux Development | Mechanical Drawing | PCB Design | ROS and Robot Simulation<br>Focus on Embedded Systems, Robot Control and Simulation."
-        },
-        projects: {
-          title: "My Projects",
-          imgAlt: "Project image",
-          item1: {
-            title: "Portfolio-01 ROBOCON Legged Robot Competition: Quadruped Robot Full-Stack Development",
-            desc: "Carbon tube assembly mechanism similar to plant protection drones + force control algorithm + 3D radar mapping and navigation technology."
-          },
-          item2: {
-            title: "Portfolio-02 Bionic Boston Lobster Civil Submersible Robot",
-            desc: "Integrated lower-level framework with stepper peristaltic pumps, motor/servo drivers, gyroscope data processing, and closed-loop control of 360-degree servos via reading IIC encoders."
-          },
-          item3: {
-            title: "Portfolio-03 Intelligent Transplanting and Harvesting Robot",
-            desc: "Completed functional debugging of modules including gripper lifting mechanism, omni-wheel chassis, and omni-directional positioning system by controlling DJI3508 motors."
-          },
-          viewGithub: "View GitHub <i class='fab fa-github'></i>",
-          viewDetail: "View Details <i class='fas fa-external-link-alt'></i>",
-          viewTutorial: "View Tutorial <i class='fas fa-book'></i>"
-        },
         docs: {
-          title: "Documents",
-          newBlog: "<i class='fas fa-edit'></i> Feishu Docs - New Blog",
-          manageBlog: "<i class='fas fa-list'></i> Feishu Docs - Blog Management",
-          carSelection: "<i class='fas fa-pencil-alt'></i> Embedded Smart Car Selection"
+          title: "Technical Document Library",
+          updateTime: "Update Time: 2025-01-15",
+          category: "Category: Robot Development",
+          tags: "Tags: Quadruped Robot | ROS | Force Control",
+          item1: {
+            title: "BRS Parallel Quadruped Robot Development Documentation",
+            imgAlt: "ROBOCON 24th CURC Quadruped Robot Prototype",
+            desc: "Comprehensive documentation covering hardware design, software framework, control algorithms, and ROS simulation of the parallel quadruped robot. Includes detailed CAD model parameters, motor control logic, force control algorithm implementation, and 3D radar mapping navigation solutions. Suitable for developers engaged in legged robot research and development."
+          },
+          viewCode: "View Source Code",
+          viewDoc: "Read Documentation",
+          viewDemo: "View More Demo Images"
         },
         contact: {
           title: "Contact Me",
@@ -230,45 +217,27 @@
           zhihu: "Zhihu"
         },
         footer: {
-          copyright: "&copy; 2023-2025 Lain-Ego | Personal Homepage"
+          copyright: "&copy; 2023-2025 Lain-Ego | Technical Document Library"
         }
       },
       zh: {
         nav: {
-          home: "首页",
-          projects: "项目",
-          documents: "文档",
+          docs: "文档库",
           contact: "联系我"
         },
-        intro: {
-          avatarAlt: "Lain-Ego的头像",
-          title: "你好，我是Lain-Ego",
-          desc: "单片机开发 | Linux开发 | 机械制图 | PCB设计 | ROS与机器人仿真<br>专注于嵌入式系统、机器人控制与仿真。"
-        },
-        projects: {
-          title: "我的项目",
-          imgAlt: "项目图片",
-          item1: {
-            title: "作品集-01 ROBOCON足式机器人赛题 四足机器人全栈开发",
-            desc: "类植保无人机碳管装配工艺机构+力控制算法+3D雷达建图导航技术。"
-          },
-          item2: {
-            title: "作品集-02 仿生波士顿大龙虾民用潜航机器人",
-            desc: "集成步进蠕动泵、电机/舵机驱动、陀螺仪数据处理以及读取IIC编码器闭环控制360度舵机的下位机框架。"
-          },
-          item3: {
-            title: "作品集-03 智能插秧收获一体机器人",
-            desc: "通过控制DJI3508电机，完成夹爪抬升机构、全向轮底盘、全向定位系统等模块的功能调试。"
-          },
-          viewGithub: "查看 GitHub <i class='fab fa-github'></i>",
-          viewDetail: "查看详情 <i class='fas fa-external-link-alt'></i>",
-          viewTutorial: "查看教程 <i class='fas fa-book'></i>"
-        },
         docs: {
-          title: "文档",
-          newBlog: "<i class='fas fa-edit'></i> 飞书云文档 - 新建博客",
-          manageBlog: "<i class='fas fa-list'></i> 飞书云文档 - 博客管理",
-          carSelection: "<i class='fas fa-pencil-alt'></i> 嵌入式智能小车选型"
+          title: "技术文档库",
+          updateTime: "更新时间：2025-01-15",
+          category: "分类：机器人开发",
+          tags: "标签：四足机器人 | ROS | 力控制",
+          item1: {
+            title: "BRS并联四足机器人开发文档",
+            imgAlt: "ROBOCON第24届CURC四足机器人原型机",
+            desc: "涵盖并联四足机器人硬件设计、软件框架、控制算法及ROS仿真的完整文档。包含详细的CAD模型参数、电机控制逻辑、力控制算法实现方案以及3D雷达建图导航解决方案，适用于从事足式机器人研发的技术人员参考。"
+          },
+          viewCode: "查看源码",
+          viewDoc: "阅读文档",
+          viewDemo: "查看更多演示图"
         },
         contact: {
           title: "联系我",
@@ -278,25 +247,21 @@
           zhihu: "知乎"
         },
         footer: {
-          copyright: "&copy; 2023-2025 Lain-Ego | 个人主页"
+          copyright: "&copy; 2023-2025 Lain-Ego | 技术文档库"
         }
       }
     };
 
-    // 2. 初始化语言（优先读取本地存储，默认英文）
+    // 语言切换逻辑
     let currentLang = localStorage.getItem('lang') || 'en';
     const langToggle = document.querySelector('.lang-toggle');
 
-    // 3. 更新页面语言的函数
     function updateLang(lang) {
-      // 遍历所有带data-i18n属性的元素
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        // 解析嵌套键（如"nav.home" -> langData.en.nav.home）
         const value = key.split('.').reduce((obj, k) => obj?.[k], langData[lang]);
         
         if (value) {
-          // 包含HTML标签的内容用innerHTML，否则用textContent
           if (value.includes('<') && value.includes('>')) {
             el.innerHTML = value;
           } else {
@@ -304,22 +269,18 @@
           }
         }
       });
-      // 更新按钮文本
       langToggle.textContent = lang === 'en' ? '中文' : 'English';
-      // 保存当前语言到本地存储
       localStorage.setItem('lang', lang);
     }
 
-    // 4. 初始化页面语言
     updateLang(currentLang);
 
-    // 5. 绑定切换按钮事件
     langToggle.addEventListener('click', () => {
       currentLang = currentLang === 'en' ? 'zh' : 'en';
       updateLang(currentLang);
     });
 
-    // 平滑滚动（保留原功能）
+    // 平滑滚动
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
