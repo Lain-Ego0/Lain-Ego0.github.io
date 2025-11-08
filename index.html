@@ -46,8 +46,11 @@
 
     /* 快速文章发布 */
     #quick-publish { background: white; }
-    #quick-publish a { display: inline-block; padding: 12px 24px; background: #3498db; color: white; border-radius: 6px; font-weight: 500; transition: background 0.3s; }
-    #quick-publish a:hover { background: #2980b9; }
+    .publish-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px; }
+    .publish-link { display: inline-block; padding: 12px 24px; background: #3498db; color: white; border-radius: 6px; font-weight: 500; transition: background 0.3s; }
+    .publish-link:hover { background: #2980b9; color: white; }
+    .publish-link.feishu { background: #0078d7; }
+    .publish-link.feishu:hover { background: #005a9e; }
 
     /* 联系方式 */
     .contact { background: #2c3e50; color: white; }
@@ -147,10 +150,16 @@
   <!-- 快速文章发布 -->
   <section id="quick-publish">
     <div class="container">
-      <h2>快速文章发布</h2>
-      <div style="text-align: center; margin-top: 20px;">
-        <a href="你的飞书链接" target="_blank">
-          <i class="fas fa-pencil-alt"></i> 发布新文章（跳转飞书）
+      <h2>博客管理与发布</h2>
+      <div class="publish-links">
+        <a href="你的飞书云文档编辑链接" target="_blank" class="publish-link feishu">
+          <i class="fas fa-edit"></i> 飞书云文档 - 新建博客
+        </a>
+        <a href="你的飞书云文档博客列表链接" target="_blank" class="publish-link feishu">
+          <i class="fas fa-list"></i> 飞书云文档 - 博客管理
+        </a>
+        <a href="https://wcn9j5638vrr.feishu.cn/wiki/EkqtwjUuHicUy1kr7u1cay35nqh?from=from_copylink" target="_blank" class="publish-link">
+          <i class="fas fa-pencil-alt"></i> 嵌入式智能小车选型
         </a>
       </div>
     </div>
