@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "documents": "Documents",
+    "contact": "Contact Me"
+  },
+  "intro": {
+    "avatarAlt": "Lain-Ego's avatar",
+    "title": "Hello, I'm Lain-Ego",
+    "desc": "MCU Development | Linux Development | Mechanical Drawing | PCB Design | ROS and Robot Simulation<br>Focus on Embedded Systems, Robot Control and Simulation."
+  },
+  "projects": {
+    "title": "My Projects",
+    "imgAlt": "Project image",
+    "item1": {
+      "title": "Portfolio-01 ROBOCON Legged Robot Competition: Quadruped Robot Full-Stack Development",
+      "desc": "Carbon tube assembly mechanism similar to plant protection drones + force control algorithm + 3D radar mapping and navigation technology."
+    },
+    "item2": {
+      "title": "Portfolio-02 Bionic Boston Lobster Civil Submersible Robot",
+      "desc": "Integrated lower-level framework with stepper peristaltic pumps, motor/servo drivers, gyroscope data processing, and closed-loop control of 360-degree servos via reading IIC encoders."
+    },
+    "item3": {
+      "title": "Portfolio-03 Intelligent Transplanting and Harvesting Robot",
+      "desc": "Completed functional debugging of modules including gripper lifting mechanism, omni-wheel chassis, and omni-directional positioning system by controlling DJI3508 motors."
+    },
+    "viewDetail": "View Details <i class='fas fa-external-link-alt'></i>"
+  },
+  "docs": {
+    "title": "Documents",
+    "document1": "MCU Development",
+    "document2": "Linux Usage",
+    "document3": "Robotics"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "bilibili": "Bilibili",
+    "github": "GitHub",
+    "twitter": "X (Twitter)",
+    "zhihu": "Zhihu"
+  },
+  "footer": {
+    "copyright": "&copy; 2023-2025 Lain-Ego | Personal Homepage"
+  }
+}

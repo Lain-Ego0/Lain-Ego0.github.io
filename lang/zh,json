@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "首页",
+    "projects": "项目",
+    "documents": "文档",
+    "contact": "联系我"
+  },
+  "intro": {
+    "avatarAlt": "Lain-Ego的头像",
+    "title": "你好，我是Lain-Ego",
+    "desc": "单片机开发 | Linux开发 | 机械制图 | PCB设计 | ROS与机器人仿真<br>专注于嵌入式系统、机器人控制与仿真。"
+  },
+  "projects": {
+    "title": "我的项目",
+    "imgAlt": "项目图片",
+    "item1": {
+      "title": "作品集-01 ROBOCON足式机器人赛题 四足机器人全栈开发",
+      "desc": "类植保无人机碳管装配工艺机构+力控制算法+3D雷达建图导航技术。"
+    },
+    "item2": {
+      "title": "作品集-02 仿生波士顿大龙虾民用潜航机器人",
+      "desc": "集成步进蠕动泵、电机/舵机驱动、陀螺仪数据处理以及读取IIC编码器闭环控制360度舵机的下位机框架。"
+    },
+    "item3": {
+      "title": "作品集-03 智能插秧收获一体机器人",
+      "desc": "通过控制DJI3508电机，完成夹爪抬升机构、全向轮底盘、全向定位系统等模块的功能调试。"
+    },
+    "viewDetail": "查看详情 <i class='fas fa-external-link-alt'></i>"
+  },
+  "docs": {
+    "title": "文档",
+    "document1": "单片机开发",
+    "document2": "Linux使用",
+    "document3": "机器人学"
+  },
+  "contact": {
+    "title": "联系我",
+    "bilibili": "哔哩哔哩",
+    "github": "代码仓库",
+    "twitter": "推特",
+    "zhihu": "知乎"
+  },
+  "footer": {
+    "copyright": "&copy; 2023-2025 Lain-Ego | 个人主页"
+  }
+}

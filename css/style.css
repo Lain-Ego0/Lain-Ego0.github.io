@@ -1,0 +1,186 @@
+/* 全局变量 */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --text-color: #333;
+  --text-light: #666;
+  --bg-light: #f9f9f9;
+  --white: #fff;
+  --gap-sm: 15px;
+  --gap-md: 20px;
+  --gap-lg: 30px;
+  --shadow: 0 2px 10px rgba(0,0,0,0.1);
+  --border-radius: 8px;
+  --breakpoint-md: 768px;
+}
+
+/* 全局样式 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: 'Segoe UI', sans-serif; 
+  line-height: 1.6; 
+  color: var(--text-color); 
+  background: var(--bg-light); 
+}
+a { text-decoration: none; color: var(--primary-color); }
+a:hover { color: var(--secondary-color); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--gap-sm); }
+section { padding: var(--gap-lg) 0; }
+h2 { 
+  font-size: 2rem; 
+  margin-bottom: var(--gap-lg); 
+  text-align: center; 
+  color: var(--primary-color); 
+}
+
+/* 工具类 */
+.flex-center { 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-wrap: wrap; 
+}
+.text-center { text-align: center; }
+.card { 
+  background: var(--white); 
+  border-radius: var(--border-radius); 
+  box-shadow: var(--shadow); 
+}
+
+/* 导航栏 */
+nav { 
+  background: var(--primary-color); 
+  padding: var(--gap-sm) 0; 
+  position: sticky; 
+  top: 0; 
+  z-index: 100; 
+}
+.nav-container { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+.logo { color: var(--white); font-size: 1.5rem; font-weight: bold; }
+.nav-links { 
+  display: flex; 
+  gap: var(--gap-md); 
+  align-items: center; 
+}
+.nav-links a { color: var(--white); }
+.nav-links a:hover { color: var(--secondary-color); }
+
+/* 语言切换按钮 */
+.lang-toggle {
+  background: transparent;
+  border: 1px solid var(--white);
+  color: var(--white);
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.lang-toggle:hover {
+  background: var(--white);
+  color: var(--primary-color);
+}
+
+/* 个人简介 */
+.intro { 
+  padding: 40px 20px; 
+  border-radius: 10px;
+}
+.avatar { 
+  width: 150px; 
+  height: 150px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+  margin-bottom: var(--gap-md); 
+}
+.intro h1 { font-size: 2.5rem; margin-bottom: 10px; }
+.intro p { 
+  font-size: 1.2rem; 
+  color: var(--text-light); 
+  max-width: 700px; 
+  margin: 0 auto; 
+}
+
+/* 项目展示 */
+.projects-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: var(--gap-lg); 
+}
+.project-card { 
+  overflow: hidden; 
+  transition: transform 0.3s; 
+}
+.project-card:hover { transform: translateY(-5px); }
+.project-img { 
+  width: 100%; 
+  height: 200px; 
+  object-fit: cover; 
+}
+.project-info { padding: var(--gap-md); }
+.project-info h3 { margin-bottom: 10px; }
+.project-info p { 
+  color: var(--text-light); 
+  margin-bottom: var(--gap-sm); 
+}
+.project-link { 
+  display: inline-block; 
+  color: var(--secondary-color); 
+  font-weight: 500; 
+}
+
+/* 快速文章发布 */
+#quick-publish { background: var(--white); }
+.publish-links { gap: var(--gap-md); margin-top: var(--gap-sm); }
+.publish-link { 
+  display: inline-block; 
+  padding: 12px 24px; 
+  background: var(--secondary-color); 
+  color: var(--white); 
+  border-radius: 6px; 
+  font-weight: 500; 
+  transition: background 0.3s; 
+}
+.publish-link:hover { 
+  background: #2980b9; 
+  color: var(--white); 
+}
+.publish-link.feishu { background: #0078d7; }
+.publish-link.feishu:hover { background: #005a9e; }
+
+/* 联系方式 */
+.contact { 
+  background: var(--primary-color); 
+  color: var(--white); 
+}
+.contact-links { 
+  gap: var(--gap-lg); 
+  margin-top: var(--gap-lg); 
+}
+.contact-item { text-align: center; }
+.contact-item i { 
+  font-size: 2rem; 
+  margin-bottom: 10px; 
+  cursor: pointer; 
+}
+.contact-item a { color: var(--white); }
+.contact-item a:hover { color: var(--secondary-color); }
+
+/* 页脚 */
+footer { 
+  text-align: center; 
+  padding: var(--gap-md); 
+  background: #1a252f; 
+  color: #bbb; 
+}
+
+/* 响应式调整 */
+@media (max-width: var(--breakpoint-md)) {
+  .nav-container { flex-direction: column; gap: var(--gap-sm); }
+  .projects-grid { grid-template-columns: 1fr; }
+  .intro h1 { font-size: 2rem; }
+}
