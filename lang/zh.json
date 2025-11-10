@@ -34,13 +34,12 @@
     "document3": "机器人学"
   },
   "contact": {
-    "title": "联系我",
     "bilibili": "哔哩哔哩",
     "github": "代码仓库",
     "twitter": "推特",
     "zhihu": "知乎"
   },
   "footer": {
-    "copyright": "&copy; 2023-2025 Lain-Ego | 个人主页"
+    "copyright": "© 2023-2025 Lain-Ego | 个人主页"
   }
 }

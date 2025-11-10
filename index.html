@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lain's personal database</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Lain-Ego's Homepage</title>
+  <!-- 引入样式文件（更新路径） -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- 引入图标库（补充缺失的Font Awesome） -->
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <!-- 导航栏 -->
   <nav>
     <div class="container nav-container">
-      <div class="logo">Lain's personal database</div>
+      <a href="#" class="logo" data-i18n="nav.home">Home</a>
       <div class="nav-links">
-        <a href="#intro" data-i18n="nav.home">Home</a>
         <a href="#projects" data-i18n="nav.projects">Projects</a>
-        <a href="#quick-publish" data-i18n="nav.documents">Documents</a>
+        <a href="#documents" data-i18n="nav.documents">Documents</a>
         <a href="#contact" data-i18n="nav.contact">Contact Me</a>
         <button class="lang-toggle">中文</button>
       </div>
@@ -23,48 +24,39 @@
   </nav>
 
   <!-- 个人简介 -->
-  <section id="intro">
-    <div class="container">
-      <div class="intro card text-center">
-        <img src="assets/images/Avatar.jpg" alt="头像" class="avatar" data-i18n="intro.avatarAlt">
-        <h1 data-i18n="intro.title"></h1>
-        <p data-i18n="intro.desc"></p>
-      </div>
+  <section class="intro flex-center card">
+    <div class="text-center">
+      <img src="assets/images/Avatar.jpg" alt="Avatar" class="avatar" data-i18n="intro.avatarAlt">
+      <h1 data-i18n="intro.title">Hello, I'm Lain-Ego</h1>
+      <p data-i18n="intro.desc">MCU Development | Linux Development | Mechanical Drawing | PCB Design | ROS and Robot Simulation<br>Focus on Embedded Systems, Robot Control and Simulation.</p>
     </div>
   </section>
 
   <!-- 项目展示 -->
-  <section id="projects">
-    <div class="container">
-      <h2 data-i18n="projects.title"></h2>
-      <div class="projects-grid"></div> <!-- 动态生成项目卡片 -->
-    </div>
+  <section id="projects" class="container">
+    <h2 data-i18n="projects.title">My Projects</h2>
+    <div class="projects-grid"></div>
   </section>
 
-  <!-- 快速文章发布 -->
-  <section id="quick-publish">
-    <div class="container">
-      <h2 data-i18n="docs.title"></h2>
-      <div class="publish-links flex-center"></div> <!-- 动态生成文档链接 -->
-    </div>
+  <!-- 文档区域 -->
+  <section id="documents" class="container" id="quick-publish">
+    <h2 data-i18n="docs.title">Documents</h2>
+    <div class="flex-center publish-links"></div>
   </section>
 
   <!-- 联系方式 -->
   <section id="contact" class="contact">
     <div class="container">
       <h2 data-i18n="contact.title"></h2>
-      <div class="contact-links flex-center"></div> <!-- 动态生成联系链接 -->
+      <div class="flex-center contact-links"></div>
     </div>
   </section>
 
   <!-- 页脚 -->
-  <footer>
-    <div class="container">
-      <p data-i18n="footer.copyright"></p>
-    </div>
-  </footer>
+<footer data-i18n="footer.copyright"></footer>
 
-  <script src="js/i18n.js"></script>
-  <script src="js/main.js"></script>
+  <!-- 引入脚本文件（更新路径，注意加载顺序） -->
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

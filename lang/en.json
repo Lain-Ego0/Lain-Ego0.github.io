@@ -34,13 +34,12 @@
     "document3": "Robotics"
   },
   "contact": {
-    "title": "Contact Me",
     "bilibili": "Bilibili",
     "github": "GitHub",
     "twitter": "X (Twitter)",
     "zhihu": "Zhihu"
   },
   "footer": {
-    "copyright": "&copy; 2023-2025 Lain-Ego | Personal Homepage"
+    "copyright": "© 2023-2025 Lain-Ego | Personal Homepage"
   }
 }
