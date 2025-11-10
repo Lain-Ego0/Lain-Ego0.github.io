@@ -43,7 +43,6 @@ function initProjects() {
   projects.forEach(project => {
     const card = document.createElement('div');
     card.className = 'project-card card';
-    // 注意这里将class改为project-thumbnail
     card.innerHTML = `
       <img src="${project.img}" alt="${window.i18n.get('projects.imgAlt')}" class="project-thumbnail">
       <div class="project-info">
