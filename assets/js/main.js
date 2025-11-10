@@ -58,9 +58,9 @@ function initProjects() {
 // 初始化文档链接（适配子页面路径）
 function initDocuments() {
   const docs = [
-    { key: "docs.document1", link: "pages/documents/document1.html", icon: "fas fa-edit" },
-    { key: "docs.document2", link: "pages/documents/document2.html", icon: "fas fa-list" },
-    { key: "docs.document3", link: "pages/documents/document3.html", icon: "fas fa-pencil-alt" }
+    { key: "Document01.title", link: "pages/documents/document1.html", icon: "fas fa-edit" },
+    { key: "Document02.title", link: "pages/documents/document2.html", icon: "fas fa-list" },
+    { key: "Document03.title", link: "pages/documents/document3.html", icon: "fas fa-pencil-alt" }
   ];
   const container = document.querySelector('.publish-links');
   if (!container) return; // 子页面无文档容器，直接返回避免报错

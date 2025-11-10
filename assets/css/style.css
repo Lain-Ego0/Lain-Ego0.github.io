@@ -39,7 +39,7 @@ a:hover {
   padding: 0 var(--gap-sm); /* 左右内边距，避免内容贴边 */
 }
 section { 
-  padding: 50px 0; /* 区块上下内边距，保证内容与其他区块的间距 */
+  padding: 20px 0; /* 区块上下内边距，保证内容与其他区块的间距 */
 }
 h2 { 
   font-size: 2rem; /* 二级标题字体大小 */
@@ -196,6 +196,20 @@ nav {
   background: #005a9e; /* 飞书按钮 hover 时背景色加深 */
 }
 
+/* 项目链接特殊样式 */
+.project-links .publish-link.github {
+  background: #333;
+}
+.project-links .publish-link.github:hover {
+  background: #555;
+}
+.project-links .publish-link.bilibili {
+  background: #FB7299;
+}
+.project-links .publish-link.bilibili:hover {
+  background: #F75981;
+}
+
 /* 联系方式区域样式 */
 .contact { 
   background: var(--primary-color); /* 区域背景（主色调） */
@@ -218,6 +232,23 @@ nav {
 }
 .contact-item a:hover { 
   color: var(--secondary-color); /* 链接 hover 时颜色（辅助色） */
+}
+
+/* 基础图片样式 */
+.project-img {
+  width: 100%;
+  max-width: 800px;
+  /* 关键：保持图片原始比例，完全显示在容器内（不会裁剪，可能留空白） */
+  object-fit: contain;
+  /* 限制最大高度，避免图片过高超出屏幕（根据实际图片比例调整） */
+  max-height: 80vh; /* 最大高度为屏幕可视区域的80% */
+  /* 确保图片容器不隐藏溢出内容 */
+  overflow: visible;
+  border-radius: 8px;
+  margin: 1rem auto; /* 水平居中，上下留间距 */
+  display: block;
+  /* 避免图片被意外拉伸 */
+  height: auto;
 }
 
 /* 页脚样式 */
