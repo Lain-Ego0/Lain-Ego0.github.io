@@ -12,7 +12,7 @@ window.addEventListener('i18nLoaded', () => {
   initContactLinks();
 });
 
-// 初始化项目卡片（适配子页面路径）
+// 在initProjects函数中修改图片class
 function initProjects() {
   const projects = [
     { 
@@ -38,13 +38,14 @@ function initProjects() {
     }
   ];
   const grid = document.querySelector('.projects-grid');
-  if (!grid) return; // 子页面无项目网格，直接返回避免报错
+  if (!grid) return;
   grid.innerHTML = '';
   projects.forEach(project => {
     const card = document.createElement('div');
     card.className = 'project-card card';
+    // 注意这里将class改为project-thumbnail
     card.innerHTML = `
-      <img src="${project.img}" alt="${window.i18n.get('projects.imgAlt')}" class="project-img">
+      <img src="${project.img}" alt="${window.i18n.get('projects.imgAlt')}" class="project-thumbnail">
       <div class="project-info">
         <h3>${window.i18n.get(project.titleKey)}</h3>
         <p>${window.i18n.get(project.descKey)}</p>

@@ -251,6 +251,14 @@ nav {
   height: auto;
 }
 
+/* 首页项目缩略图专用样式 - 保持统一高度 */
+.project-thumbnail {
+  width: 100%;
+  height: 200px; /* 固定高度，可根据需要调整 */
+  object-fit: cover; /* 保持比例裁剪图片，避免拉伸 */
+  border-radius: var(--border-radius) var(--border-radius) 0 0; /* 顶部圆角与卡片匹配 */
+}
+
 /* 页脚样式 */
 footer { 
   text-align: center; /* 页脚文本居中 */
