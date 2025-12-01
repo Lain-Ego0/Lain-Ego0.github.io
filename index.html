@@ -1,57 +1,62 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lain-Ego0 | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-            colors: {
-              primary: '#3b82f6',
-              secondary: '#64748b',
-              dark: '#0f172a',
-              light: '#f8fafc',
-            }
-          },
-        },
-      }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-      /* Hide scrollbar for Chrome, Safari and Opera */
-      .no-scrollbar::-webkit-scrollbar {
-          display: none;
-      }
-      /* Hide scrollbar for IE, Edge and Firefox */
-      .no-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lain-Ego's Homepage</title>
+  <!-- 引入样式文件（更新路径） -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- 引入图标库（补充缺失的Font Awesome） -->
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-  <body class="bg-light text-slate-900 dark:bg-dark dark:text-slate-100 transition-colors duration-300">
-    <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
+<body>
+  <!-- 导航栏 -->
+  <nav>
+    <div class="container nav-container">
+      <a href="#" class="logo" data-i18n="nav.home">Home</a>
+      <div class="nav-links">
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#documents" data-i18n="nav.documents">Documents</a>
+        <a href="#contact" data-i18n="nav.contact">Contact Me</a>
+        <button class="lang-toggle">中文</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 个人简介 -->
+  <section class="intro flex-center card">
+    <div class="text-center">
+      <img src="assets/images/Avatar.jpg" alt="Avatar" class="avatar" data-i18n="intro.avatarAlt">
+      <h1 data-i18n="intro.title">Hello, I'm Lain-Ego</h1>
+      <p data-i18n="intro.desc">MCU Development | Linux Development | Mechanical Drawing | PCB Design | ROS and Robot Simulation<br>Focus on Embedded Systems, Robot Control and Simulation.</p>
+    </div>
+  </section>
+
+  <!-- 项目展示 -->
+  <section id="projects" class="container">
+    <h2 data-i18n="projects.title">My Projects</h2>
+    <div class="projects-grid"></div>
+  </section>
+
+  <!-- 文档区域 -->
+  <section id="documents" class="container" id="quick-publish">
+    <h2 data-i18n="docs.title">Documents</h2>
+    <div class="flex-center publish-links"></div>
+  </section>
+
+  <!-- 联系方式 -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 data-i18n="contact.title"></h2>
+      <div class="flex-center contact-links"></div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+<footer data-i18n="footer.copyright"></footer>
+
+  <!-- 引入脚本文件（更新路径，注意加载顺序） -->
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
