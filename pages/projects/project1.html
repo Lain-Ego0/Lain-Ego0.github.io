@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 01 - Lain-Ego</title>
+  <!-- 引用公共样式和图标库 -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- 导航栏（与主页一致） -->
+  <nav>
+    <div class="container nav-container">
+      <a href="../../index.html" class="logo" data-i18n="nav.home">Home</a>
+      <div class="nav-links">
+        <a href="../../index.html#projects" data-i18n="nav.projects">Projects</a>
+        <a href="../../index.html#documents" data-i18n="nav.documents">Documents</a>
+        <a href="../../index.html#contact" data-i18n="nav.contact">Contact Me</a>
+        <button class="lang-toggle">中文</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 项目详情内容（用户可自行补充） -->
+  <section class="container" style="padding: 50px 0;">
+    <div class="card" style="padding: 30px;">
+      <h2 data-i18n="project1.title"></h2>
+      <img src="../../assets/images/Portfolio-01.png" 
+        data-i18n="projects1.imgAlt1" 
+          class="project-img">
+       <p data-i18n="project1.desc"></p>
+      <img src="../../assets/images/Portfolio-01-3.png" 
+        data-i18n="project1.imgAlt2" 
+          class="project-img">
+      <img src="../../assets/images/Portfolio-01-1.png" 
+        data-i18n="project1.imgAlt3" 
+          class="project-img">
+      <img src="../../assets/images/Portfolio-01-2.png" 
+        data-i18n="project1.imgAlt4" 
+          class="project-img">
+     
+      <!-- 可添加更多详情内容 -->
+    <div class="project1.links" 
+    style="margin: 30px 0; display: flex; gap: 15px; flex-wrap: wrap;justify-content: center;">
+      <a href="https://github.com/Lain-Ego0/BRS-Parallel-Robot" target="_blank" class="publish-link github">
+        <i class="fab fa-github"></i> <span data-i18n="project1.links.github">开源代码</span>
+      </a>
+      <a href="https://wcn9j5638vrr.feishu.cn/wiki/space/7570988375279517715?ccm_open_type=lark_wiki_spaceLink&open_tab_from=wiki_home" target="_blank" class="publish-link">
+        <i class="fas fa-file-pdf"></i> <span data-i18n="project1.links.techDoc">技术文档</span>
+      </a>
+      <a href="https://www.bilibili.com/video/BV15wu4zuEmf" target="_blank" class="publish-link bilibili">
+        <i class="fab fa-bilibili"></i> <span data-i18n="project1.links.demo">演示视频</span>
+      </a>
+    </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer data-i18n="footer.copyright"></footer>
+
+  <!-- 引用脚本文件 -->
+  <script src="../../assets/js/i18n.js"></script>
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>
