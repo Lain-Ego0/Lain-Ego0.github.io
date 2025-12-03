@@ -7,8 +7,8 @@
   },
   "intro": {
     "avatarAlt": "Lain-Ego的头像",
-    "title": "你好，我是Lain-Ego",
-    "desc": "单片机开发 | Linux开发 | 机械制图 | PCB设计 | ROS与机器人仿真<br>专注于嵌入式系统、机器人控制与仿真。"
+    "title": "你好，我是Lain",
+    "desc": "单片机开发 | Linux开发 | 机械制图 | PCB设计 | ROS与机器人仿真<br>专注于嵌入式系统、机器人控制与仿真<br>邮箱：lain-ego@qq.com"
   },
   "projects": {
     "title": "我的项目",

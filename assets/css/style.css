@@ -1,285 +1,386 @@
-/* 全局变量定义 - 用于统一管理网站的颜色、间距、阴影等基础样式属性，便于整体调整 */
+/* =========================================
+   1. 全局变量 - Modern Tech Palette
+   ========================================= */
 :root {
-  --primary-color: #2c3e50; /* 主色调 - 用于主要标题、导航栏等核心元素 */
-  --secondary-color: #3498db; /* 辅助色 - 用于强调、交互元素（如链接 hover 状态） */
-  --text-color: #333; /* 主要文本颜色 */
-  --text-light: #666; /* 次要文本颜色 - 用于说明文字等 */
-  --bg-light: #f9f9f9; /* 浅色背景 - 用于页面整体背景 */
-  --white: #fff; /* 白色 - 用于卡片、容器背景 */
-  --gap-sm: 15px; /* 小间距 - 用于紧凑元素间的间隔 */
-  --gap-md: 20px; /* 中间距 - 用于中等距离的元素间隔 */
-  --gap-lg: 30px; /* 大间距 - 用于较大距离的元素间隔 */
-  --shadow: 0 2px 10px rgba(0,0,0,0.1); /* 阴影效果 - 用于卡片、容器的悬浮感 */
-  --border-radius: 8px; /* 圆角半径 - 用于卡片、按钮等元素的圆角 */
-  --breakpoint-md: 768px; /* 中等屏幕断点 - 用于响应式布局切换 */
+  /* 核心色板：使用 Slate 色系代替普通黑蓝，更有质感 */
+  --primary-color: #1e293b;   /* 深岩灰：用于导航、主标题 */
+  --primary-hover: #0f172a;   /* 更深的岩灰：用于交互 */
+  --secondary-color: #3b82f6; /* 科技蓝：用于强调、链接、按钮 */
+  --secondary-hover: #2563eb; /* 深科技蓝：按钮 Hover */
+  
+  /* 文本颜色 */
+  --text-color: #334155;      /* 次深灰：正文 */
+  --text-light: #64748b;      /* 浅灰：辅助说明 */
+  
+  /* 背景颜色 */
+  --bg-body: #f8fafc;         /* 极淡的灰蓝背景，比纯白护眼 */
+  --bg-card: #ffffff;         /* 纯白卡片背景 */
+  
+  /* 间距与布局 */
+  --gap-sm: 16px;
+  --gap-md: 24px;
+  --gap-lg: 48px;
+  --border-radius: 12px;      /* 更圆润的边角，符合现代 UI 趋势 */
+  --container-width: 1100px;  /* 稍微收窄内容区，提升阅读体验 */
+  
+  /* 高级阴影系统 (更柔和、更有层次) */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* 全局样式重置与基础设置 */
+/* =========================================
+   2. 基础重置与排版
+   ========================================= */
 * { 
   margin: 0; 
   padding: 0; 
-  box-sizing: border-box; /* 盒模型设置为 border-box，确保 padding 和 border 不影响元素总尺寸 */
+  box-sizing: border-box;
 }
+
 body { 
-  font-family: 'Segoe UI', sans-serif; /* 全局字体设置 */
-  line-height: 1.6; /* 行高设置，提升文本可读性 */
-  color: var(--text-color); /* 使用全局文本颜色变量 */
-  background: var(--bg-light); /* 使用全局浅色背景 */
+  /* 现代字体栈：优先使用系统字体，渲染效果最好 */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.7; /* 增加行高，提升长文阅读舒适度 */
+  color: var(--text-color); 
+  background: var(--bg-body);
+  -webkit-font-smoothing: antialiased; /* 让字体在 Mac 上更清晰 */
 }
+
 a { 
-  text-decoration: none; /* 移除链接默认下划线 */
-  color: var(--primary-color); /* 链接默认颜色 */
+  text-decoration: none; 
+  color: var(--secondary-color);
+  transition: color 0.2s ease;
 }
+
 a:hover { 
-  color: var(--secondary-color); /* 链接 hover 状态颜色（使用辅助色） */
+  color: var(--secondary-hover); 
 }
+
 .container { 
-  max-width: 1200px; /* 内容最大宽度限制 */
-  margin: 0 auto; /* 水平居中 */
-  padding: 0 var(--gap-sm); /* 左右内边距，避免内容贴边 */
+  max-width: var(--container-width); 
+  margin: 0 auto; 
+  padding: 0 20px; 
 }
+
 section { 
-  padding: 20px 0; /* 区块上下内边距，保证内容与其他区块的间距 */
+  padding: 60px 0; /* 增加区块呼吸感 */
 }
+
+h1, h2, h3 {
+  color: var(--primary-color);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
 h2 { 
-  font-size: 2rem; /* 二级标题字体大小 */
-  margin-bottom: var(--gap-lg); /* 标题下方间距 */
-  text-align: center; /* 标题居中对齐 */
-  color: var(--primary-color); /* 标题颜色（使用主色调） */
+  font-size: 2.25rem; 
+  margin-bottom: var(--gap-lg); 
+  text-align: center;
+  position: relative;
 }
 
-/* 工具类 - 可复用的样式集合，用于快速设置元素样式 */
-.flex-center { 
-  display: flex; /* 使用 flex 布局 */
-  justify-content: center; /* 主轴方向居中 */
-  align-items: center; /* 交叉轴方向居中 */
-  flex-wrap: wrap; /* 允许换行，适应小屏幕 */
-}
-.text-center { 
-  text-align: center; /* 文本居中 */
-}
-.card { 
-  background: var(--white); /* 卡片背景为白色 */
-  border-radius: var(--border-radius); /* 卡片圆角 */
-  box-shadow: var(--shadow); /* 卡片阴影，增强立体感 */
-}
-
-/* 导航栏样式 */
-nav { 
-  background: var(--primary-color); /* 导航栏背景（使用主色调） */
-  padding: var(--gap-sm) 0; /* 导航栏上下内边距 */
-  position: sticky; /* 粘性定位 - 滚动时固定在顶部 */
-  top: 0; 
-  z-index: 100; /* 层级设置，确保导航栏在其他元素上方 */
-}
-.nav-container { 
-  display: flex; /* 导航内容使用 flex 布局 */
-  justify-content: space-between; /* 两端对齐（logo 居左，链接居右） */
-  align-items: center; /* 垂直居中对齐 */
-}
-.logo { 
-  color: var(--white); /* logo 文字颜色为白色 */
-  font-size: 1.5rem; /* logo 字体大小 */
-  font-weight: bold; /* 加粗显示 */
-}
-.nav-links { 
-  display: flex; /* 导航链接使用 flex 布局横向排列 */
-  gap: var(--gap-md); /* 链接之间的间距 */
-  align-items: center; /* 垂直居中对齐 */
-}
-.nav-links a { 
-  color: var(--white); /* 导航链接文字颜色为白色 */
-}
-.nav-links a:hover { 
-  color: var(--secondary-color); /* 导航链接 hover 状态颜色（使用辅助色） */
-}
-
-/* 语言切换按钮样式 */
-.lang-toggle {
-  background: transparent; /* 透明背景 */
-  border: 1px solid var(--white); /* 白色边框 */
-  color: var(--white); /* 文字颜色为白色 */
-  padding: 5px 10px; /* 内边距 */
-  border-radius: 4px; /* 小圆角 */
-  cursor: pointer; /* 鼠标悬停时显示指针 */
-  font-weight: 500; /* 中等加粗 */
-  transition: all 0.3s; /* 过渡动画，使交互更平滑 */
-}
-.lang-toggle:hover {
-  background: var(--white); /* hover 时背景变为白色 */
-  color: var(--primary-color); /* hover 时文字颜色变为主色调 */
-}
-
-/* 个人简介区域样式 */
-.intro { 
-  padding: 40px 20px; /* 内边距 */
-  border-radius: 10px; /* 圆角 */
-}
-.avatar { 
-  width: 150px; /* 头像宽度 */
-  height: 150px; /* 头像高度 */
-  border-radius: 50%; /* 圆形头像 */
-  object-fit: cover; /* 图片裁剪方式，保持比例填充 */
-  margin-bottom: var(--gap-md); /* 头像下方间距 */
-}
-.intro h1 { 
-  font-size: 2.5rem; /* 主标题大小 */
-  margin-bottom: 10px; /* 标题下方间距 */
-}
-.intro p { 
-  font-size: 1.2rem; /* 简介文字大小 */
-  color: var(--text-light); /* 简介文字颜色（次要文本色） */
-  max-width: 700px; /* 最大宽度限制，避免文本过长影响阅读 */
-  margin: 0 auto; /* 水平居中 */
-}
-
-/* 项目展示区域样式 */
-.projects-grid { 
-  display: grid; /* 使用 grid 布局 */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 自适应列数，最小列宽 300px */
-  gap: var(--gap-lg); /* 项目卡片之间的间距 */
-}
-.project-card { 
-  overflow: hidden; /* 超出部分隐藏（用于图片圆角适配） */
-  transition: transform 0.3s; /* 变换过渡动画 */
-}
-.project-card:hover { 
-  transform: translateY(-5px); /* 鼠标悬停时向上偏移，增强交互感 */
-}
-.project-img { 
-  width: 100%; /* 图片宽度占满容器 */
-  height: 200px; /* 图片固定高度 */
-  object-fit: cover; /* 图片裁剪方式 */
-}
-.project-info { 
-  padding: var(--gap-md); /* 项目信息区域内边距 */
-}
-.project-info h3 { 
-  margin-bottom: 10px; /* 项目标题下方间距 */
-}
-.project-info p { 
-  color: var(--text-light); /* 项目描述文字颜色（次要文本色） */
-  margin-bottom: var(--gap-sm); /* 描述下方间距 */
-}
-.project-link { 
-  display: inline-block; /* 链接块级显示，便于设置内外边距 */
-  color: var(--secondary-color); /* 链接颜色（辅助色） */
-  font-weight: 500; /* 中等加粗 */
-}
-
-/* 快速文章发布区域样式 */
-#quick-publish { 
-  background: var(--white); /* 区域背景为白色 */
-}
-.publish-links { 
-  gap: var(--gap-md); /* 发布链接之间的间距 */
-  margin-top: var(--gap-lg); /* 链接区域上方间距 */
-  margin-bottom: var(--gap-lg); /* 链接区域下方间距 */
-}
-.publish-link { 
-  display: inline-block; /* 块级显示，便于设置内外边距 */
-  padding: 12px 24px; /* 按钮内边距 */
-  background: var(--secondary-color); /* 按钮背景（辅助色） */
-  color: var(--white); /* 按钮文字颜色 */
-  border-radius: 6px; /* 按钮圆角 */
-  font-weight: 500; /* 中等加粗 */
-  transition: background 0.3s; /* 背景色过渡动画 */
-}
-.publish-link:hover { 
-  background: #2980b9; /* hover 时背景色加深 */
-  color: var(--white); /* 保持文字颜色为白色 */
-}
-.publish-link.feishu { 
-  background: #0078d7; /* 飞书平台按钮特殊背景色 */
-}
-.publish-link.feishu:hover { 
-  background: #005a9e; /* 飞书按钮 hover 时背景色加深 */
-}
-
-/* 项目链接特殊样式 */
-.project-links .publish-link.github {
-  background: #333;
-}
-.project-links .publish-link.github:hover {
-  background: #555;
-}
-.project-links .publish-link.bilibili {
-  background: #FB7299;
-}
-.project-links .publish-link.bilibili:hover {
-  background: #F75981;
-}
-
-/* 联系方式区域样式 */
-.contact { 
-  background: var(--primary-color); /* 区域背景（主色调） */
-  color: var(--white); /* 文字颜色为白色 */
-}
-.contact-links { 
-  gap: var(--gap-lg); /* 联系项之间的间距 */
-  margin-top: var(--gap-lg); /* 联系区域上方间距 */
-}
-.contact-item { 
-  text-align: center; /* 联系项文本居中 */
-}
-.contact-item i { 
-  font-size: 2rem; /* 图标大小 */
-  margin-bottom: 10px; /* 图标下方间距 */
-  cursor: pointer; /* 鼠标悬停时显示指针 */
-}
-.contact-item a { 
-  color: var(--white); /* 联系链接文字颜色为白色 */
-}
-.contact-item a:hover { 
-  color: var(--secondary-color); /* 链接 hover 时颜色（辅助色） */
-}
-
-/* 基础图片样式 */
-.project-img {
-  width: 100%;
-  max-width: 800px;
-  /* 关键：保持图片原始比例，完全显示在容器内（不会裁剪，可能留空白） */
-  object-fit: contain;
-  /* 限制最大高度，避免图片过高超出屏幕（根据实际图片比例调整） */
-  max-height: 80vh; /* 最大高度为屏幕可视区域的80% */
-  /* 确保图片容器不隐藏溢出内容 */
-  overflow: visible;
-  border-radius: 8px;
-  margin: 1rem auto; /* 水平居中，上下留间距 */
+/* 给标题加一个小装饰线，增加设计感 */
+h2::after {
+  content: '';
   display: block;
-  /* 避免图片被意外拉伸 */
-  height: auto;
+  width: 60px;
+  height: 4px;
+  background: var(--secondary-color);
+  margin: 15px auto 0;
+  border-radius: 2px;
 }
 
-/* 首页项目缩略图专用样式 - 保持统一高度 */
+/* =========================================
+   3. 导航栏 (Glassmorphism / 毛玻璃风格)
+   ========================================= */
+nav { 
+  background: rgba(30, 41, 59, 0.9); /* 主色调 + 透明度 */
+  backdrop-filter: blur(10px);       /* 关键：背景模糊效果 */
+  padding: 16px 0; 
+  position: sticky; 
+  top: 0; 
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.nav-container { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.logo { 
+  color: #fff; 
+  font-size: 1.5rem; 
+  font-weight: 800; 
+  letter-spacing: -0.5px; /* 紧凑一点更现代 */
+}
+
+.nav-links { 
+  display: flex; 
+  gap: 30px; 
+  align-items: center; 
+}
+
+.nav-links a { 
+  color: rgba(255, 255, 255, 0.85); 
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover { 
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.3); /* 发光效果 */
+}
+
+/* 语言切换按钮优化 */
+.lang-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px; /* 胶囊形状 */
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.lang-toggle:hover {
+  background: #fff;
+  color: var(--primary-color);
+}
+
+/* =========================================
+   4. 个人简介 (Intro)
+   ========================================= */
+.intro { 
+  padding: 80px 20px; 
+  text-align: center; /* 默认居中，更适合个人主页 */
+  background: linear-gradient(to bottom, #fff, var(--bg-body)); /* 微妙的背景渐变 */
+}
+
+.avatar { 
+  width: 160px; 
+  height: 160px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+  margin-bottom: var(--gap-md);
+  box-shadow: var(--shadow-lg); /* 头像立体感 */
+  border: 4px solid #fff;       /* 白色边框 */
+}
+
+.intro h1 { 
+  font-size: 3rem; 
+  margin-bottom: 16px;
+  color: var(--primary-color);
+}
+
+.intro p { 
+  font-size: 1.25rem; 
+  color: var(--text-light); 
+  max-width: 680px; 
+  margin: 0 auto; 
+}
+
+/* =========================================
+   5. 项目展示 (Card UI)
+   ========================================= */
+.projects-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+  gap: 30px; 
+}
+
+.card, .project-card { 
+  background: var(--bg-card); 
+  border-radius: var(--border-radius); 
+  box-shadow: var(--shadow-md); 
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* 丝滑的贝塞尔曲线 */
+  border: 1px solid rgba(0,0,0,0.03); /* 极淡的边框，增加精致感 */
+  overflow: hidden;
+}
+
+.project-card:hover { 
+  transform: translateY(-8px); /* 向上浮动 */
+  box-shadow: var(--shadow-hover); /* 阴影加深扩散 */
+}
+
 .project-thumbnail {
   width: 100%;
-  height: 200px; /* 固定高度，可根据需要调整 */
-  object-fit: cover; /* 保持比例裁剪图片，避免拉伸 */
-  border-radius: var(--border-radius) var(--border-radius) 0 0; /* 顶部圆角与卡片匹配 */
+  height: 220px; 
+  object-fit: cover; 
+  transition: transform 0.5s ease;
 }
 
-/* 页脚样式 */
+.project-card:hover .project-thumbnail {
+  transform: scale(1.05); /* 图片微放大 */
+}
+
+.project-info { 
+  padding: 24px; 
+}
+
+.project-info h3 { 
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+.project-info p { 
+  color: var(--text-light); 
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.project-link { 
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.project-link::after {
+  content: '→';
+  margin-left: 6px;
+  transition: transform 0.2s;
+}
+.project-link:hover::after {
+  transform: translateX(4px); /* 箭头移动动画 */
+}
+
+/* 详情页大图样式 */
+.project-img {
+  width: 100%;
+  max-width: 900px;
+  object-fit: contain;
+  max-height: 80vh;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  margin: 2rem auto;
+  display: block;
+}
+
+/* =========================================
+   6. 按钮与链接 (Buttons)
+   ========================================= */
+#quick-publish { 
+  background: transparent; /* 融入整体背景 */
+}
+
+.publish-links { 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.publish-link { 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px; 
+  background: var(--primary-color); /* 默认用主色 */
+  color: #fff; 
+  border-radius: 50px; /* 全圆角按钮 */
+  font-weight: 600; 
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.publish-link:hover { 
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  color: #fff;
+}
+
+/* 品牌色按钮定制 */
+.publish-link.feishu { background: #0078d7; }
+.publish-link.feishu:hover { background: #0063b1; }
+
+.publish-link.github { background: #24292e; }
+.publish-link.github:hover { background: #000; }
+
+.publish-link.bilibili { background: #FB7299; }
+.publish-link.bilibili:hover { background: #f54e7d; }
+
+/* =========================================
+   7. 联系方式与页脚
+   ========================================= */
+.contact { 
+  background: var(--primary-color); 
+  color: #fff; 
+  text-align: center;
+  padding: 80px 0;
+}
+
+.contact-links { 
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+.contact-item i { 
+  font-size: 2.5rem; 
+  margin-bottom: 15px; 
+  display: block;
+  opacity: 0.9;
+  transition: transform 0.3s;
+}
+
+.contact-item:hover i {
+  transform: scale(1.1);
+  color: var(--secondary-color);
+}
+
+.contact-item a { 
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+}
+
 footer { 
-  text-align: center; /* 页脚文本居中 */
-  padding: var(--gap-md); /* 页脚内边距 */
-  background: #1a252f; /* 页脚背景色（比主色调更深） */
-  color: #bbb; /* 页脚文字颜色（浅灰色） */
+  background: #0f172a; /* 比主色更黑 */
+  color: #64748b; 
+  text-align: center; 
+  padding: 30px; 
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/* 响应式调整 - 针对中等及以下屏幕（小于 768px） */
-@media (max-width: var(--breakpoint-md)) {
+/* =========================================
+   8. 响应式适配 (Mobile)
+   ========================================= */
+@media (max-width: 768px) {
+  :root {
+    --gap-lg: 32px;
+  }
+  
+  .intro h1 { font-size: 2.2rem; }
+  .intro p { font-size: 1rem; }
+  
   .nav-container { 
-    flex-direction: column; /* 导航容器改为垂直排列 */
-    gap: var(--gap-sm); /* 元素间垂直间距 */
+    flex-direction: column; 
+    gap: 15px; 
   }
+  
   .projects-grid { 
-    grid-template-columns: 1fr; /* 项目网格改为单列布局 */
+    grid-template-columns: 1fr; /* 手机端单列 */
   }
-  .intro h1 { 
-    font-size: 2rem; /* 缩小主标题字体大小，适应小屏幕 */
+  
+  .contact-links {
+    gap: 30px;
+    flex-direction: column; /* 手机端垂直排列联系方式 */
   }
-  section {
-    padding: 60px 0; /* 小屏幕下适当减小区域间距（从80px调整为60px） */
+  
+  .publish-links {
+    flex-direction: column;
+    width: 100%;
   }
-}              
+  
+  .publish-link {
+    width: 100%; /* 按钮占满全宽 */
+  }
+}
