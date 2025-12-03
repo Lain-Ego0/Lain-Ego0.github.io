@@ -5,7 +5,8 @@
     "opensource": "Open Source",
     "timeline": "Timeline",
     "skills": "Tech Stack",
-    "contact": "Contact"
+    "contact": "Contact",
+    "documents": "Docs"
   },
   "intro": {
     "avatarAlt": "Lain-Ego's avatar",
@@ -17,17 +18,43 @@
     "imgAlt": "Project image",
     "viewDetail": "View Details",
     "item1": {
-      "title": "ROBOCON Quadruped Robot Full-Stack",
-      "desc": "2025 Season. Carbon tube assembly mechanism + Force control algorithm + 3D LiDAR mapping & navigation."
+      "title": "ROBOCON 2025 Quadruped Robot",
+      "desc": "Full-stack R&D for 2025 ROBOCON. Responsible for carbon tube assembly mechanical modeling, force control algorithms, and 3D LiDAR SLAM navigation. Led the team to achieve 30th in Speed, 31st in Obstacle, and 34th in Cross-country among 180+ teams.",
+      "tags": ["Motion Control", "SLAM", "Mechanical Design", "LiDAR"]
     },
     "item2": {
       "title": "Bionic Boston Lobster Submersible",
-      "desc": "Lower computer framework integrating stepper pumps, motor drives, gyro processing, and IIC encoder closed-loop control."
+      "desc": "Buoyancy-controllable multi-DOF underwater robot. Developed control system (stepper pumps, motor/servo drive, gyro fusion, IIC encoder loop) and vector propulsion model for omnidirectional movement. Handled hardware selection and waterproofing. Won Special Prize in Fujian Intelligent Marine Equipment Competition.",
+      "tags": ["Embedded Systems", "Vector Propulsion", "Hardware Design", "Waterproofing"]
     },
     "item3": {
       "title": "Intelligent Agriculture Robot",
-      "desc": "Based on FreeRTOS. Controlled DJI3508 motors for gripper lifting, omni-wheel chassis, and positioning system."
+      "desc": "Smart planting & harvesting robot based on FreeRTOS. Controlled DJI3508 motors for gripper lifting and omni-directional chassis with ±5mm positioning accuracy. Participated in pneumatic design and hardware wiring, supporting dual-robot synergy.",
+      "tags": ["FreeRTOS", "Motor Control", "Multi-robot Synergy"]
     }
+  },
+  "project1": {
+    "title": "ROBOCON 2025 Quadruped Robot Challenge",
+    "desc": "ROBOCON is a top-tier robotics competition that places high demands on mechanical reliability, electronic control stability, and visual accuracy.<br><br>In the 2025 season, I was responsible for the full-stack R&D of the quadruped robot team, covering mechanical modeling, motion control, and autonomous navigation. Utilizing a carbon tube assembly mechanism similar to plant protection drones, force control algorithms, and 3D LiDAR mapping & navigation technology, our team achieved 30th place in the Speed Race, 31st in the Obstacle Race, and 34th in the Cross-Country Race at the 2025 ROBOCON (Jiangyin) among over 180 participating teams, winning Second Prize nationally in all three categories.",
+    "links": {
+      "github": "Code",
+      "techDoc": "Docs",
+      "demo": "Demo"
+    }
+  },
+  "project2": {
+    "title": "Bionic Boston Lobster Submersible",
+    "desc": "This project features a buoyancy-controllable multi-DOF lobster underwater robot.<br><br>On the software side, I was responsible for the control system development, designing a lower-level machine framework that integrates stepper peristaltic pumps, motor/servo drives, gyroscope data processing, and IIC encoder feedback for closed-loop control of 360-degree servos. I also designed a vector propulsion model for the irregular multi-rotor structure to achieve omnidirectional movement. On the hardware side, I handled driver selection, step-down circuit design, and waterproofing.<br><br>The project won the Special Prize in the Underwater Robot Track at the 2024 Fujian University Student Intelligent Marine Equipment Design Competition. It also represented Fujian University of Technology at the 2024 World Maritime Equipment Conference, receiving coverage from media outlets such as Xinhua News Agency and Guangming Daily."
+  },
+  "project3": {
+    "title": "Intelligent Planting and Harvesting Robot",
+    "desc": "Based on the FreeRTOS real-time operating system, I developed the control system for an integrated intelligent planting and harvesting agricultural robot.<br><br>By controlling DJI3508 motors, I completed the functional debugging of the gripper lifting mechanism, omnidirectional chassis, and omnidirectional positioning system, achieving a gripper positioning accuracy within ±5mm. I also participated in the pneumatic system design and hardware wiring, supporting collaborative operation with another autonomous robot to efficiently complete tasks."
+  },
+  "projects1": {
+    "imgAlt1": "Project Detail View",
+    "imgAlt2": "Detail View 1",
+    "imgAlt3": "Detail View 2",
+    "imgAlt4": "Detail View 3"
   },
   "opensource": {
     "title": "Open Source Contributions",

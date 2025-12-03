@@ -666,3 +666,31 @@ footer {
 nav {
   z-index: 1000;
 }
+
+/* ... Previous CSS ... */
+
+/* =========================================
+   12. Project Tags (New)
+   ========================================= */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px; /* Space between tags and 'View Details' link */
+  margin-top: -12px;   /* Pull closer to description */
+}
+
+.project-tag {
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  background: var(--bg-hover);
+  color: var(--primary);
+  border-radius: 4px;
+  font-weight: 500;
+  border: 1px solid var(--border-light);
+}
+
+/* Adjust paragraph margin in project info to accommodate tags */
+.project-info p {
+  margin-bottom: 16px; 
+}

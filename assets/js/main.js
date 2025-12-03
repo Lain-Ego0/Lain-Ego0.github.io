@@ -51,6 +51,8 @@ function initLangToggle() {
   });
 }
 
+// ... (Previous code remains the same)
+
 // ================= 1. 精选项目渲染 =================
 function initProjects() {
   const grid = document.querySelector('.projects-grid');
@@ -61,24 +63,33 @@ function initProjects() {
     { 
       img: "assets/images/Portfolio-01.png", 
       titleKey: "projects.item1.title", 
-      descKey: "projects.item1.desc", 
+      descKey: "projects.item1.desc",
+      tagsKey: "projects.item1.tags", // Added tags key
       link: "pages/projects/project1.html"
     },
     { 
       img: "assets/images/Portfolio-02.png", 
       titleKey: "projects.item2.title", 
       descKey: "projects.item2.desc", 
+      tagsKey: "projects.item2.tags", // Added tags key
       link: "pages/projects/project2.html"
     },
     { 
       img: "assets/images/Portfolio-03.png", 
       titleKey: "projects.item3.title", 
       descKey: "projects.item3.desc", 
+      tagsKey: "projects.item3.tags", // Added tags key
       link: "pages/projects/project3.html"
     }
   ];
 
   projects.forEach(p => {
+    // 处理 Tags
+    const tags = window.i18n.get(p.tagsKey);
+    const tagsHtml = Array.isArray(tags) 
+      ? `<div class="project-tags">${tags.map(t => `<span class="project-tag">${t}</span>`).join('')}</div>`
+      : '';
+
     const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `
@@ -88,12 +99,15 @@ function initProjects() {
       <div class="project-info">
         <h3>${window.i18n.get(p.titleKey)}</h3>
         <p>${window.i18n.get(p.descKey)}</p>
+        ${tagsHtml}
         <a href="${p.link}" class="project-link">${window.i18n.get('projects.viewDetail')}</a>
       </div>
     `;
     grid.appendChild(card);
   });
 }
+
+// ... (Rest of the code remains the same)
 
 // ================= 2. 开源贡献渲染 =================
 function initOpenSource() {
@@ -102,8 +116,8 @@ function initOpenSource() {
   grid.innerHTML = ''; // 【关键】清空
 
   const items = [
-    { key: "opensource.item1", linkCode: "https://github.com/Lain-Ego0", linkDoc: null },
-    { key: "opensource.item2", linkCode: "https://github.com/Lain-Ego0", linkDoc: null },
+    { key: "opensource.item1", linkCode: "https://github.com/Lain-Ego0/BRS-Parallel-Robot", linkDoc: null },
+    { key: "opensource.item2", linkCode: "https://github.com/Lain-Ego0/SliverWolf-ArmRobotDog", linkDoc: null },
     { key: "opensource.item3", linkCode: null, linkDoc: "https://wcn9j5638vrr.feishu.cn/wiki/space/7570988375279517715" }
   ];
 
