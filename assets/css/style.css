@@ -1,386 +1,668 @@
 /* =========================================
-   1. 全局变量 - Modern Tech Palette
+   1. Design Token & Themes
    ========================================= */
 :root {
-  /* 核心色板：使用 Slate 色系代替普通黑蓝，更有质感 */
-  --primary-color: #1e293b;   /* 深岩灰：用于导航、主标题 */
-  --primary-hover: #0f172a;   /* 更深的岩灰：用于交互 */
-  --secondary-color: #3b82f6; /* 科技蓝：用于强调、链接、按钮 */
-  --secondary-hover: #2563eb; /* 深科技蓝：按钮 Hover */
+  /* 基础参数 */
+  --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius-md: 16px;
+  --radius-full: 999px;
+  --container-width: 1024px;
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
-  /* 文本颜色 */
-  --text-color: #334155;      /* 次深灰：正文 */
-  --text-light: #64748b;      /* 浅灰：辅助说明 */
+  /* [Light Mode] 默认日间模式变量 */
+  --bg-body: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.8);
+  --bg-hover: #f1f5f9;
   
-  /* 背景颜色 */
-  --bg-body: #f8fafc;         /* 极淡的灰蓝背景，比纯白护眼 */
-  --bg-card: #ffffff;         /* 纯白卡片背景 */
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-invert: #ffffff;
   
-  /* 间距与布局 */
-  --gap-sm: 16px;
-  --gap-md: 24px;
-  --gap-lg: 48px;
-  --border-radius: 12px;      /* 更圆润的边角，符合现代 UI 趋势 */
-  --container-width: 1100px;  /* 稍微收窄内容区，提升阅读体验 */
+  --primary: #2563eb;       /* 核心蓝 */
+  --primary-glow: rgba(37, 99, 235, 0.2);
   
-  /* 高级阴影系统 (更柔和、更有层次) */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --border-light: rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  --gradient-title: linear-gradient(135deg, #0f172a 0%, #3b82f6 100%);
+  --decoration-blob: #e2e8f0;
+}
+
+/* [Dark Mode] 深色模式变量覆盖 */
+[data-theme="dark"] {
+  --bg-body: #0f172a;       /* 深岩灰背景 */
+  --bg-card: #1e293b;       /* 稍亮的卡片背景 */
+  --bg-glass: rgba(15, 23, 42, 0.8);
+  --bg-hover: #334155;
+  
+  --text-main: #f1f5f9;     /* 亮灰白 */
+  --text-muted: #94a3b8;    /* 柔和灰 */
+  
+  --primary: #60a5fa;       /* 亮蓝，暗色下更显眼 */
+  --primary-glow: rgba(96, 165, 250, 0.25);
+  
+  --border-light: rgba(255, 255, 255, 0.08);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 0 20px rgba(96, 165, 250, 0.15); /* 加点蓝色光晕 */
+  
+  --gradient-title: linear-gradient(135deg, #f8fafc 0%, #60a5fa 100%);
+  --decoration-blob: #1e293b;
 }
 
 /* =========================================
-   2. 基础重置与排版
+   2. Global Reset & Layout
    ========================================= */
-* { 
-  margin: 0; 
-  padding: 0; 
-  box-sizing: border-box;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.6;
+  /* 关键：平滑过渡背景色和文字颜色 */
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
 }
 
-body { 
-  /* 现代字体栈：优先使用系统字体，渲染效果最好 */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.7; /* 增加行高，提升长文阅读舒适度 */
-  color: var(--text-color); 
-  background: var(--bg-body);
-  -webkit-font-smoothing: antialiased; /* 让字体在 Mac 上更清晰 */
+/* 新增：全局图片约束，防止图片撑破布局 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-a { 
-  text-decoration: none; 
-  color: var(--secondary-color);
-  transition: color 0.2s ease;
+a { text-decoration: none; color: inherit; transition: var(--transition-base); }
+ul { list-style: none; }
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-a:hover { 
-  color: var(--secondary-hover); 
+.section-padding { padding: 80px 0; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.column { flex-direction: column; }
+
+/* 滚动条美化 */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-body); }
+::-webkit-scrollbar-thumb { background: var(--text-muted); border-radius: 4px; opacity: 0.5; }
+
+/* =========================================
+   3. Navigation (Glassmorphism)
+   ========================================= */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-light);
+  transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
-.container { 
-  max-width: var(--container-width); 
-  margin: 0 auto; 
-  padding: 0 20px; 
+.nav-container {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-section { 
-  padding: 60px 0; /* 增加区块呼吸感 */
-}
-
-h1, h2, h3 {
-  color: var(--primary-color);
-  line-height: 1.2;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text-main);
 }
 
-h2 { 
-  font-size: 2.25rem; 
-  margin-bottom: var(--gap-lg); 
-  text-align: center;
+.logo-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.nav-actions { display: flex; align-items: center; gap: 32px; }
+
+.nav-links { display: flex; gap: 24px; }
+.nav-links a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
   position: relative;
 }
+.nav-links a:hover, .nav-links a.active { color: var(--primary); }
 
-/* 给标题加一个小装饰线，增加设计感 */
-h2::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: var(--secondary-color);
-  margin: 15px auto 0;
-  border-radius: 2px;
-}
+.nav-controls { display: flex; align-items: center; gap: 12px; }
 
-/* =========================================
-   3. 导航栏 (Glassmorphism / 毛玻璃风格)
-   ========================================= */
-nav { 
-  background: rgba(30, 41, 59, 0.9); /* 主色调 + 透明度 */
-  backdrop-filter: blur(10px);       /* 关键：背景模糊效果 */
-  padding: 16px 0; 
-  position: sticky; 
-  top: 0; 
-  z-index: 1000;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.3s ease;
-}
-
-.nav-container { 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-}
-
-.logo { 
-  color: #fff; 
-  font-size: 1.5rem; 
-  font-weight: 800; 
-  letter-spacing: -0.5px; /* 紧凑一点更现代 */
-}
-
-.nav-links { 
-  display: flex; 
-  gap: 30px; 
-  align-items: center; 
-}
-
-.nav-links a { 
-  color: rgba(255, 255, 255, 0.85); 
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.nav-links a:hover { 
-  color: #fff;
-  text-shadow: 0 0 10px rgba(255,255,255,0.3); /* 发光效果 */
-}
-
-/* 语言切换按钮优化 */
-.lang-toggle {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
+/* 按钮通用样式 */
+.control-btn {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
   padding: 6px 14px;
-  border-radius: 20px; /* 胶囊形状 */
+  border-radius: 20px;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.lang-toggle:hover {
-  background: #fff;
-  color: var(--primary-color);
+.control-btn:hover {
+  background: var(--bg-hover);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
-/* =========================================
-   4. 个人简介 (Intro)
-   ========================================= */
-.intro { 
-  padding: 80px 20px; 
-  text-align: center; /* 默认居中，更适合个人主页 */
-  background: linear-gradient(to bottom, #fff, var(--bg-body)); /* 微妙的背景渐变 */
-}
-
-.avatar { 
-  width: 160px; 
-  height: 160px; 
-  border-radius: 50%; 
-  object-fit: cover; 
-  margin-bottom: var(--gap-md);
-  box-shadow: var(--shadow-lg); /* 头像立体感 */
-  border: 4px solid #fff;       /* 白色边框 */
-}
-
-.intro h1 { 
-  font-size: 3rem; 
-  margin-bottom: 16px;
-  color: var(--primary-color);
-}
-
-.intro p { 
-  font-size: 1.25rem; 
-  color: var(--text-light); 
-  max-width: 680px; 
-  margin: 0 auto; 
-}
-
-/* =========================================
-   5. 项目展示 (Card UI)
-   ========================================= */
-.projects-grid { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-  gap: 30px; 
-}
-
-.card, .project-card { 
-  background: var(--bg-card); 
-  border-radius: var(--border-radius); 
-  box-shadow: var(--shadow-md); 
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* 丝滑的贝塞尔曲线 */
-  border: 1px solid rgba(0,0,0,0.03); /* 极淡的边框，增加精致感 */
+/* 主题切换按钮特殊处理 */
+.theme-toggle {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 50%;
+  position: relative;
   overflow: hidden;
 }
 
-.project-card:hover { 
-  transform: translateY(-8px); /* 向上浮动 */
-  box-shadow: var(--shadow-hover); /* 阴影加深扩散 */
+.theme-toggle i {
+  position: absolute;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.5s;
 }
 
+/* 图标切换动画逻辑 */
+[data-theme="light"] .moon-icon { transform: translateY(20px) rotate(90deg); opacity: 0; }
+[data-theme="light"] .sun-icon { transform: translateY(0) rotate(0); opacity: 1; }
+[data-theme="dark"] .sun-icon { transform: translateY(-20px) rotate(-90deg); opacity: 0; }
+[data-theme="dark"] .moon-icon { transform: translateY(0) rotate(0); opacity: 1; }
+
+/* =========================================
+   4. Hero Section / Intro
+   ========================================= */
+.intro {
+  padding: 100px 0 60px;
+  position: relative;
+  text-align: center;
+}
+
+/* 背景装饰球 */
+.bg-decoration {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, var(--decoration-blob) 0%, transparent 70%);
+  opacity: 0.5;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.avatar-container {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--bg-card);
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0; /* 防止头像被挤压 */
+}
+
+.avatar-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--primary);
+  filter: blur(25px);
+  opacity: 0.4;
+  z-index: 1;
+  transform: scale(0.9);
+  transition: opacity 0.3s;
+}
+.avatar-container:hover .avatar-glow { opacity: 0.7; }
+
+.gradient-text {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  background: var(--gradient-title);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* 关键：文字透明显示背景渐变 */
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   5. Projects Grid & Detail Images
+   ========================================= */
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 48px;
+  color: var(--text-main);
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+/* 标题下划线 */
+h2::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 4px;
+  background: var(--primary);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  transition: var(--transition-base);
+  /* 解决 Safari 下圆角溢出问题 */
+  transform: translateZ(0); 
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary-glow);
+}
+
+/* 首页项目卡片缩略图 - 优化适配 */
 .project-thumbnail {
   width: 100%;
-  height: 220px; 
-  object-fit: cover; 
+  height: 220px;           /* 调整高度，显示更佳 */
+  object-fit: cover;       /* 填满容器，防止拉伸 */
+  object-position: center; /* 居中裁剪 */
+  border-bottom: 1px solid var(--border-light);
   transition: transform 0.5s ease;
+  background-color: var(--bg-hover);
 }
 
-.project-card:hover .project-thumbnail {
-  transform: scale(1.05); /* 图片微放大 */
-}
+.card:hover .project-thumbnail { transform: scale(1.05); }
 
-.project-info { 
-  padding: 24px; 
-}
+.project-info { padding: 24px; }
 
-.project-info h3 { 
-  margin-bottom: 12px;
+.project-info h3 {
   font-size: 1.25rem;
+  margin-bottom: 8px;
+  color: var(--text-main);
 }
 
-.project-info p { 
-  color: var(--text-light); 
+.project-info p {
   font-size: 0.95rem;
+  color: var(--text-muted);
   margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.project-link { 
-  display: inline-flex;
-  align-items: center;
+.project-link {
   font-weight: 600;
-  font-size: 0.9rem;
-}
-.project-link::after {
-  content: '→';
-  margin-left: 6px;
-  transition: transform 0.2s;
-}
-.project-link:hover::after {
-  transform: translateX(4px); /* 箭头移动动画 */
-}
-
-/* 详情页大图样式 */
-.project-img {
-  width: 100%;
-  max-width: 900px;
-  object-fit: contain;
-  max-height: 80vh;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-md);
-  margin: 2rem auto;
-  display: block;
-}
-
-/* =========================================
-   6. 按钮与链接 (Buttons)
-   ========================================= */
-#quick-publish { 
-  background: transparent; /* 融入整体背景 */
-}
-
-.publish-links { 
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin: 40px 0;
-}
-
-.publish-link { 
+  color: var(--primary);
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 12px 28px; 
-  background: var(--primary-color); /* 默认用主色 */
-  color: #fff; 
-  border-radius: 50px; /* 全圆角按钮 */
-  font-weight: 600; 
-  box-shadow: var(--shadow-md);
-  transition: all 0.3s ease;
-  min-width: 120px;
+  gap: 4px;
 }
+.project-link::after { content: '→'; transition: transform 0.2s; }
+.project-link:hover::after { transform: translateX(4px); }
 
-.publish-link:hover { 
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-  color: #fff;
+/* 子页面：详情大图样式 (新增) */
+.project-img {
+  display: block;
+  width: 100%;             /* 强制宽度撑满容器 */
+  max-width: 100%;         /* 防止超出父容器 */
+  height: auto;            /* 高度自动，保持比例 */
+  object-fit: contain;     /* 保证图片内容完整显示 */
+  border-radius: var(--radius-md);
+  margin: 32px auto;       /* 上下增加间距 */
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-light);
 }
-
-/* 品牌色按钮定制 */
-.publish-link.feishu { background: #0078d7; }
-.publish-link.feishu:hover { background: #0063b1; }
-
-.publish-link.github { background: #24292e; }
-.publish-link.github:hover { background: #000; }
-
-.publish-link.bilibili { background: #FB7299; }
-.publish-link.bilibili:hover { background: #f54e7d; }
 
 /* =========================================
-   7. 联系方式与页脚
+   6. Documents & Buttons
    ========================================= */
-.contact { 
-  background: var(--primary-color); 
-  color: #fff; 
-  text-align: center;
-  padding: 80px 0;
+.publish-links-wrapper { text-align: center; }
+
+.publish-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  background: var(--bg-card);
+  padding: 12px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
 }
 
-.contact-links { 
+.publish-link {
+  padding: 10px 24px;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.publish-link:hover {
+  background: var(--bg-hover);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   7. Contact & Footer
+   ========================================= */
+.contact {
+  background: var(--bg-card); /* 改为卡片色，不再是大色块 */
+  border-top: 1px solid var(--border-light);
+}
+
+.contact-links {
   display: flex;
   justify-content: center;
-  gap: 60px;
+  gap: 48px;
   margin-top: 40px;
 }
 
-.contact-item i { 
-  font-size: 2.5rem; 
-  margin-bottom: 15px; 
-  display: block;
-  opacity: 0.9;
-  transition: transform 0.3s;
+.contact-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+}
+
+.contact-item i {
+  font-size: 2rem;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  color: var(--text-main);
 }
 
 .contact-item:hover i {
-  transform: scale(1.1);
-  color: var(--secondary-color);
+  transform: scale(1.2) rotate(8deg);
+  color: var(--primary);
 }
+.contact-item:hover p { color: var(--primary); }
 
-.contact-item a { 
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.1rem;
-}
-
-footer { 
-  background: #0f172a; /* 比主色更黑 */
-  color: #64748b; 
-  text-align: center; 
-  padding: 30px; 
+footer {
+  text-align: center;
+  padding: 30px;
   font-size: 0.9rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-body);
 }
 
 /* =========================================
-   8. 响应式适配 (Mobile)
+   8. Mobile Responsive
    ========================================= */
 @media (max-width: 768px) {
-  :root {
-    --gap-lg: 32px;
+  .nav-links { display: none; } /* 暂时简化手机端 */
+  
+  .intro { padding-top: 60px; }
+  .gradient-text { font-size: 2.2rem; }
+
+  /* 手机端图片适配 */
+  .avatar {
+    width: 120px;
+    height: 120px;
   }
-  
-  .intro h1 { font-size: 2.2rem; }
-  .intro p { font-size: 1rem; }
-  
-  .nav-container { 
-    flex-direction: column; 
-    gap: 15px; 
+  .project-thumbnail {
+    height: 180px;
   }
-  
-  .projects-grid { 
-    grid-template-columns: 1fr; /* 手机端单列 */
-  }
-  
-  .contact-links {
-    gap: 30px;
-    flex-direction: column; /* 手机端垂直排列联系方式 */
+  .project-img {
+    margin: 20px auto;
+    border-radius: 8px;
   }
   
   .publish-links {
     flex-direction: column;
+    border-radius: var(--radius-md);
     width: 100%;
   }
   
-  .publish-link {
-    width: 100%; /* 按钮占满全宽 */
+  .contact-links {
+    gap: 24px;
+    flex-wrap: wrap;
   }
+}
+
+
+/* Paste this AFTER your existing CSS */
+
+/* =========================================
+   9. Open Source Section (New)
+   ========================================= */
+.opensource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.os-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  transition: var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.os-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-card);
+}
+
+.os-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.os-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.os-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.os-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.os-tag {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  background: var(--bg-hover);
+  color: var(--text-muted);
+  border-radius: 20px;
+}
+
+.os-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.os-btn {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.os-btn:hover { text-decoration: underline; }
+
+/* =========================================
+   10. Timeline Section (New)
+   ========================================= */
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 30px;
+}
+
+/* Vertical Line */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border-light);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -35px; /* Adjust based on padding */
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background: var(--bg-body);
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.timeline-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--text-main);
+}
+
+.timeline-content p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* =========================================
+   11. Tech Stack Section (New)
+   ========================================= */
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+}
+
+.skill-category h3 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  color: var(--text-main);
+  border-left: 3px solid var(--primary);
+  padding-left: 12px;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-badge {
+  padding: 8px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.skill-badge:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* 修复主题切换按钮的点击响应 */
+.theme-toggle {
+  cursor: pointer;
+  z-index: 10; /* 提高层级 */
+  /* 确保按钮有足够空间容纳图标 */
+  width: 40px; 
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 防止图标拦截鼠标事件，确保点击穿透到 button */
+.theme-toggle i {
+  pointer-events: none; 
+}
+
+/* 确保导航栏层级够高 */
+nav {
+  z-index: 1000;
 }

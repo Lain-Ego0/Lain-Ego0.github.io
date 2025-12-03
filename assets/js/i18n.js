@@ -1,58 +1,63 @@
+// 定义全局变量
 let langData = {};
-let currentLang = localStorage.getItem('lang') || 'en';
+let currentLang = localStorage.getItem('lang') || 'zh'; // 默认中文，可根据需求改
 
-// 关键修复：用根目录绝对路径加载语言文件，适配所有层级子页面
-async function loadLang(lang) {
-  try {
-    const res = await fetch(`/lang/${lang}.json`, {
-      cache: 'no-cache' // 禁用缓存，确保获取最新文件
-    });
-    if (!res.ok) throw new Error(`加载语言文件失败（${lang}.json），状态码: ${res.status}`);
-    langData = await res.json();
-    console.log(`成功加载${lang}语言文件:`, langData);
-    updatePageLang();
-    window.dispatchEvent(new Event('i18nLoaded')); // 触发页面更新事件
-  } catch (err) {
-    console.error('多语言加载错误:', err);
-    alert('语言切换失败，请检查文件路径或刷新页面');
-  }
-}
-
-// 更新页面所有带data-i18n属性的文本
-function updatePageLang() {
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    const value = key.split('.').reduce((obj, k) => obj?.[k], langData);
-    
-    if (value) {
-      // 支持带HTML标签的翻译文本（如换行<br>）
-      value.includes('<') ? el.innerHTML = value : el.textContent = value;
-      console.log(`更新元素[${key}]:`, value);
-    } else {
-      console.warn(`未找到${key}对应的翻译文本`);
-    }
-  });
-  // 更新语言切换按钮显示文本
-  const toggleBtn = document.querySelector('.lang-toggle');
-  if (toggleBtn) toggleBtn.textContent = currentLang === 'en' ? '中文' : 'English';
-}
-
-// 初始化加载默认语言
-loadLang(currentLang);
-
-// 暴露给外部的公共方法（供main.js调用）
+// 1. 暴露全局对象 (立即执行，防止 main.js 调用时未定义)
 window.i18n = {
-  get: (key) => key.split('.').reduce((obj, k) => obj?.[k], langData),
+  get: (key) => {
+    if (!langData) return key;
+    return key.split('.').reduce((obj, k) => obj?.[k], langData) || key; // 找不到key时返回key本身
+  },
   changeLang: (lang) => {
-    if (currentLang === lang) return; // 避免重复切换同一语言
+    if (currentLang === lang) return;
     currentLang = lang;
-    localStorage.setItem('lang', lang); // 本地存储记住语言偏好
+    localStorage.setItem('lang', lang);
     loadLang(lang);
   },
   currentLang: () => currentLang
 };
 
-// 暴露全局变量，供main.js补充逻辑使用
-window.langData = langData;
-window.loadLang = loadLang;
-window.updatePageLang = updatePageLang;
+// 2. 加载语言文件 (核心逻辑)
+async function loadLang(lang) {
+  try {
+    // 【修复】使用相对路径 ./lang/ 避免 404 错误
+    const res = await fetch(`./lang/${lang}.json?t=${new Date().getTime()}`); 
+    
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    
+    langData = await res.json();
+    console.log(`[i18n] Loaded: ${lang}`);
+    
+    // 更新页面静态文本
+    updatePageLang();
+    
+    // 派发事件，通知 main.js 重绘动态内容
+    window.dispatchEvent(new Event('i18nLoaded'));
+    
+  } catch (err) {
+    console.error('[i18n] Load failed:', err);
+    alert('语言文件加载失败，请检查 ./lang/ 目录下是否存在对应的 json 文件');
+  }
+}
+
+// 3. 更新带有 data-i18n 属性的静态元素
+function updatePageLang() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const value = window.i18n.get(key);
+    
+    if (value && value !== key) {
+      // 支持 HTML 标签 (如 <br>)
+      el.innerHTML = value; 
+    }
+  });
+
+  // 更新切换按钮的文字
+  const toggleBtn = document.querySelector('.lang-toggle');
+  if (toggleBtn) {
+    toggleBtn.textContent = currentLang === 'en' ? '中文' : 'English';
+  }
+}
+
+// 初始化加载
+loadLang(currentLang);

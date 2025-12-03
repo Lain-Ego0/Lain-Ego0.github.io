@@ -1,105 +1,98 @@
 {
   "nav": {
     "home": "Home",
-    "projects": "Projects",
-    "documents": "Documents",
-    "contact": "Contact Me"
+    "projects": "Portfolio",
+    "opensource": "Open Source",
+    "timeline": "Timeline",
+    "skills": "Tech Stack",
+    "contact": "Contact"
   },
   "intro": {
     "avatarAlt": "Lain-Ego's avatar",
     "title": "Hello, I'm Lain",
-    "desc": "MCU Development | Linux Development | Mechanical Drawing | PCB Design | ROS & Robot Simulation<br>Focused on embedded systems, robot control and simulation<br>E-mail：lain-ego@qq.com"
+    "desc": "Robot development enthusiast, Junior Year Student.<br>Interning at a Humanoid Robot Company.<br>Focus on MCU & Linux development, Motion Control, RL, and Perception.<br>Email: lain-ego@qq.com"
   },
   "projects": {
-    "title": "My Projects",
+    "title": "Selected Projects",
     "imgAlt": "Project image",
+    "viewDetail": "View Details",
     "item1": {
-      "title": "Portfolio-01 ROBOCON Legged Robot Competition Topic: Quadruped Robot Full-Stack Development",
-      "desc": "Plant protection drone-like carbon tube assembly mechanism + force control algorithm + 3D radar mapping and navigation technology."
+      "title": "ROBOCON Quadruped Robot Full-Stack",
+      "desc": "2025 Season. Carbon tube assembly mechanism + Force control algorithm + 3D LiDAR mapping & navigation."
     },
     "item2": {
-      "title": "Portfolio-02 Bionic Boston Lobster Civil Submersible Robot",
-      "desc": "Lower computer framework integrating stepper peristaltic pump, motor/servo drive, gyroscope data processing, and closed-loop control of 360-degree servo by reading IIC encoder."
+      "title": "Bionic Boston Lobster Submersible",
+      "desc": "Lower computer framework integrating stepper pumps, motor drives, gyro processing, and IIC encoder closed-loop control."
     },
     "item3": {
-      "title": "Portfolio-03 Intelligent Transplanting and Harvesting Integrated Robot",
-      "desc": "Completed functional debugging of modules such as gripper lifting mechanism, omni-wheel chassis, and omni-directional positioning system by controlling DJI3508 motors."
+      "title": "Intelligent Agriculture Robot",
+      "desc": "Based on FreeRTOS. Controlled DJI3508 motors for gripper lifting, omni-wheel chassis, and positioning system."
+    }
+  },
+  "opensource": {
+    "title": "Open Source Contributions",
+    "btnCode": "Code",
+    "btnDoc": "Docs",
+    "item1": {
+      "title": "BRS Parallel Quadruped Robot",
+      "desc": "Open-source parallel structure quadruped robot project, exploring efficient mechanical structure and control implementation.",
+      "tags": ["Robotics", "Mechanical Design", "Open Source"]
     },
-    "viewDetail": "View details <i class='fas fa-external-link-alt'></i>"
-  },
-
-  "project1": {
-    "title": "Portfolio-01 ROBOCON Legged Robot Competition Topic: Quadruped Robot Full-Stack Development",
-    "imgAlt1": "Project image 1",
-    "imgAlt2": "Project image 2",
-    "imgAlt3": "Project image 3",
-    "imgAlt4": "Project image 4",
-    "desc": "As a top competition in the robotics field, ROBOCON has high requirements for mechanical reliability, electrical control stability, and visual accuracy. In the 2025 season, I was basically fully responsible for the full-stack research and development of the legged robot team 1, from mechanical modeling, motion control to autonomous navigation. Adopting plant protection drone-like carbon tube assembly mechanism + force control algorithm + 3D radar mapping and navigation technology, we achieved good results in the 2025 ROBOCON (Jiangyin) legged robot competitions: 30th in the national speed race, 31st in the obstacle race, and 34th in the cross-country race (with more than 180 participating teams in the national competition), winning three second prizes at the national level.",
-    "links": {
-      "github": "Open Source Code",
-      "techDoc": "Technical Documentation",
-      "demo": "Demo Video"
+    "item2": {
+      "title": "SliverWolf Desktop Quadruped",
+      "desc": "Direct-drive serial quadruped using 9g servos, featuring IMU control, voice control, and robotic arm collaboration.",
+      "tags": ["STM32", "Voice Control", "IMU", "Robotic Arm"]
+    },
+    "item3": {
+      "title": "Quadruped Robot Knowledge Base",
+      "desc": "A comprehensive R&D knowledge base covering mechanics, electronic control, and algorithms.",
+      "tags": ["Documentation", "Knowledge Sharing"]
     }
   },
-
-  "project2": {
-    "title": "Portfolio-02 Bionic Boston Lobster Civil Submersible Robot",
-    "imgAlt1": "Project image 1",
-    "imgAlt2": "Project image 2",
-    "imgAlt3": "Project image 3",
-    "imgAlt4": "Project image 4",
-    "desc": "This project is a multi-degree-of-freedom lobster underwater robot with controllable buoyancy. In the software part, I was responsible for the development of the control system, designing a lower computer framework integrating stepper peristaltic pump, motor/servo drive, gyroscope data processing, and closed-loop control of 360-degree servo by reading IIC encoder. Meanwhile, I designed a vector propulsion model for special-shaped multi-rotors to improve the omni-directional movement function. In the hardware design part, I was responsible for driver selection, step-down circuit, and waterproof design, etc.<br>The work won the special prize in the underwater robot track of the 2024 Fujian Provincial College Students' Intelligent Marine Equipment Design and Production Competition, and further represented Fujian University of Technology in the 2024 World Maritime Equipment Conference, which was reported by Xinhua News Agency, Guangming Daily and other media.",
-    "links": {
-      "github": "Open Source Code",
-      "techDoc": "Technical Documentation",
-      "demo": "Demo Video"
+  "timeline": {
+    "title": "Timeline",
+    "event1": {
+      "date": "2024-05",
+      "title": "Open Source SliverWolf",
+      "desc": "Released SliverWolf, a desktop quadruped robot with voice control and arm collaboration capabilities."
+    },
+    "event2": {
+      "date": "2024-07",
+      "title": "Agri-Robot Development",
+      "desc": "Developed embedded control system based on FreeRTOS, achieving ±5mm positioning accuracy."
+    },
+    "event3": {
+      "date": "2024-11",
+      "title": "Intelligent Marine Equip. Comp.",
+      "desc": "Won the Special Prize in the Underwater Robot Track (Fujian Province)."
+    },
+    "event4": {
+      "date": "2024-12",
+      "title": "2024 World Maritime Equip. Conf.",
+      "desc": "Exhibited the Bionic Lobster Robot representing FJUT; reported by Xinhua News Agency."
+    },
+    "event5": {
+      "date": "2025-07",
+      "title": "2025 ROBOCON National",
+      "desc": "Won 2nd Prize in Speed, Obstacle, and Cross-country races. Responsible for full-stack development."
+    },
+    "event6": {
+      "date": "2025-10",
+      "title": "Open Source BRS Robot",
+      "desc": "Open-sourced the mechanical structure and control code for the BRS parallel quadruped robot on GitHub."
     }
   },
-
-  "project3": {
-    "title": "Portfolio-03 Intelligent Transplanting and Harvesting Integrated Robot",
-    "imgAlt1": "Project image 1",
-    "imgAlt2": "Project image 2",
-    "imgAlt3": "Project image 3",
-    "imgAlt4": "Project image 4",
-    "desc": "Based on the FreeRTOS real-time operating system, the control system for the intelligent integrated transplanting and harvesting agricultural robot was written. By controlling DJI3508 motors, the functional debugging of modules such as the gripper lifting mechanism, omni-wheel chassis, and omni-directional positioning system was completed, ensuring the positioning accuracy of the gripper movement within ±5mm; simultaneously participated in the design of the air circuit system and hardware wiring, supporting collaborative work with another autonomously operating robot to efficiently complete tasks.",
-    "links": {
-      "github": "Open Source Code",
-      "techDoc": "Technical Documentation",
-      "demo": "Demo Video"
-    }
+  "skills": {
+    "title": "Tech Stack",
+    "embedded": "Embedded",
+    "robotics": "Robotics",
+    "software": "Software",
+    "hardware": "Hardware"
   },
-
-  "Document01": {
-    "title": "MCU Development Document",
-    "imgAlt1": "Project Image 1",
-    "imgAlt2": "Project Image 2",
-    "imgAlt3": "Project Image 3",
-    "imgAlt4": "Project Image 4",
-    "desc": "See the Feishu link below"
-  },
-
-  "Document02": {
-    "title": "Linux Development Document",
-    "imgAlt1": "Project Image 1",
-    "imgAlt2": "Project Image 2",
-    "imgAlt3": "Project Image 3",
-    "imgAlt4": "Project Image 4",
-    "desc": "See the Feishu link below"
-  },
-
-  "Document03": {
-    "title": "Robotics Document",
-    "imgAlt1": "Project Image 1",
-    "imgAlt2": "Project Image 2",
-    "imgAlt3": "Project Image 3",
-    "imgAlt4": "Project Image 4",
-    "desc": "See the Feishu link below"
-  },
-
   "contact": {
+    "title": "Let's Connect",
     "bilibili": "Bilibili",
-    "github": "Code Repository",
+    "github": "GitHub",
     "twitter": "Twitter",
     "zhihu": "Zhihu"
   },
