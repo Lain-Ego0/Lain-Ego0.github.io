@@ -60,21 +60,51 @@
     "title": "Open Source Contributions",
     "btnCode": "Code",
     "btnDoc": "Docs",
-    "item1": {
-      "title": "BRS Parallel Quadruped Robot",
-      "desc": "Open-source parallel structure quadruped robot project, exploring efficient mechanical structure and control implementation.",
-      "tags": ["Robotics", "Mechanical Design", "Open Source"]
-    },
-    "item2": {
-      "title": "SliverWolf Desktop Quadruped",
-      "desc": "Direct-drive serial quadruped using 9g servos, featuring IMU control, voice control, and robotic arm collaboration.",
-      "tags": ["STM32", "Voice Control", "IMU", "Robotic Arm"]
-    },
-    "item3": {
-      "title": "Quadruped Robot Knowledge Base",
-      "desc": "A comprehensive R&D knowledge base covering mechanics, electronic control, and algorithms.",
-      "tags": ["Documentation", "Knowledge Sharing"]
-    }
+  "item1": {
+    "title": "BRS Parallel Quadruped Robot",
+    "desc": "Project 'BLACK☆ROCK SHOOTER': A full-stack parallel structure quadruped robot. The complete solution is open-source and competed in the 2025 ROBOCON National Competition.",
+    "tags": ["Robotics", "Mechanical Design", "Open Source"]
+  },
+  "item2": {
+    "title": "SliverWolf Desktop Quadruped",
+    "desc": "A direct-drive, position-controlled serial quadruped using 9g micro servos. Features IMU integration, voice control, various gaits, and collaborative fetching with a robotic arm.",
+    "tags": ["STM32", "Voice Control", "IMU", "Robotic Arm"]
+  },
+  "item3": {
+    "title": "Quadruped Robot Lark Knowledge Base",
+    "desc": "A comprehensive post-competition R&D knowledge base, covering the full workflow from basic concepts to practical development and reinforcement learning applications.",
+    "tags": ["Documentation", "Knowledge Sharing"]
+  },
+  "item4": {
+    "title": "ROBOCON 2024 R1 Robot",
+    "desc": "Low-level control repository for the ROBOCON 2024 R1 robot, including mechanical schemes, omnidirectional chassis kinematics, and task mechanism logic.",
+    "tags": ["Robocon", "STM32", "C", "Chassis Control"]
+  },
+  "item5": {
+    "title": "3508 Legged Robot Drive Platform",
+    "desc": "A quadruped robot drive solution based on DJI 3508 brushless geared motors, used in multiple ROBOCON National Competitions from 2022 to 2025.",
+    "tags": ["Motor Control", "DJI", "Legged Robot"]
+  },
+  "item6": {
+    "title": "HTDW4438 Isaac Gym",
+    "desc": "Isaac Gym reinforcement learning simulation environment for the HTDW4438 quadruped robot, with completed sim-to-sim migration.",
+    "tags": ["RL", "Isaac Gym", "RSL_RL", "Sim2Real", "Legged_gym"]
+  },
+  "item7": {
+    "title": "HTDW4438 OpenDog Deployment",
+    "desc": "Physical control and deployment code for the HTDW4438 robot, including mechanical design, control algorithm implementation, and system integration testing.",
+    "tags": ["Robotics", "Mechanical Design", "C++", "Robotics Hardware"]
+  },
+  "item8": {
+    "title": "Lain's Note Personal Knowledge Base",
+    "desc": "Personal technical documentation and blog repository, recording notes and technical insights accumulated during robotics R&D and algorithm studies.",
+    "tags": ["Blog", "Documentation", "Study Notes"]
+  },
+  "item9": {
+    "title": "PDF2PNG Converter Tool",
+    "desc": "Implemented via Vibecoding, a tool for batch converting PDF documents into high-quality PNG images.",
+    "tags": ["Utility", "Tool"]
+  }
 
 
 
@@ -82,34 +112,49 @@
   "timeline": {
     "title": "Timeline",
     "event1": {
-      "date": "2024-05",
-      "title": "Open Source SliverWolf",
-      "desc": "Released SliverWolf, a desktop quadruped robot with voice control and arm collaboration capabilities."
+    "date": "2024-05",
+    "title": "Open Source SliverWolf Desktop Quadruped",
+    "desc": "Released SliverWolf, a desktop-level serial quadruped robot featuring voice control and robotic arm collaborative capabilities."
     },
     "event2": {
       "date": "2024-07",
-      "title": "Agri-Robot Development",
-      "desc": "Developed embedded control system based on FreeRTOS, achieving ±5mm positioning accuracy."
+      "title": "2024 ROBOCON National Competition",
+      "desc": "Developed the embedded control system for the R1 robot based on FreeRTOS, achieving ±5mm positioning accuracy, ball launching, and gripper functionalities."
     },
     "event3": {
-      "date": "2024-11",
-      "title": "Intelligent Marine Equip. Comp.",
-      "desc": "Won the Special Prize in the Underwater Robot Track (Fujian Province)."
+      "date": "2024-08",
+      "title": "2024 Fujian Undergraduate Electronics Design Contest",
+      "desc": "Developed an autonomous driving car system based on the MSPM0G3507, qualifying for the provincial testing stage."
     },
     "event4": {
-      "date": "2024-12",
-      "title": "2024 World Maritime Equip. Conf.",
-      "desc": "Exhibited the Bionic Lobster Robot representing FJUT; reported by Xinhua News Agency."
+      "date": "2024-11",
+      "title": "Fujian Intelligent Marine Equipment Design Competition",
+      "desc": "Led the development of the control system for a buoyancy-controlled multi-DOF lobster underwater robot, winning the Grand Prize."
     },
     "event5": {
-      "date": "2025-07",
-      "title": "2025 ROBOCON National",
-      "desc": "Won 2nd Prize in Speed, Obstacle, and Cross-country races. Responsible for full-stack development."
+      "date": "2024-12",
+      "title": "2024 World Marine Equipment Conference",
+      "desc": "Represented Fujian University of Technology as an exhibitor, showcasing the bionic Boston Lobster robot; covered by media outlets including Xinhua News Agency."
     },
     "event6": {
-      "date": "2025-10",
-      "title": "Open Source BRS Robot",
-      "desc": "Open-sourced the mechanical structure and control code for the BRS parallel quadruped robot on GitHub."
+      "date": "2025-07",
+      "title": "2025 ROBOCON National Competition",
+      "desc": "Responsible for full-stack R&D of the legged robot. Ranked 30th nationally in the Sprint Race, 31st in the Obstacle Race, and 34th in the Cross-Country Race, securing three National Second Prizes."
+    },
+    "event7": {
+      "date": "2025-08",
+      "title": "2025 National Undergraduate Electronics Design Contest",
+      "desc": "Responsible for the hardware design and fabrication of the power meter for an automatic ranging system, winning the National Second Prize."
+    },
+    "event8": {
+      "date": "2025-09",
+      "title": "Open Source BRS Parallel Quadruped Robot",
+      "desc": "Open-sourced the mechanical structure and control code of the BRS parallel quadruped robot on GitHub."
+    },
+    "event9": {
+      "date": "2025-10 to 2026-03",
+      "title": "Internship at Gaoqing Electromechanical",
+      "desc": "Responsible for mechanical design, control algorithm development, and system integration testing for the HTDW4438 bionic quadruped robot (both open-source and commercial versions)."
     }
   },
   "skills": {
