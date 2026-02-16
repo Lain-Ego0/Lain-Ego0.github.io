@@ -118,10 +118,13 @@ function initOpenSource() {
   const items = [
     { key: "opensource.item1", linkCode: "https://github.com/Lain-Ego0/BRS-Parallel-Robot", linkDoc: null },
     { key: "opensource.item2", linkCode: "https://github.com/Lain-Ego0/SliverWolf-ArmRobotDog", linkDoc: null },
-    { key: "opensource.item3", linkCode: null, linkDoc: "https://wcn9j5638vrr.feishu.cn/wiki/space/7570988375279517715" }
-
-
-
+    { key: "opensource.item3", linkCode: null, linkDoc: "https://wcn9j5638vrr.feishu.cn/wiki/space/7570988375279517715" },
+    { key: "opensource.item4", linkCode: "https://github.com/Lain-Ego0/ROBOCON2024-R1", linkDoc: null },
+    { key: "opensource.item5", linkCode: "https://github.com/Lain-Ego0/ROBOCON2024-3508DOG", linkDoc: null },
+    { key: "opensource.item6", linkCode: "https://github.com/Lain-Ego0/HTDW4438_Isaacgym", linkDoc: null },
+    { key: "opensource.item7", linkCode: "https://github.com/Lain-Ego0/HTDW4438-OpenDog", linkDoc: null },
+    { key: "opensource.item8", linkCode: "https://github.com/Lain-Ego0/Lain-s-Note", linkDoc: null },
+    { key: "opensource.item9", linkCode: "https://github.com/Lain-Ego0/Lain-s-PDF2PNG", linkDoc: null }
   ];
 
   items.forEach(item => {
@@ -154,6 +157,7 @@ function initTimeline() {
   container.innerHTML = ''; // 【关键】清空
 
   const events = [
+    "timeline.event9", "timeline.event8", "timeline.event7", 
     "timeline.event6", "timeline.event5", "timeline.event4", 
     "timeline.event3", "timeline.event2", "timeline.event1"
   ];

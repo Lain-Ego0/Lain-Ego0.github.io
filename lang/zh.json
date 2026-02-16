@@ -61,20 +61,50 @@
     "btnCode": "代码仓库",
     "btnDoc": "在线文档",
     "item1": {
-      "title": "BRS 并联四足机器人",
-      "desc": "开源的并联结构四足机器人项目，探索高效的机械结构与控制实现。",
-      "tags": ["Robotics", "Mechanical Design", "Open Source"]
-    },
-    "item2": {
-      "title": "SliverWolf 桌面级四足机器人",
-      "desc": "使用9g小型舵机的直驱位控串联四足，接入IMU控制、语音控制，完成多种步态与机械臂协同取物功能。",
-      "tags": ["STM32", "Voice Control", "IMU", "Robotic Arm"]
-    },
-    "item3": {
-      "title": "四足机器人飞书知识库",
-      "desc": "整理汇总的四足机器人研发知识库，涵盖机械、电控与算法细节。",
-      "tags": ["Documentation", "Knowledge Sharing"]
-    }
+    "title": "BRS-并联四足机器人",
+    "desc": "BLACK☆ROCK SHOOTER，全栈完成的并联结构四足机器人项目，完整方案全部开源，参加了2025年ROBOCON全国赛。",
+    "tags": ["Robotics", "Mechanical Design", "Open Source"]
+  },
+  "item2": {
+    "title": "SliverWolf 桌面级四足机器人",
+    "desc": "使用9g小型舵机的直驱位控串联四足，接入IMU控制、语音控制，完成多种步态与机械臂协同取物功能。",
+    "tags": ["STM32", "Voice Control", "IMU", "Robotic Arm"]
+  },
+  "item3": {
+    "title": "四足机器人飞书知识库",
+    "desc": "赛后详细编写的四足机器人研发知识库，覆盖从基础认知到实践开发、强化学习应用的全流程内容",
+    "tags": ["Documentation", "Knowledge Sharing"]
+  },
+  "item4": {
+    "title": "ROBOCON 2024 R1 机器人",
+    "desc": "ROBOCON 2024 比赛 R1 机器人的底层控制代码仓库，包含机械方案、全向底盘运动学解算与任务机构逻辑。",
+    "tags": ["Robocon", "STM32", "C", "Chassis Control"]
+  },
+  "item5": {
+    "title": "3508足式机器人驱动验证平台",
+    "desc": "基于 DJI 3508 无刷减速电机的四足机器人驱动方案，参加2022-2025年多届 ROBOCON 全国赛。",
+    "tags": ["Motor Control", "DJI", "Legged Robot"]
+  },
+  "item6": {
+    "title": "HTDW4438 Isaac Gym ",
+    "desc": "HTDW4438 四足机器人的 Isaac Gym 强化学习仿真训练环境，已做好sim2sim迁移工作",
+    "tags": ["RL", "Isaac Gym", "RSL_RL", "Sim2Real", "Legged_gym"]
+  },
+  "item7": {
+    "title": "HTDW4438 OpenDog",
+    "desc": "HTDW4438 机器人的实物控制与部署代码，包含机械结构设计、控制算法实现与系统集成测试。",
+    "tags": ["Robotics", "Mechanical Design", "C++", "Robotics Hardware"]
+  },
+  "item8": {
+    "title": "Lain's Note 个人知识库",
+    "desc": "个人技术文档与博客仓库，记录机器人研发、算法学习过程中的笔记与技术积累。",
+    "tags": ["Blog", "Documentation", "Study Notes"]
+  },
+  "item9": {
+    "title": "PDF2PNG 转换工具",
+    "desc": "Vibecoding实现，用于将 PDF 文档批量转换为高质量 PNG 图片。",
+    "tags": ["Utility", "Tool"]
+  }
 
 
 
@@ -88,28 +118,43 @@
     },
     "event2": {
       "date": "2024-07",
-      "title": "智能插秧收获一体机器人开发",
-      "desc": "基于FreeRTOS完成农业机器人嵌入式控制系统开发，实现±5mm定位精度。"
+      "title": "2024ROBOCON全国赛",
+      "desc": "基于FreeRTOS完成R1机器人嵌入式控制系统开发，实现±5mm定位精度，球体发射、夹爪夹取功能。"
     },
     "event3": {
-      "date": "2024-11",
-      "title": "福建省大学生智能海洋装备设计制作大赛",
-      "desc": "获得水下机器人赛道特等奖。"
+      "date": "2024-08",
+      "title": "2024福建省大学生电子设计大赛",
+      "desc": "基于MSPM0G3507开发自动驾驶小车系统，进入省测。"
     },
     "event4": {
+      "date": "2024-11",
+      "title": "福建省大学生智能海洋装备设计制作大赛",
+      "desc": "负责开发浮力可控多自由度龙虾水下机器人的控制系统，获特等奖。"
+    },
+    "event5": {
       "date": "2024-12",
       "title": "2024 世界航海装备大会",
       "desc": "代表福建理工大学参展，展示仿生波士顿大龙虾机器人，获新华社等媒体报道。"
     },
-    "event5": {
+    "event6": {
       "date": "2025-07",
       "title": "2025 ROBOCON 全国赛",
-      "desc": "获足式机器人竞速赛全国30名、障碍赛31名、越野赛34名，共三项国二佳绩。负责足式机器人全栈研发。"
+      "desc": "负责足式机器人全栈研发。获足式机器人竞速赛全国30名、障碍赛31名、越野赛34名，共三项国二佳绩。"
     },
-    "event6": {
-      "date": "2025-10",
+    "event7": {
+      "date": "2025-08",
+      "title": "2025全国大学生电子设计大赛",
+      "desc": "负责自动测距系统的功率计硬件设计与制作，获全国二等奖。"
+    },
+    "event8": {
+      "date": "2025-09",
       "title": "开源 BRS 并联四足机器人",
       "desc": "在GitHub开源BRS并联四足机器人的机械结构与控制代码。"
+    },
+    "event9": {
+      "date": "2025-10至2026-3",
+      "title": "高擎机电激情实习中",
+      "desc": "负责HTDW4438仿生四足机器人的机械设计、控制算法开发与系统集成测试,分为开源版本与产品化版本"
     }
   },
   "skills": {
