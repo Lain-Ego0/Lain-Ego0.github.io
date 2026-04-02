@@ -111,37 +111,45 @@
 
   const TECH_STACK = [
     {
+      category: 'skills.hardware',
+      items: [
+        { name: 'Fusion 360', icon: 'fas fa-cube' },
+        { name: 'SolidWorks', icon: 'fas fa-drafting-compass' },
+        { name: 'LCEDA', icon: 'fas fa-pencil-ruler' },
+        { name: 'KiCad', icon: 'fas fa-layer-group' },
+      ],
+    },
+    {
       category: 'skills.embedded',
       items: [
-        { name: 'STM32', icon: 'fas fa-microchip' },
-        { name: 'ESP32', icon: 'fas fa-wifi' },
-        { name: 'FreeRTOS', icon: 'fas fa-cogs' },
+        { name: 'MCU', icon: 'fas fa-microchip' },
+        { name: 'SBC', icon: 'fas fa-server' },
+        { name: 'RTOS', icon: 'fas fa-cogs' },
+        { name: 'Keil MDK', icon: 'fas fa-screwdriver-wrench' },
+        { name: 'STM32CubeMX', icon: 'fas fa-cubes' },
         { name: 'C/C++', icon: 'fas fa-code' },
+        { name: 'Rust', icon: 'fab fa-rust' },
       ],
     },
     {
       category: 'skills.robotics',
       items: [
         { name: 'ROS/ROS2', icon: 'fas fa-robot' },
-        { name: 'Gazebo', icon: 'fas fa-cube' },
-        { name: 'Motion Control', icon: 'fas fa-wave-square' },
-        { name: 'RL', icon: 'fas fa-brain' },
-      ],
-    },
-    {
-      category: 'skills.hardware',
-      items: [
-        { name: 'Altium', icon: 'fas fa-pencil-ruler' },
-        { name: 'SolidWorks', icon: 'fas fa-drafting-compass' },
-        { name: 'PCB', icon: 'fas fa-layer-group' },
+        { name: 'MuJoCo', icon: 'fas fa-cube' },
+        { name: 'Isaac Gym', icon: 'fas fa-dumbbell' },
+        { name: 'Isaac Sim', icon: 'fas fa-vr-cardboard' },
+        { name: 'Webots', icon: 'fas fa-globe' },
       ],
     },
     {
       category: 'skills.software',
       items: [
         { name: 'Linux', icon: 'fab fa-linux' },
-        { name: 'Python', icon: 'fab fa-python' },
         { name: 'Git', icon: 'fab fa-git-alt' },
+        { name: 'CMake', icon: 'fas fa-gears' },
+        { name: 'conda', icon: 'fas fa-box-open' },
+        { name: 'Docker', icon: 'fab fa-docker' },
+        { name: 'GitLab CI', icon: 'fab fa-gitlab' },
       ],
     },
   ];

@@ -187,10 +187,10 @@
   },
   "skills": {
     "title": "Tech Stack",
-    "embedded": "Embedded",
+    "embedded": "Embedded Development",
     "robotics": "Robotics",
-    "software": "Software",
-    "hardware": "Hardware"
+    "software": "Toolchain",
+    "hardware": "Structure & Hardware Design"
   },
   "contact": {
     "title": "Let's Connect",

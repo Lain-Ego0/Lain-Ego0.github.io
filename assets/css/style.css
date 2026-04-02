@@ -303,8 +303,8 @@ nav {
 }
 
 .intro-contact-link {
-  width: 34px;
-  height: 34px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   border: 1px solid var(--border-light);
   background: var(--bg-card);
@@ -316,7 +316,7 @@ nav {
 }
 
 .intro-contact-link i {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 .intro-contact-link:hover {

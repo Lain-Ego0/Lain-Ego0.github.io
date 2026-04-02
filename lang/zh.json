@@ -189,8 +189,8 @@
     "title": "技术栈",
     "embedded": "嵌入式开发",
     "robotics": "机器人技术",
-    "software": "软件与工具",
-    "hardware": "硬件设计"
+    "software": "开发工具链",
+    "hardware": "结构与硬件设计"
   },
   "contact": {
     "title": "联系我",
