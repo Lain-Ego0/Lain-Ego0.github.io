@@ -16,6 +16,9 @@
     WATERPROOF_ENGINEERING: 'Waterproof Engineering',
     AGRICULTURAL_ROBOTICS: 'Agricultural Robotics',
     MULTI_ROBOT_COLLABORATION: 'Multi-Robot Collaboration',
+    WIKI: 'Wiki',
+    KNOWLEDGE_BASE: 'Knowledge Base',
+    OPEN_SOURCE: 'Open Source',
   };
 
   const PROJECTS = [
@@ -68,13 +71,25 @@
       ],
       link: 'pages/projects/project4.html',
     },
+    {
+      img: 'assets/images/locowiki-cover.png',
+      titleKey: 'projects.item5.title',
+      descKey: 'projects.item5.desc',
+      tags: [
+        PROJECT_TAG_LIBRARY.WIKI,
+        PROJECT_TAG_LIBRARY.KNOWLEDGE_BASE,
+        PROJECT_TAG_LIBRARY.ROBOTICS,
+        PROJECT_TAG_LIBRARY.OPEN_SOURCE,
+      ],
+      link: 'pages/projects/project5.html',
+    },
   ];
 
   const OPEN_SOURCE_ITEMS = [
     { key: 'opensource.item9', linkCode: 'https://github.com/Lain-Ego0/LocoWiki', linkDoc: null },
     { key: 'opensource.item1', linkCode: 'https://github.com/Lain-Ego0/BRS-Parallel-Robot', linkDoc: null },
     { key: 'opensource.item2', linkCode: 'https://github.com/Lain-Ego0/SliverWolf-ArmRobotDog', linkDoc: null },
-    { key: 'opensource.item3', linkCode: null, linkDoc: 'https://wcn9j5638vrr.feishu.cn/wiki/space/7570988375279517715' },
+    { key: 'opensource.item3', linkCode: 'https://github.com/Lain-Ego0/BionicLobster-ROV', linkDoc: null },
     { key: 'opensource.item4', linkCode: 'https://github.com/Lain-Ego0/ROBOCON2024-R1', linkDoc: null },
     { key: 'opensource.item5', linkCode: 'https://github.com/Lain-Ego0/ROBOCON2024-3508DOG', linkDoc: null },
     { key: 'opensource.item6', linkCode: 'https://github.com/Lain-Ego0/HTDW4438_HIMloco', linkDoc: null },

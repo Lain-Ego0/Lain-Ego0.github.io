@@ -36,6 +36,11 @@
       "title": "Intelligent Agriculture Robot",
       "desc": "Smart planting & harvesting robot based on FreeRTOS. Controlled DJI3508 motors for gripper lifting and omni-directional chassis with ±5mm positioning accuracy. Participated in pneumatic design and hardware wiring, supporting dual-robot synergy.",
       "tags": ["Agricultural Robotics", "FreeRTOS", "Motor Control", "Multi-Robot Collaboration"]
+    },
+    "item5": {
+      "title": "LocoWiki Robot Locomotion Repository",
+      "desc": "A one-stop resource repository for robot locomotion learning, targeting ROBOCON preparation, research studies, and development reference. Aggregates competition rules, technical sharing, paper reading lists, and mainstream open-source project directories, with a companion website and Feishu knowledge base.",
+      "tags": ["Wiki", "Knowledge Base", "Robotics", "Open Source"]
     }
   },
   "project1": {
@@ -64,6 +69,15 @@
     "title": "Intelligent Planting and Harvesting Robot",
     "desc": "Based on the FreeRTOS real-time operating system, I developed the control system for an integrated intelligent planting and harvesting agricultural robot.<br><br>By controlling DJI3508 motors, I completed the functional debugging of the gripper lifting mechanism, omnidirectional chassis, and omnidirectional positioning system, achieving a gripper positioning accuracy within ±5mm. I also participated in the pneumatic system design and hardware wiring, supporting collaborative operation with another autonomous robot to efficiently complete tasks."
   },
+  "project5": {
+    "title": "LocoWiki Robot Locomotion Repository",
+    "desc": "LocoWiki is a one-stop resource repository built for robot locomotion learning, targeting ROBOCON preparation, research studies, and development reference scenarios, covering all core resources for legged robot development.<br><br>Repository contents include:<br>1) Official competition rules from past seasons;<br>2) Technical sharing from university teams (PPT/PPTX);<br>3) Paper reading lists (reading lists + recommended paper PDFs);<br>4) Mainstream open-source projects, core component drivers, and learning knowledge base directories.<br><br>The companion website locowiki.github.io provides module navigation, commonly used tool sites, and Feishu knowledge base entry points, along with a QQ group for developer and team communication.",
+    "links": {
+      "github": "Code",
+      "website": "Website",
+      "feishu": "Feishu Wiki"
+    }
+  },
   "projects1": {
     "imgAlt1": "Project Detail View",
     "imgAlt2": "Detail View 1",
@@ -85,9 +99,9 @@
     "tags": ["STM32", "Voice Control", "IMU", "Robotic Arm"]
   },
   "item3": {
-    "title": "Quadruped Robot Lark Knowledge Base",
-    "desc": "A comprehensive post-competition R&D knowledge base, covering the full workflow from basic concepts to practical development and reinforcement learning applications.",
-    "tags": ["Documentation", "Knowledge Sharing"]
+    "title": "BionicLobster ROV",
+    "desc": "Open-source bionic Boston Lobster submersible robot project, including the control system, vector propulsion model, and hardware design for a buoyancy-controllable multi-DOF underwater robot.",
+    "tags": ["Underwater Robotics", "Embedded Systems", "Open Source"]
   },
   "item4": {
     "title": "ROBOCON 2024 R1 Robot",

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 05 - Lain-Ego</title>
+  
+  <script>
+    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav>
+    <div class="container nav-container">
+      <a href="../../index.html" class="logo">
+        <span class="logo-text">Lain-Ego</span>
+        <div class="logo-dot"></div>
+      </a>
+      <div class="nav-actions">
+        <div class="nav-links">
+          <a href="../../index.html#projects" data-i18n="nav.projects">Projects</a>
+          <a href="../../index.html#documents" data-i18n="nav.documents">Documents</a>
+        </div>
+        <div class="nav-controls">
+          <button class="control-btn lang-toggle" aria-label="Toggle Language">中文</button>
+          <button class="control-btn theme-toggle" aria-label="Toggle Theme">
+            <i class="fas fa-sun sun-icon"></i>
+            <i class="fas fa-moon moon-icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section-padding">
+    <div class="container">
+      <div class="card project-detail-card">
+        <h2 data-i18n="project5.title"></h2>
+        
+        <img src="../../assets/images/locowiki-cover.png" data-i18n="projects1.imgAlt1" class="project-img">
+        
+        <div class="project-detail-desc">
+           <p data-i18n="project5.desc"></p>
+        </div>
+     
+        <div class="publish-links-wrapper">
+          <div class="publish-links">
+            <a href="https://github.com/Lain-Ego0/LocoWiki" target="_blank" class="publish-link github">
+              <i class="fab fa-github"></i> <span data-i18n="project1.links.github">开源代码</span>
+            </a>
+            <a href="https://locowiki.github.io/" target="_blank" class="publish-link">
+              <i class="fas fa-globe"></i> <span data-i18n="project5.links.website">项目网站</span>
+            </a>
+            <a href="https://lain-database.feishu.cn/wiki/HwyJwB70niKbW7khmwlcbCH2nXb" target="_blank" class="publish-link">
+              <i class="fas fa-book"></i> <span data-i18n="project5.links.feishu">飞书知识库</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer data-i18n="footer.copyright">© 2026 Lain-Ego. All rights reserved.</footer>
+
+  <script src="../../assets/js/i18n.js"></script>
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

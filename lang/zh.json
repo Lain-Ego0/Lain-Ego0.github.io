@@ -36,6 +36,11 @@
       "title": "智能插秧收获一体机器人",
       "desc": "基于FreeRTOS的智能插秧收获农业机器人。通过控制DJI3508电机完成夹爪抬升与全向底盘控制，定位精度±5mm。参与气路设计与硬件布线，支持双机器人协同作业。",
       "tags": ["Agricultural Robotics", "FreeRTOS", "Motor Control", "Multi-Robot Collaboration"]
+    },
+    "item5": {
+      "title": "LocoWiki 机器人运控资源仓库",
+      "desc": "专为机器人运控学习打造的一站式资源整合仓库，面向ROBOCON备赛、科研学习与开发检索场景。汇总历届赛事规则、高校技术分享、论文学习清单及主流开源项目索引，配套项目网站与飞书知识库。",
+      "tags": ["Wiki", "Knowledge Base", "Robotics", "Open Source"]
     }
   },
   "project1": {
@@ -64,6 +69,15 @@
     "title": "智能插秧收获一体机器人",
     "desc": "基于FreeRTOS实时操作系统，进行智能插秧与收获一体化农业机器人控制系统编写。<br><br>通过控制DJI3508电机，完成夹爪抬升机构、全向轮底盘、全向定位系统等模块的功能调试，使夹爪动作定位精度控制在±5mm内；同步参与气路系统设计与硬件布线工作，支持与另一台自主运行机器人协同作业，高效完成任务。"
   },
+  "project5": {
+    "title": "LocoWiki 机器人运控资源仓库",
+    "desc": "LocoWiki 是专为机器人运控学习打造的一站式资源整合仓库，面向ROBOCON备赛、科研学习与开发检索场景，全链路覆盖足式机器人开发核心资源。<br><br>仓库内容涵盖：<br>1）历届赛事官方规则文档；<br>2）高校参赛队伍技术分享（PPT/PPTX）；<br>3）论文学习清单（阅读清单 + 推荐论文PDF）；<br>4）主流开源项目、核心组件驱动与学习知识库汇总。<br><br>配套项目网站 locowiki.github.io 提供模块导航、常用工具站点与飞书知识库入口，同时维护QQ交流群，方便开发者与参赛队伍交流协作。",
+    "links": {
+      "github": "开源代码",
+      "website": "项目网站",
+      "feishu": "飞书知识库"
+    }
+  },
   "projects1": {
     "imgAlt1": "项目展示图",
     "imgAlt2": "细节展示图 1",
@@ -85,9 +99,9 @@
     "tags": ["STM32", "Voice Control", "IMU", "Robotic Arm"]
   },
   "item3": {
-    "title": "四足机器人飞书知识库",
-    "desc": "赛后详细编写的四足机器人研发知识库，覆盖从基础认知到实践开发、强化学习应用的全流程内容",
-    "tags": ["Documentation", "Knowledge Sharing"]
+    "title": "仿生龙虾水下机器人",
+    "desc": "仿生波士顿大龙虾民用潜航机器人开源项目，包含浮力可控多自由度水下机器人的控制系统、矢量推进模型与硬件设计方案。",
+    "tags": ["Underwater Robotics", "Embedded Systems", "Open Source"]
   },
   "item4": {
     "title": "ROBOCON 2024 R1 机器人",
