@@ -139,6 +139,11 @@
   },
   "timeline": {
     "title": "Timeline",
+    "event10": {
+      "date": "2026.03",
+      "title": "Launched LocoWiki Resource Hub",
+      "desc": "Launched the LocoWiki resource hub for robot competition preparation, research learning, and development reference, bringing together competition rules, technical sharing, paper reading lists, and high-quality open-source projects in one place."
+    },
     "event1": {
     "date": "2024.05",
     "title": "Open Source SliverWolf Desktop Quadruped",

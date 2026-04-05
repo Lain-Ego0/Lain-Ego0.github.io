@@ -98,6 +98,7 @@
   ];
 
   const TIMELINE_EVENTS = [
+     'timeline.event10',
     'timeline.event9',
     'timeline.event8',
     'timeline.event7',
