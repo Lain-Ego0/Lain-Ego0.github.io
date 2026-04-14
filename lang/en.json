@@ -146,6 +146,11 @@
   },
   "timeline": {
     "title": "Timeline",
+    "event11": {
+      "date": "2026.03 - Present",
+      "title": "Internship at Qianxing Intelligence",
+      "desc": "Responsible for motion control and human-robot interaction R&D for humanoid robots."
+    },
     "event10": {
       "date": "2026.03",
       "title": "Launched LocoWiki Resource Hub",
