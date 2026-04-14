@@ -18,32 +18,41 @@
     "imgAlt": "Project image",
     "viewDetail": "View Details",
     "item1": {
+      "title": "LocoWiki Robot Locomotion Repository",
+      "desc": "A one-stop resource repository for robot locomotion learning, targeting ROBOCON preparation, research studies, and development reference. Aggregates competition rules, technical sharing, paper reading lists, and mainstream open-source project directories, with a companion website and Feishu knowledge base.",
+      "tags": ["Wiki", "Knowledge Base", "Robotics", "Open Source"]
+    },
+    "item2": {
       "title": "HTDW4438 OpenDog Quadruped",
       "desc": "A full-stack open-source quadruped project spanning mechanical design and URDF modeling, Isaac Gym RL training, and Sim2Real deployment. It centers on HTDW4438-OpenDog and works together with HTDW4438-AMP, HTDW4438_HIMloco, and HTDW4438_Isaacgym as one development pipeline.",
       "tags": ["Robotics", "Reinforcement Learning", "Sim2Real", "Deployment"]
     },
-    "item2": {
+    "item3": {
       "title": "ROBOCON 2025 Quadruped Robot",
       "desc": "Full-stack R&D for 2025 ROBOCON. Responsible for carbon tube assembly mechanical modeling, force control algorithms, and 3D LiDAR SLAM navigation. Led the team to achieve 30th in Speed, 31st in Obstacle, and 34th in Cross-country among 180+ teams.",
       "tags": ["Robotics", "Motion Control", "SLAM", "LiDAR", "Mechanical Design"]
     },
-    "item3": {
+    "item4": {
       "title": "Bionic Boston Lobster Submersible",
       "desc": "Buoyancy-controllable multi-DOF underwater robot. Developed control system (stepper pumps, motor/servo drive, gyro fusion, IIC encoder loop) and vector propulsion model for omnidirectional movement. Handled hardware selection and waterproofing. Won Special Prize in Fujian Intelligent Marine Equipment Competition.",
       "tags": ["Underwater Robotics", "Embedded Systems", "Vector Propulsion", "Waterproof Engineering"]
     },
-    "item4": {
-      "title": "Intelligent Agriculture Robot",
-      "desc": "Smart planting & harvesting robot based on FreeRTOS. Controlled DJI3508 motors for gripper lifting and omni-directional chassis with ±5mm positioning accuracy. Participated in pneumatic design and hardware wiring, supporting dual-robot synergy.",
-      "tags": ["Agricultural Robotics", "FreeRTOS", "Motor Control", "Multi-Robot Collaboration"]
-    },
     "item5": {
-      "title": "LocoWiki Robot Locomotion Repository",
-      "desc": "A one-stop resource repository for robot locomotion learning, targeting ROBOCON preparation, research studies, and development reference. Aggregates competition rules, technical sharing, paper reading lists, and mainstream open-source project directories, with a companion website and Feishu knowledge base.",
-      "tags": ["Wiki", "Knowledge Base", "Robotics", "Open Source"]
+      "title": "Intelligent Agriculture Robot",
+      "desc": "Smart planting & harvesting robot based on FreeRTOS. Controlled DJI3508 motors for gripper lifting and omni-directional chassis with +/-5mm positioning accuracy. Participated in pneumatic design and hardware wiring, supporting dual-robot synergy.",
+      "tags": ["Agricultural Robotics", "FreeRTOS", "Motor Control", "Multi-Robot Collaboration"]
     }
   },
   "project1": {
+    "title": "LocoWiki Robot Locomotion Repository",
+    "desc": "LocoWiki is a one-stop resource repository built for robot locomotion learning, targeting ROBOCON preparation, research studies, and development reference scenarios, covering all core resources for legged robot development.<br><br>Repository contents include:<br>1) Official competition rules from past seasons;<br>2) Technical sharing from university teams (PPT/PPTX);<br>3) Paper reading lists (reading lists + recommended paper PDFs);<br>4) Mainstream open-source projects, core component drivers, and learning knowledge base directories.<br><br>The companion website locowiki.github.io provides module navigation, commonly used tool sites, and Feishu knowledge base entry points, along with a QQ group for developer and team communication.",
+    "links": {
+      "github": "Code",
+      "website": "Website",
+      "feishu": "Feishu Wiki"
+    }
+  },
+  "project2": {
     "title": "HTDW4438 OpenDog Quadruped",
     "desc": "HTDW4438 OpenDog is a full-stack open-source quadruped project focused on reliable real-world deployment of reinforcement-learning locomotion. The workflow covers mechanical design, URDF modeling, simulation training, policy export, and on-robot validation.<br><br>Repository layout highlights:<br>1) 1.Hardware for mechanical assets, URDF, and meshes;<br>2) 2.Software for livelybot_sdk and hardware control scripts;<br>3) 3.Document / 4.Paper for BOM, manuals, and technical references.<br><br>The training and deployment chain is driven by three related repositories:<br>1) HTDW4438-AMP for motion-prior RL training and policy iteration;<br>2) HTDW4438_HIMloco for locomotion policy adaptation and control optimization;<br>3) HTDW4438_Isaacgym for large-scale GPU simulation, playback, and policy export.<br><br>Together they build a practical end-to-end loop: mechanical/URDF -> simulation training -> Sim2Real deployment.",
     "links": {
@@ -52,7 +61,7 @@
       "demo": "Demo"
     }
   },
-  "project2": {
+  "project3": {
     "title": "ROBOCON 2025 Quadruped Robot Challenge",
     "desc": "ROBOCON is a top-tier robotics competition that places high demands on mechanical reliability, electronic control stability, and visual accuracy.<br><br>In the 2025 season, I was responsible for the full-stack R&D of the quadruped robot team, covering mechanical modeling, motion control, and autonomous navigation. Utilizing a carbon tube assembly mechanism similar to plant protection drones, force control algorithms, and 3D LiDAR mapping & navigation technology, our team achieved 30th place in the Speed Race, 31st in the Obstacle Race, and 34th in the Cross-Country Race at the 2025 ROBOCON (Jiangyin) among over 180 participating teams, winning Second Prize nationally in all three categories.",
     "links": {
@@ -61,21 +70,22 @@
       "demo": "Demo"
     }
   },
-  "project3": {
-    "title": "Bionic Boston Lobster Submersible",
-    "desc": "This project features a buoyancy-controllable multi-DOF lobster underwater robot.<br><br>On the software side, I was responsible for the control system development, designing a lower-level machine framework that integrates stepper peristaltic pumps, motor/servo drives, gyroscope data processing, and IIC encoder feedback for closed-loop control of 360-degree servos. I also designed a vector propulsion model for the irregular multi-rotor structure to achieve omnidirectional movement. On the hardware side, I handled driver selection, step-down circuit design, and waterproofing.<br><br>The project won the Special Prize in the Underwater Robot Track at the 2024 Fujian University Student Intelligent Marine Equipment Design Competition. It also represented Fujian University of Technology at the 2024 World Maritime Equipment Conference, receiving coverage from media outlets such as Xinhua News Agency and Guangming Daily."
-  },
   "project4": {
-    "title": "Intelligent Planting and Harvesting Robot",
-    "desc": "Based on the FreeRTOS real-time operating system, I developed the control system for an integrated intelligent planting and harvesting agricultural robot.<br><br>By controlling DJI3508 motors, I completed the functional debugging of the gripper lifting mechanism, omnidirectional chassis, and omnidirectional positioning system, achieving a gripper positioning accuracy within ±5mm. I also participated in the pneumatic system design and hardware wiring, supporting collaborative operation with another autonomous robot to efficiently complete tasks."
+    "title": "Bionic Boston Lobster Submersible",
+    "desc": "This project features a buoyancy-controllable multi-DOF lobster underwater robot.<br><br>On the software side, I was responsible for the control system development, designing a lower-level machine framework that integrates stepper peristaltic pumps, motor/servo drives, gyroscope data processing, and IIC encoder feedback for closed-loop control of 360-degree servos. I also designed a vector propulsion model for the irregular multi-rotor structure to achieve omnidirectional movement. On the hardware side, I handled driver selection, step-down circuit design, and waterproofing.<br><br>The project won the Special Prize in the Underwater Robot Track at the 2024 Fujian University Student Intelligent Marine Equipment Design Competition. It also represented Fujian University of Technology at the 2024 World Maritime Equipment Conference, receiving coverage from media outlets such as Xinhua News Agency and Guangming Daily.",
+    "links": {
+      "firmware": "Firmware",
+      "mechanical": "Mechanical",
+      "vision": "Vision"
+    }
   },
   "project5": {
-    "title": "LocoWiki Robot Locomotion Repository",
-    "desc": "LocoWiki is a one-stop resource repository built for robot locomotion learning, targeting ROBOCON preparation, research studies, and development reference scenarios, covering all core resources for legged robot development.<br><br>Repository contents include:<br>1) Official competition rules from past seasons;<br>2) Technical sharing from university teams (PPT/PPTX);<br>3) Paper reading lists (reading lists + recommended paper PDFs);<br>4) Mainstream open-source projects, core component drivers, and learning knowledge base directories.<br><br>The companion website locowiki.github.io provides module navigation, commonly used tool sites, and Feishu knowledge base entry points, along with a QQ group for developer and team communication.",
+    "title": "Intelligent Planting and Harvesting Robot",
+    "desc": "Based on the FreeRTOS real-time operating system, I developed the control system for an integrated intelligent planting and harvesting agricultural robot.<br><br>By controlling DJI3508 motors, I completed the functional debugging of the gripper lifting mechanism, omnidirectional chassis, and omnidirectional positioning system, achieving a gripper positioning accuracy within +/-5mm. I also participated in the pneumatic system design and hardware wiring, supporting collaborative operation with another autonomous robot to efficiently complete tasks.",
     "links": {
       "github": "Code",
-      "website": "Website",
-      "feishu": "Feishu Wiki"
+      "techDoc": "Docs",
+      "demo": "Demo"
     }
   },
   "projects1": {
@@ -88,54 +98,51 @@
     "title": "Open Source Contributions",
     "btnCode": "Code",
     "btnDoc": "Docs",
-  "item1": {
-    "title": "BRS Parallel Quadruped Robot",
-    "desc": "Project 'BLACK☆ROCK SHOOTER': A full-stack parallel structure quadruped robot. The complete solution is open-source and competed in the 2025 ROBOCON National Competition.",
-    "tags": ["Robotics", "Mechanical Design", "Open Source"]
-  },
-  "item2": {
-    "title": "SliverWolf Desktop Quadruped",
-    "desc": "A direct-drive, position-controlled serial quadruped using 9g micro servos. Features IMU integration, voice control, various gaits, and collaborative fetching with a robotic arm.",
-    "tags": ["STM32", "Voice Control", "IMU", "Robotic Arm"]
-  },
-  "item3": {
-    "title": "BionicLobster ROV",
-    "desc": "Open-source bionic Boston Lobster submersible robot project, including the control system, vector propulsion model, and hardware design for a buoyancy-controllable multi-DOF underwater robot.",
-    "tags": ["Underwater Robotics", "Embedded Systems", "Open Source"]
-  },
-  "item4": {
-    "title": "ROBOCON 2024 R1 Robot",
-    "desc": "Low-level control repository for the ROBOCON 2024 R1 robot, including mechanical schemes, omnidirectional chassis kinematics, and task mechanism logic.",
-    "tags": ["Robocon", "STM32", "C", "Chassis Control"]
-  },
-  "item5": {
-    "title": "3508 Legged Robot Drive Platform",
-    "desc": "A quadruped robot drive solution based on DJI 3508 brushless geared motors, used in multiple ROBOCON National Competitions from 2022 to 2025.",
-    "tags": ["Motor Control", "DJI", "Legged Robot"]
-  },
-  "item6": {
-    "title": "HTDW4438 HIMloco",
-    "desc": "HIMloco locomotion control and deployment project for HTDW4438, covering policy transfer and real-robot validation workflows.",
-    "tags": ["RL", "Locomotion", "Sim2Real", "Deployment"]
-  },
-  "item7": {
-    "title": "HTDW4438 OpenDog Deployment",
-    "desc": "Physical control and deployment code for the HTDW4438 robot, including mechanical design, control algorithm implementation, and system integration testing.",
-    "tags": ["Robotics", "Mechanical Design", "C++", "Robotics Hardware"]
-  },
-  "item8": {
-    "title": "ROBOCON2024-PPS",
-    "desc": "Code repository for the ROBOCON 2024 PPS-related robot project, including competition task logic and control implementations.",
-    "tags": ["Robocon", "Robot Control", "Competition"]
-  },
-  "item9": {
-    "title": "LocoWiki",
-    "desc": "A lightweight open-source wiki and knowledge management project focused on structured note organization, fast retrieval, and long-term knowledge growth.",
-    "tags": ["Wiki", "Knowledge Base", "Productivity"]
-  }
-
-
-
+    "item1": {
+      "title": "BRS Parallel Quadruped Robot",
+      "desc": "Project 'BLACK☆ROCK SHOOTER': A full-stack parallel structure quadruped robot. The complete solution is open-source and competed in the 2025 ROBOCON National Competition.",
+      "tags": ["Robotics", "Mechanical Design", "Open Source"]
+    },
+    "item2": {
+      "title": "SliverWolf Desktop Quadruped",
+      "desc": "A direct-drive, position-controlled serial quadruped using 9g micro servos. Features IMU integration, voice control, various gaits, and collaborative fetching with a robotic arm.",
+      "tags": ["STM32", "Voice Control", "IMU", "Robotic Arm"]
+    },
+    "item3": {
+      "title": "BionicLobster ROV",
+      "desc": "Open-source bionic Boston Lobster submersible robot project, including the control system, vector propulsion model, and hardware design for a buoyancy-controllable multi-DOF underwater robot.",
+      "tags": ["Underwater Robotics", "Embedded Systems", "Open Source"]
+    },
+    "item4": {
+      "title": "ROBOCON 2024 R1 Robot",
+      "desc": "Low-level control repository for the ROBOCON 2024 R1 robot, including mechanical schemes, omnidirectional chassis kinematics, and task mechanism logic.",
+      "tags": ["Robocon", "STM32", "C", "Chassis Control"]
+    },
+    "item5": {
+      "title": "3508 Legged Robot Drive Platform",
+      "desc": "A quadruped robot drive solution based on DJI 3508 brushless geared motors, used in multiple ROBOCON National Competitions from 2022 to 2025.",
+      "tags": ["Motor Control", "DJI", "Legged Robot"]
+    },
+    "item6": {
+      "title": "HTDW4438 HIMloco",
+      "desc": "HIMloco locomotion control and deployment project for HTDW4438, covering policy transfer and real-robot validation workflows.",
+      "tags": ["RL", "Locomotion", "Sim2Real", "Deployment"]
+    },
+    "item7": {
+      "title": "HTDW4438 OpenDog Deployment",
+      "desc": "Physical control and deployment code for the HTDW4438 robot, including mechanical design, control algorithm implementation, and system integration testing.",
+      "tags": ["Robotics", "Mechanical Design", "C++", "Robotics Hardware"]
+    },
+    "item8": {
+      "title": "ROBOCON2024-PPS",
+      "desc": "Code repository for the ROBOCON 2024 PPS-related robot project, including competition task logic and control implementations.",
+      "tags": ["Robocon", "Robot Control", "Competition"]
+    },
+    "item9": {
+      "title": "LocoWiki",
+      "desc": "A lightweight open-source wiki and knowledge management project focused on structured note organization, fast retrieval, and long-term knowledge growth.",
+      "tags": ["Wiki", "Knowledge Base", "Productivity"]
+    }
   },
   "timeline": {
     "title": "Timeline",
@@ -145,9 +152,9 @@
       "desc": "Launched the LocoWiki resource hub for robot competition preparation, research learning, and development reference, bringing together competition rules, technical sharing, paper reading lists, and high-quality open-source projects in one place."
     },
     "event1": {
-    "date": "2024.05",
-    "title": "Open Source SliverWolf Desktop Quadruped",
-    "desc": "Released SliverWolf, a desktop-level serial quadruped robot featuring voice control and robotic arm collaborative capabilities."
+      "date": "2024.05",
+      "title": "Open Source SliverWolf Desktop Quadruped",
+      "desc": "Released SliverWolf, a desktop-level serial quadruped robot featuring voice control and robotic arm collaborative capabilities."
     },
     "event2": {
       "date": "2024.07",
