@@ -10,7 +10,7 @@
   "intro": {
     "avatarAlt": "Lain-Ego的头像",
     "title": "你好，我是Lain",
-    "desc": "机器人开发爱好者，大三在读，目前于人形机器人公司实习<br>擅长MCU与Linux应用层开发<br>持续钻研运动控制、强化学习及机器人感知技术<br>邮箱：lain-ego@qq.com"
+    "desc": "机器人开发爱好者，大三在读，目前于人形机器人公司实习<br>擅长MCU与Linux应用层开发<br>持续钻研运动控制、强化学习及机器人感知技术"
   },
   "projects": {
     "title": "项目合集",
@@ -36,7 +36,7 @@
       "tags": ["Wiki", "Knowledge Base", "Robotics", "Open Source"]
     },
     "item2": {
-      "title": "HTDW4438 OpenDog 四足机器人",
+      "title": "高擎动力桌面四足",
       "desc": "全栈开源四足机器人项目，覆盖机械结构与URDF建模、Isaac Gym强化学习训练到Sim-to-Real实机部署。以HTDW4438-OpenDog主仓为核心，并与HTDW4438-AMP、HTDW4438_HIMloco、HTDW4438_Isaacgym协同形成完整研发闭环。",
       "tags": ["Robotics", "Reinforcement Learning", "Sim-to-Real", "Deployment"]
     },
@@ -146,7 +146,8 @@
     "bilibili": "哔哩哔哩",
     "github": "代码仓库",
     "twitter": "推特",
-    "zhihu": "知乎"
+    "zhihu": "知乎",
+    "email": "邮箱"
   },
   "footer": {
     "copyright": "© 2023-2026 Lain-Ego | 个人主页"

@@ -262,6 +262,7 @@
     { icon: 'fab fa-github', key: 'contact.github', link: 'https://github.com/Lain-Ego0' },
     { icon: 'fab fa-twitter', key: 'contact.twitter', link: 'https://x.com/Lain_Ego0' },
     { icon: 'fab fa-zhihu', key: 'contact.zhihu', link: 'https://www.zhihu.com/people/hua-99-50-21' },
+    { icon: 'fas fa-envelope', key: 'contact.email', link: 'mailto:lain-ego@qq.com' },
   ];
 
   function qs(selector, root = document) {
@@ -423,8 +424,10 @@
       const item = document.createElement('a');
       item.className = 'intro-contact-link';
       item.href = contact.link;
-      item.target = '_blank';
-      item.rel = 'noopener noreferrer';
+      if (!contact.link.startsWith('mailto:')) {
+        item.target = '_blank';
+        item.rel = 'noopener noreferrer';
+      }
       item.title = label;
       item.setAttribute('aria-label', label);
       item.innerHTML = `<i class="${contact.icon}"></i>`;

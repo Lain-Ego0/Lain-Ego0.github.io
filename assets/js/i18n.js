@@ -1,6 +1,6 @@
 (() => {
   let langData = null;
-  let currentLang = localStorage.getItem('lang') || 'zh';
+  let currentLang = localStorage.getItem('lang') || 'en';
 
   function getNestedValue(obj, key) {
     if (!obj) return undefined;

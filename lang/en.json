@@ -10,7 +10,7 @@
   "intro": {
     "avatarAlt": "Lain-Ego's avatar",
     "title": "Hello, I'm Lain",
-    "desc": "Robotics developer and junior undergraduate.<br>Currently interning at a humanoid robotics company.<br>Focused on MCU and Linux application development, motion control, RL deployment, and robot perception.<br>Email: lain-ego@qq.com"
+    "desc": "Robotics developer and junior undergraduate.<br>Currently interning at a humanoid robotics company.<br>Focused on MCU and Linux application development, motion control, RL deployment, and robot perception."
   },
   "projects": {
     "title": "Projects",
@@ -36,7 +36,7 @@
       "tags": ["Wiki", "Knowledge Base", "Robotics", "Open Source"]
     },
     "item2": {
-      "title": "HTDW4438 OpenDog Quadruped",
+      "title": "High Torque Desktop Quadruped",
       "desc": "A full-stack open-source quadruped project spanning mechanical design, URDF modeling, Isaac Gym RL training, and sim-to-real deployment. It centers on HTDW4438-OpenDog and works together with HTDW4438-AMP, HTDW4438_HIMloco, and HTDW4438_Isaacgym as one development pipeline.",
       "tags": ["Robotics", "Reinforcement Learning", "Sim-to-Real", "Deployment"]
     },
@@ -146,7 +146,8 @@
     "bilibili": "Bilibili",
     "github": "GitHub",
     "twitter": "Twitter",
-    "zhihu": "Zhihu"
+    "zhihu": "Zhihu",
+    "email": "Email"
   },
   "footer": {
     "copyright": "© 2023-2026 Lain-Ego | Personal Homepage"
