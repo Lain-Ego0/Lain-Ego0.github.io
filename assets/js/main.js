@@ -3,7 +3,7 @@
     ROBOTICS: 'Robotics',
     EMBEDDED: 'Embedded Systems',
     REINFORCEMENT_LEARNING: 'Reinforcement Learning',
-    SIM2REAL: 'Sim2Real',
+    SIM2REAL: 'Sim-to-Real',
     DEPLOYMENT: 'Deployment',
     FREERTOS: 'FreeRTOS',
     MOTION_CONTROL: 'Motion Control',
@@ -12,7 +12,7 @@
     LIDAR: 'LiDAR',
     MECHANICAL_DESIGN: 'Mechanical Design',
     UNDERWATER_ROBOTICS: 'Underwater Robotics',
-    VECTOR_PROPULSION: 'Vector Propulsion',
+    VECTOR_PROPULSION: 'Vectored Propulsion',
     WATERPROOF_ENGINEERING: 'Waterproof Engineering',
     AGRICULTURAL_ROBOTICS: 'Agricultural Robotics',
     MULTI_ROBOT_COLLABORATION: 'Multi-Robot Collaboration',
@@ -195,7 +195,7 @@
     const htmlEl = document.documentElement;
     if (!toggleBtn) return;
 
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedTheme = localStorage.getItem('theme') || htmlEl.getAttribute('data-theme') || 'light';
     htmlEl.setAttribute('data-theme', savedTheme);
 
     toggleBtn.addEventListener('click', () => {

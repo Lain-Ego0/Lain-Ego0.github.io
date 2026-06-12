@@ -2,7 +2,7 @@
   "nav": {
     "home": "首页",
     "projects": "个人项目",
-    "opensource": "开源贡献",
+    "opensource": "开源项目",
     "timeline": "时间轴",
     "skills": "技术栈",
     "contact": "联系我",
@@ -24,8 +24,8 @@
     },
     "item2": {
       "title": "HTDW4438 OpenDog 四足机器人",
-      "desc": "全栈开源四足机器人项目，覆盖机械结构与URDF建模、Isaac Gym强化学习训练到Sim2Real实机部署。以HTDW4438-OpenDog主仓为核心，并与HTDW4438-AMP、HTDW4438_HIMloco、HTDW4438_Isaacgym协同形成完整研发闭环。",
-      "tags": ["Robotics", "Reinforcement Learning", "Sim2Real", "Deployment"]
+      "desc": "全栈开源四足机器人项目，覆盖机械结构与URDF建模、Isaac Gym强化学习训练到Sim-to-Real实机部署。以HTDW4438-OpenDog主仓为核心，并与HTDW4438-AMP、HTDW4438_HIMloco、HTDW4438_Isaacgym协同形成完整研发闭环。",
+      "tags": ["Robotics", "Reinforcement Learning", "Sim-to-Real", "Deployment"]
     },
     "item3": {
       "title": "ROBOCON 2025 足式机器人",
@@ -34,8 +34,8 @@
     },
     "item4": {
       "title": "仿生波士顿大龙虾潜航机器人",
-      "desc": "浮力可控多自由度龙虾水下机器人。负责控制系统开发（步进蠕动泵、电机/舵机驱动、陀螺仪融合、IIC编码器闭环），设计异形多旋翼矢量推进模型实现全向移动。硬件方面负责驱动选型与防水设计。获福建省大学生智能海洋装备大赛特等奖。",
-      "tags": ["Underwater Robotics", "Embedded Systems", "Vector Propulsion", "Waterproof Engineering"]
+      "desc": "浮力可控多自由度龙虾水下机器人。负责控制系统开发（步进蠕动泵、电机/舵机驱动、陀螺仪融合、I2C编码器闭环），设计异形多旋翼矢量推进模型实现全向移动。硬件方面负责驱动选型与防水设计。获福建省大学生智能海洋装备大赛特等奖。",
+      "tags": ["Underwater Robotics", "Embedded Systems", "Vectored Propulsion", "Waterproof Engineering"]
     },
     "item5": {
       "title": "智能插秧收获一体机器人",
@@ -54,7 +54,7 @@
   },
   "project2": {
     "title": "HTDW4438 OpenDog 四足机器人",
-    "desc": "HTDW4438 OpenDog 是一个全栈开源四足机器人项目，核心目标是把强化学习步态稳定落地到真实机器人。项目链路覆盖机械结构、URDF建模、仿真训练、策略部署与实机调试。<br><br>仓库结构参考：<br>1）1.Hardware：机器人机械文件、URDF与网格资源；<br>2）2.Software：livelybot_sdk实机通信与控制脚本；<br>3）3.Document / 4.Paper：BOM、手册、参考论文与设计资料。<br><br>训练与控制链路由三仓协同构成：<br>1）HTDW4438-AMP：动作先验与强化学习训练流程；<br>2）HTDW4438_HIMloco：面向稳定行走的策略适配与运动控制优化；<br>3）HTDW4438_Isaacgym：GPU并行仿真训练、策略回放与导出。<br><br>通过上述流程，形成“机械/URDF → 仿真训练 → Sim2Real部署”的完整闭环，支持从策略迭代到实机验证的持续开发。",
+    "desc": "HTDW4438 OpenDog 是一个全栈开源四足机器人项目，核心目标是把强化学习步态稳定落地到真实机器人。项目链路覆盖机械结构、URDF建模、仿真训练、策略部署与实机调试。<br><br>仓库结构参考：<br>1）1.Hardware：机器人机械文件、URDF与网格资源；<br>2）2.Software：livelybot_sdk实机通信与控制脚本；<br>3）3.Document / 4.Paper：BOM、手册、参考论文与设计资料。<br><br>训练与控制链路由三仓协同构成：<br>1）HTDW4438-AMP：动作先验与强化学习训练流程；<br>2）HTDW4438_HIMloco：面向稳定行走的策略适配与运动控制优化；<br>3）HTDW4438_Isaacgym：GPU并行仿真训练、策略回放与导出。<br><br>通过上述流程，形成“机械/URDF → 仿真训练 → Sim-to-Real部署”的完整闭环，支持从策略迭代到实机验证的持续开发。",
     "links": {
       "github": "开源代码",
       "techDoc": "技术文档",
@@ -72,7 +72,7 @@
   },
   "project4": {
     "title": "仿生波士顿大龙虾民用潜航机器人",
-    "desc": "本项目为浮力可控的多自由度龙虾水下机器人。<br><br>软件部分负责控制系统开发，设计了一套集成步进蠕动泵、电机/舵机驱动、陀螺仪数据处理以及读取IIC编码器闭环控制360度舵机的下位机框架，同时设计异形多旋翼的矢量推进模型，完善全向移动功能。在硬件设计部分负责了驱动器选型、降压电路以及防水设计等工作。<br><br>作品获2024 年福建省大学生智能海洋装备设计制作大赛水下机器人赛道特等奖，同时进一步代表福建理工大学参展2024世界航海装备大会，获得新华社、光明日报等媒体报道。",
+    "desc": "本项目为浮力可控的多自由度龙虾水下机器人。<br><br>软件部分负责控制系统开发，设计了一套集成步进蠕动泵、电机/舵机驱动、陀螺仪数据处理以及读取I2C编码器闭环控制360度舵机的下位机框架，同时设计异形多旋翼的矢量推进模型，完善全向移动功能。在硬件设计部分负责了驱动器选型、降压电路以及防水设计等工作。<br><br>作品获2024 年福建省大学生智能海洋装备设计制作大赛水下机器人赛道特等奖，同时进一步代表福建理工大学参展2024世界航海装备大会，获得新华社、光明日报等媒体报道。",
     "links": {
       "firmware": "固件开源",
       "mechanical": "机械开源",
@@ -95,7 +95,7 @@
     "imgAlt4": "细节展示图 3"
   },
   "opensource": {
-    "title": "开源贡献",
+    "title": "开源项目",
     "btnCode": "代码仓库",
     "btnDoc": "在线文档",
     "item1": {
@@ -116,7 +116,7 @@
     "item4": {
       "title": "ROBOCON 2024 R1 机器人",
       "desc": "ROBOCON 2024 比赛 R1 机器人的底层控制代码仓库，包含机械方案、全向底盘运动学解算与任务机构逻辑。",
-      "tags": ["Robocon", "STM32", "C", "Chassis Control"]
+      "tags": ["ROBOCON", "STM32", "C", "Chassis Control"]
     },
     "item5": {
       "title": "3508足式机器人驱动验证平台",
@@ -126,7 +126,7 @@
     "item6": {
       "title": "HTDW4438 HIMloco",
       "desc": "HTDW4438 机器人的 HIMloco 运动控制与部署项目，覆盖训练策略迁移与实机验证流程。",
-      "tags": ["RL", "Locomotion", "Sim2Real", "Deployment"]
+      "tags": ["RL", "Locomotion", "Sim-to-Real", "Deployment"]
     },
     "item7": {
       "title": "HTDW4438 OpenDog",
@@ -136,7 +136,7 @@
     "item8": {
       "title": "ROBOCON2024-PPS",
       "desc": "ROBOCON 2024 PPS 相关机器人项目代码仓库，包含比赛任务逻辑与控制实现。",
-      "tags": ["Robocon", "Robot Control", "Competition"]
+      "tags": ["ROBOCON", "Robot Control", "Competition"]
     },
     "item9": {
       "title": "LocoWiki",
@@ -149,7 +149,7 @@
     "event11": {
       "date": "2026.03 - 至今",
       "title": "迁星智能实习",
-      "desc": "负责类人形机器人的运动控制与人机交互研发。"
+      "desc": "负责人形机器人的运动控制与人机交互研发。"
     },
     "event10": {
       "date": "2026.03",
