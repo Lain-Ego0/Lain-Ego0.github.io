@@ -20,14 +20,26 @@
     KNOWLEDGE_BASE: 'Knowledge Base',
     OPEN_SOURCE: 'Open Source',
     STM32: 'STM32',
+    STM32F103: 'STM32F103',
     VOICE_CONTROL: 'Voice Control',
     IMU: 'IMU',
+    LD3320: 'LD3320',
     ROBOTIC_ARM: 'Robotic Arm',
     DJI: 'DJI',
+    M3508: 'M3508',
+    PID: 'PID',
+    SENSOR_FUSION: 'Sensor Fusion',
     LEGGED_ROBOT: 'Legged Robot',
     ROBOCON: 'ROBOCON',
     ROBOT_CONTROL: 'Robot Control',
     COMPETITION: 'Competition',
+    RS485: 'RS485',
+    ABSOLUTE_ENCODER: 'Absolute Encoder',
+    POSITIONING: 'Positioning',
+    TYPST: 'Typst',
+    RESUME: 'Resume',
+    TEMPLATE: 'Template',
+    PDF: 'PDF',
   };
 
   const PROJECTS = [
@@ -77,7 +89,7 @@
       ],
       links: [
         { href: 'https://github.com/Lain-Ego0/BRS-Parallel-Robot', labelKey: 'projects.links.code', icon: 'fab fa-github' },
-        { href: 'https://wcn9j5638vrr.feishu.cn/wiki/space/7570988375279517715?ccm_open_type=lark_wiki_spaceLink&open_tab_from=wiki_home', labelKey: 'projects.links.docs', icon: 'fas fa-book' },
+        { href: 'https://lain-database.feishu.cn/wiki/MUtjwx2FzixM65kKYhlcxcxdnqg', labelKey: 'projects.links.docs', icon: 'fas fa-book' },
         { href: 'https://www.bilibili.com/video/BV15wu4zuEmf', labelKey: 'projects.links.demo', icon: 'fab fa-bilibili' },
       ],
     },
@@ -113,26 +125,14 @@
       ],
     },
     {
-      img: 'assets/images/opendog-detail-1.png',
-      titleKey: 'projects.item6.title',
-      descKey: 'projects.item6.desc',
-      tags: [
-        PROJECT_TAG_LIBRARY.STM32,
-        PROJECT_TAG_LIBRARY.VOICE_CONTROL,
-        PROJECT_TAG_LIBRARY.IMU,
-        PROJECT_TAG_LIBRARY.ROBOTIC_ARM,
-      ],
-      links: [
-        { href: 'https://github.com/Lain-Ego0/SliverWolf-ArmRobotDog', labelKey: 'projects.links.code', icon: 'fab fa-github' },
-      ],
-    },
-    {
-      img: 'assets/images/robocon-cover.png',
+      img: 'assets/images/3508dog-cover.jpg',
       titleKey: 'projects.item7.title',
       descKey: 'projects.item7.desc',
       tags: [
+        PROJECT_TAG_LIBRARY.M3508,
         PROJECT_TAG_LIBRARY.MOTOR_CONTROL,
-        PROJECT_TAG_LIBRARY.DJI,
+        PROJECT_TAG_LIBRARY.PID,
+        PROJECT_TAG_LIBRARY.SENSOR_FUSION,
         PROJECT_TAG_LIBRARY.LEGGED_ROBOT,
       ],
       links: [
@@ -140,13 +140,41 @@
       ],
     },
     {
-      img: 'assets/images/robocon-detail-3.png',
+      titleKey: 'projects.item9.title',
+      descKey: 'projects.item9.desc',
+      tags: [
+        PROJECT_TAG_LIBRARY.TYPST,
+        PROJECT_TAG_LIBRARY.RESUME,
+        PROJECT_TAG_LIBRARY.TEMPLATE,
+        PROJECT_TAG_LIBRARY.PDF,
+      ],
+      links: [
+        { href: 'https://github.com/Lain-Ego0/Typst-resume', labelKey: 'projects.links.code', icon: 'fab fa-github' },
+      ],
+    },
+    {
+      titleKey: 'projects.item6.title',
+      descKey: 'projects.item6.desc',
+      tags: [
+        PROJECT_TAG_LIBRARY.STM32F103,
+        PROJECT_TAG_LIBRARY.VOICE_CONTROL,
+        PROJECT_TAG_LIBRARY.IMU,
+        PROJECT_TAG_LIBRARY.LD3320,
+        PROJECT_TAG_LIBRARY.ROBOTIC_ARM,
+      ],
+      links: [
+        { href: 'https://github.com/Lain-Ego0/SliverWolf-ArmRobotDog', labelKey: 'projects.links.code', icon: 'fab fa-github' },
+      ],
+    },
+    {
       titleKey: 'projects.item8.title',
       descKey: 'projects.item8.desc',
       tags: [
-        PROJECT_TAG_LIBRARY.ROBOCON,
-        PROJECT_TAG_LIBRARY.ROBOT_CONTROL,
-        PROJECT_TAG_LIBRARY.COMPETITION,
+        PROJECT_TAG_LIBRARY.STM32F103,
+        PROJECT_TAG_LIBRARY.POSITIONING,
+        PROJECT_TAG_LIBRARY.RS485,
+        PROJECT_TAG_LIBRARY.ABSOLUTE_ENCODER,
+        PROJECT_TAG_LIBRARY.IMU,
       ],
       links: [
         { href: 'https://github.com/Lain-Ego0/ROBOCON2024-PPS', labelKey: 'projects.links.code', icon: 'fab fa-github' },
@@ -306,18 +334,26 @@
     PROJECTS.forEach((project) => {
       const tagsHtml = renderProjectTags(project.tags);
       const actionsHtml = renderProjectActions(project.links);
-
-      const card = document.createElement('div');
-      card.className = 'card project-card';
-      card.innerHTML = `
+      const hasThumbnail = Boolean(project.img);
+      const thumbnailHtml = project.img
+        ? `
         <div class="project-thumbnail-wrapper">
           <img src="${project.img}" alt="${t('projects.imgAlt')}" class="project-thumbnail">
         </div>
+      `
+        : '';
+      const metaHtml = hasThumbnail
+        ? `${tagsHtml}${actionsHtml}`
+        : `<div class="project-meta-row">${tagsHtml}${actionsHtml}</div>`;
+
+      const card = document.createElement('div');
+      card.className = hasThumbnail ? 'card project-card' : 'card project-card project-card--text-only';
+      card.innerHTML = `
+        ${thumbnailHtml}
         <div class="project-info">
           <h3>${t(project.titleKey)}</h3>
           <p>${t(project.descKey)}</p>
-          ${tagsHtml}
-          ${actionsHtml}
+          ${metaHtml}
         </div>
       `;
       grid.appendChild(card);

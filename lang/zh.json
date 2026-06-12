@@ -52,18 +52,23 @@
     },
     "item6": {
       "title": "SliverWolf 桌面级四足机器人",
-      "desc": "使用9g小型舵机的直驱位控串联四足，接入IMU控制、语音控制，完成多种步态与机械臂协同取物功能。",
-      "tags": ["STM32", "Voice Control", "IMU", "Robotic Arm"]
+      "desc": "桌面级12自由度串联四足 + 可选机械臂/夹爪开源工程。基于STM32F103与MG92R小型舵机，提供机身和机械臂STL、PCB图纸、四足主控、语音中继、姿态/按键控制与LD3320语音识别工程。通过串口指令实现站立、前后移动、转向、平移、爬行、握手和一键取物，支持蓝牙、IMU/按键与语音控制链路。",
+      "tags": ["STM32F103", "Voice Control", "IMU", "LD3320", "Robotic Arm"]
     },
     "item7": {
       "title": "3508足式机器人驱动验证平台",
-      "desc": "基于 DJI 3508 无刷减速电机的四足机器人驱动方案，参加2022-2025年多届 ROBOCON 全国赛。",
-      "tags": ["Motor Control", "DJI", "Legged Robot"]
+      "desc": "由福建理工大学MTI机器人队自2022年起迭代的DJI M3508四足驱动验证平台，基于F427底层架构从ROBOCON底盘改造为四足控制程序。实现遥控/键盘控制、可变PID电机参数、稳定站立、陀螺仪姿态平衡、雷达定高、步态时序、补帧、后退、转弯和赛道测试，为多届ROBOCON足式方案提供控制验证。",
+      "tags": ["M3508", "Motor Control", "PID", "Sensor Fusion", "Legged Robot"]
     },
     "item8": {
       "title": "ROBOCON2024-PPS",
-      "desc": "ROBOCON 2024 PPS 相关机器人项目代码仓库，包含比赛任务逻辑与控制实现。",
-      "tags": ["ROBOCON", "Robot Control", "Competition"]
+      "desc": "MTIPPS平面基轴定位系统，基于STM32F103C8T6、RS485绝对值编码器与全向轮码盘读取XY位移，并接入Hi219陀螺仪采集姿态数据。系统通过串口向机器人主控实时发送定位与姿态信息，用于ROBOCON2024底盘毫米级里程记录、路径规划和自动行走验证。",
+      "tags": ["STM32F103", "Positioning", "RS485", "Absolute Encoder", "IMU"]
+    },
+    "item9": {
+      "title": "Typst 中文简历模板库",
+      "desc": "一个可直接修改和导出 PDF 的 Typst 中文简历模板库，包含基础模板与多套参考风格模板，保留对应 PDF、预览图和头像素材目录。推荐配合 VS Code 与 Tinymist Typst 插件使用，支持打开 typ 文件实时预览，并提供 Typst CLI 编译、批量导出和字体依赖安装说明。",
+      "tags": ["Typst", "Resume", "Template", "PDF"]
     }
   },
   "timeline": {

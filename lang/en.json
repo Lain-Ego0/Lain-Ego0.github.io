@@ -51,19 +51,24 @@
       "tags": ["Agricultural Robotics", "FreeRTOS", "Motor Control", "Multi-Robot Collaboration"]
     },
     "item6": {
-      "title": "SliverWolf Desktop Serial-Link Quadruped",
-      "desc": "A direct-drive, position-controlled serial-link quadruped using 9g micro servos. Features IMU integration, voice control, multiple gaits, and collaborative object fetching with a robotic arm.",
-      "tags": ["STM32", "Voice Control", "IMU", "Robotic Arm"]
+      "title": "SliverWolf Desktop Quadruped and Arm",
+      "desc": "An open-source desktop 12-DOF serial-link quadruped with an optional robotic arm and gripper. Built around STM32F103 and MG92R micro servos, the repository includes body and arm STL files, PCB PDFs, quadruped firmware, voice relay firmware, posture/button-control examples, and an LD3320 voice-recognition project. Serial commands cover standing, forward/backward walking, turning, strafing, crawling, handshaking, light effects, and one-click object fetching through Bluetooth, IMU/button, and voice-control paths.",
+      "tags": ["STM32F103", "Voice Control", "IMU", "LD3320", "Robotic Arm"]
     },
     "item7": {
       "title": "3508 Legged-Robot Drive Test Platform",
-      "desc": "A quadruped drive solution based on DJI 3508 brushless geared motors, used in multiple ROBOCON National Competitions from 2022 to 2025.",
-      "tags": ["Motor Control", "DJI", "Legged Robot"]
+      "desc": "A DJI M3508-powered quadruped drive validation platform iterated by the MTI Robotics Team at Fujian University of Technology since 2022. Starting from an F427 ROBOCON chassis architecture, it evolved into a quadruped control program with RC/keyboard operation, variable PID motor parameters, stable standing, gyroscope attitude balance, LiDAR height holding, gait timing, frame compensation, backward gait, turning, and track testing for multiple ROBOCON legged-robot seasons.",
+      "tags": ["M3508", "Motor Control", "PID", "Sensor Fusion", "Legged Robot"]
     },
     "item8": {
       "title": "ROBOCON2024-PPS",
-      "desc": "Code repository for the ROBOCON 2024 PPS-related robot project, including competition task logic and control implementations.",
-      "tags": ["ROBOCON", "Robot Control", "Competition"]
+      "desc": "MTIPPS is a planar base-axis positioning system for ROBOCON 2024 robots. Based on STM32F103C8T6, RS485 absolute encoders, and omni-wheel code disks, it reads XY displacement with millimeter-level travel recording while collecting Hi219 gyroscope attitude data. The system streams positioning and attitude information to the robot mainboard for chassis localization, path-planning, and autonomous driving tests.",
+      "tags": ["STM32F103", "Positioning", "RS485", "Absolute Encoder", "IMU"]
+    },
+    "item9": {
+      "title": "Typst Chinese Resume Template Library",
+      "desc": "A Typst resume template library that can be edited directly and exported to PDF. It includes basic resume layouts, multiple reference-style templates, exported PDFs, preview images, and optional avatar assets. The workflow is built around VS Code with the Tinymist Typst extension for live preview, with README notes covering Typst CLI compilation, batch export, and font dependency setup.",
+      "tags": ["Typst", "Resume", "Template", "PDF"]
     }
   },
   "timeline": {

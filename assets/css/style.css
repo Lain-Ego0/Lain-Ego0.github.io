@@ -419,7 +419,48 @@ h2::after {
 .project-card {
   display: grid;
   grid-template-columns: minmax(240px, 36%) minmax(0, 1fr);
+  width: 100%;
+  max-width: 100%;
   min-height: 260px;
+}
+
+.project-card--text-only {
+  grid-template-columns: 1fr;
+  min-height: 0;
+}
+
+.project-card--text-only .project-info {
+  padding: 22px 24px;
+}
+
+.project-card--text-only .project-info p {
+  margin-bottom: 12px;
+}
+
+.project-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+  margin-top: auto;
+}
+
+.project-meta-row .project-tags {
+  flex: 1 1 320px;
+  min-width: 0;
+  margin: 0;
+}
+
+.project-meta-row .project-actions {
+  flex: 0 0 auto;
+  margin-top: 0;
+  margin-left: auto;
+}
+
+.project-card--text-only .project-action {
+  min-height: 32px;
+  padding: 7px 11px;
+  font-size: 0.84rem;
 }
 
 .card:hover {
@@ -456,18 +497,23 @@ h2::after {
   display: flex;
   flex: 1;
   flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .project-info h3 {
   font-size: 1.25rem;
   margin-bottom: 8px;
   color: var(--text-main);
+  overflow-wrap: anywhere;
 }
 
 .project-info p {
   font-size: 0.95rem;
   color: var(--text-muted);
   margin-bottom: 16px;
+  overflow-wrap: anywhere;
 }
 
 .project-actions {
@@ -574,6 +620,38 @@ footer {
   .project-card {
     grid-template-columns: 1fr;
     min-height: 0;
+  }
+
+  .project-card--text-only .project-info {
+    padding: 20px;
+    width: calc(100vw - 72px);
+    max-width: calc(100vw - 72px);
+  }
+
+  .project-meta-row .project-tags {
+    flex-basis: 100%;
+  }
+
+  .project-meta-row .project-actions {
+    width: 100%;
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+
+  .project-card--text-only .project-meta-row {
+    display: block;
+  }
+
+  .project-card--text-only .project-tags {
+    display: flex;
+    margin-bottom: 10px;
+    width: calc(100vw - 150px);
+    max-width: calc(100vw - 150px);
+  }
+
+  .project-card--text-only .project-actions {
+    width: calc(100vw - 72px);
+    max-width: calc(100vw - 72px);
   }
 
   .project-thumbnail-wrapper {
@@ -771,6 +849,8 @@ nav {
   flex-wrap: wrap;
   gap: 8px;
   margin: 0 0 20px;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .project-tag {
@@ -781,6 +861,7 @@ nav {
   border-radius: 4px;
   font-weight: 500;
   border: 1px solid var(--border-light);
+  overflow-wrap: anywhere;
 }
 
 /* Adjust paragraph margin in project info to accommodate tags */
