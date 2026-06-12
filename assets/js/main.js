@@ -19,6 +19,15 @@
     WIKI: 'Wiki',
     KNOWLEDGE_BASE: 'Knowledge Base',
     OPEN_SOURCE: 'Open Source',
+    STM32: 'STM32',
+    VOICE_CONTROL: 'Voice Control',
+    IMU: 'IMU',
+    ROBOTIC_ARM: 'Robotic Arm',
+    DJI: 'DJI',
+    LEGGED_ROBOT: 'Legged Robot',
+    ROBOCON: 'ROBOCON',
+    ROBOT_CONTROL: 'Robot Control',
+    COMPETITION: 'Competition',
   };
 
   const PROJECTS = [
@@ -32,7 +41,11 @@
         PROJECT_TAG_LIBRARY.ROBOTICS,
         PROJECT_TAG_LIBRARY.OPEN_SOURCE,
       ],
-      link: 'pages/projects/project1.html',
+      links: [
+        { href: 'https://github.com/Lain-Ego0/LocoWiki', labelKey: 'projects.links.code', icon: 'fab fa-github' },
+        { href: 'https://locowiki.github.io/', labelKey: 'projects.links.website', icon: 'fas fa-globe' },
+        { href: 'https://lain-database.feishu.cn/wiki/HwyJwB70niKbW7khmwlcbCH2nXb', labelKey: 'projects.links.feishu', icon: 'fas fa-book' },
+      ],
     },
     {
       img: 'assets/images/opendog-cover.png',
@@ -44,7 +57,12 @@
         PROJECT_TAG_LIBRARY.SIM2REAL,
         PROJECT_TAG_LIBRARY.DEPLOYMENT,
       ],
-      link: 'pages/projects/project2.html',
+      links: [
+        { href: 'https://github.com/Lain-Ego0/HTDW4438-OpenDog', label: 'OpenDog', icon: 'fab fa-github' },
+        { href: 'https://github.com/Lain-Ego0/HTDW4438-AMP', label: 'AMP', icon: 'fab fa-github' },
+        { href: 'https://github.com/Lain-Ego0/HTDW4438_HIMloco', label: 'HIMloco', icon: 'fab fa-github' },
+        { href: 'https://github.com/Lain-Ego0/HTDW4438_Isaacgym', label: 'Isaac Gym', icon: 'fab fa-github' },
+      ],
     },
     {
       img: 'assets/images/robocon-cover.png',
@@ -57,7 +75,11 @@
         PROJECT_TAG_LIBRARY.LIDAR,
         PROJECT_TAG_LIBRARY.MECHANICAL_DESIGN,
       ],
-      link: 'pages/projects/project3.html',
+      links: [
+        { href: 'https://github.com/Lain-Ego0/BRS-Parallel-Robot', labelKey: 'projects.links.code', icon: 'fab fa-github' },
+        { href: 'https://wcn9j5638vrr.feishu.cn/wiki/space/7570988375279517715?ccm_open_type=lark_wiki_spaceLink&open_tab_from=wiki_home', labelKey: 'projects.links.docs', icon: 'fas fa-book' },
+        { href: 'https://www.bilibili.com/video/BV15wu4zuEmf', labelKey: 'projects.links.demo', icon: 'fab fa-bilibili' },
+      ],
     },
     {
       img: 'assets/images/lobster-cover.png',
@@ -69,7 +91,11 @@
         PROJECT_TAG_LIBRARY.VECTOR_PROPULSION,
         PROJECT_TAG_LIBRARY.WATERPROOF_ENGINEERING,
       ],
-      link: 'pages/projects/project4.html',
+      links: [
+        { href: 'https://github.com/Lain-Ego0/BionicLobster-ROV', labelKey: 'projects.links.firmware', icon: 'fab fa-github' },
+        { href: 'https://github.com/iowqi/ShrimpROV', labelKey: 'projects.links.mechanical', icon: 'fab fa-github' },
+        { href: 'https://github.com/zhizhizzzzzzz/OceanSphere', labelKey: 'projects.links.vision', icon: 'fab fa-github' },
+      ],
     },
     {
       img: 'assets/images/agri-cover.png',
@@ -81,20 +107,51 @@
         PROJECT_TAG_LIBRARY.MOTOR_CONTROL,
         PROJECT_TAG_LIBRARY.MULTI_ROBOT_COLLABORATION,
       ],
-      link: 'pages/projects/project5.html',
+      links: [
+        { href: 'https://github.com/Lain-Ego0/ROBOCON2024-R1', labelKey: 'projects.links.code', icon: 'fab fa-github' },
+        { href: 'https://www.bilibili.com/video/BV1VH4y1A7aM/?spm_id_from=333.337.search-card.all.click&vd_source=193a56b6f00b33090010ba20d05cfef7', labelKey: 'projects.links.demo', icon: 'fab fa-bilibili' },
+      ],
     },
-  ];
-
-  const OPEN_SOURCE_ITEMS = [
-    { key: 'opensource.item9', linkCode: 'https://github.com/Lain-Ego0/LocoWiki', linkDoc: null },
-    { key: 'opensource.item1', linkCode: 'https://github.com/Lain-Ego0/BRS-Parallel-Robot', linkDoc: null },
-    { key: 'opensource.item2', linkCode: 'https://github.com/Lain-Ego0/SliverWolf-ArmRobotDog', linkDoc: null },
-    { key: 'opensource.item3', linkCode: 'https://github.com/Lain-Ego0/BionicLobster-ROV', linkDoc: null },
-    { key: 'opensource.item4', linkCode: 'https://github.com/Lain-Ego0/ROBOCON2024-R1', linkDoc: null },
-    { key: 'opensource.item5', linkCode: 'https://github.com/Lain-Ego0/ROBOCON2024-3508DOG', linkDoc: null },
-    { key: 'opensource.item6', linkCode: 'https://github.com/Lain-Ego0/HTDW4438_HIMloco', linkDoc: null },
-    { key: 'opensource.item7', linkCode: 'https://github.com/Lain-Ego0/HTDW4438-OpenDog', linkDoc: null },
-    { key: 'opensource.item8', linkCode: 'https://github.com/Lain-Ego0/ROBOCON2024-PPS', linkDoc: null },
+    {
+      img: 'assets/images/opendog-detail-1.png',
+      titleKey: 'projects.item6.title',
+      descKey: 'projects.item6.desc',
+      tags: [
+        PROJECT_TAG_LIBRARY.STM32,
+        PROJECT_TAG_LIBRARY.VOICE_CONTROL,
+        PROJECT_TAG_LIBRARY.IMU,
+        PROJECT_TAG_LIBRARY.ROBOTIC_ARM,
+      ],
+      links: [
+        { href: 'https://github.com/Lain-Ego0/SliverWolf-ArmRobotDog', labelKey: 'projects.links.code', icon: 'fab fa-github' },
+      ],
+    },
+    {
+      img: 'assets/images/robocon-cover.png',
+      titleKey: 'projects.item7.title',
+      descKey: 'projects.item7.desc',
+      tags: [
+        PROJECT_TAG_LIBRARY.MOTOR_CONTROL,
+        PROJECT_TAG_LIBRARY.DJI,
+        PROJECT_TAG_LIBRARY.LEGGED_ROBOT,
+      ],
+      links: [
+        { href: 'https://github.com/Lain-Ego0/ROBOCON2024-3508DOG', labelKey: 'projects.links.code', icon: 'fab fa-github' },
+      ],
+    },
+    {
+      img: 'assets/images/robocon-detail-3.png',
+      titleKey: 'projects.item8.title',
+      descKey: 'projects.item8.desc',
+      tags: [
+        PROJECT_TAG_LIBRARY.ROBOCON,
+        PROJECT_TAG_LIBRARY.ROBOT_CONTROL,
+        PROJECT_TAG_LIBRARY.COMPETITION,
+      ],
+      links: [
+        { href: 'https://github.com/Lain-Ego0/ROBOCON2024-PPS', labelKey: 'projects.links.code', icon: 'fab fa-github' },
+      ],
+    },
   ];
 
   const TIMELINE_EVENTS = [
@@ -190,6 +247,27 @@
     return `<div class="project-tags">${renderSpanTags(tags, 'project-tag')}</div>`;
   }
 
+  function renderProjectActions(links) {
+    if (!Array.isArray(links) || links.length === 0) return '';
+
+    const items = links
+      .filter((link) => link.href)
+      .map((link) => {
+        const label = link.labelKey ? t(link.labelKey) : link.label;
+        const icon = link.icon || 'fas fa-arrow-up-right-from-square';
+
+        return `
+          <a href="${link.href}" target="_blank" rel="noopener noreferrer" class="project-action" aria-label="${label}">
+            <i class="${icon}"></i>
+            <span>${label}</span>
+          </a>
+        `;
+      })
+      .join('');
+
+    return items ? `<div class="project-actions">${items}</div>` : '';
+  }
+
   function initThemeToggle() {
     const toggleBtn = qs('.theme-toggle');
     const htmlEl = document.documentElement;
@@ -227,9 +305,10 @@
 
     PROJECTS.forEach((project) => {
       const tagsHtml = renderProjectTags(project.tags);
+      const actionsHtml = renderProjectActions(project.links);
 
       const card = document.createElement('div');
-      card.className = 'card';
+      card.className = 'card project-card';
       card.innerHTML = `
         <div class="project-thumbnail-wrapper">
           <img src="${project.img}" alt="${t('projects.imgAlt')}" class="project-thumbnail">
@@ -238,40 +317,8 @@
           <h3>${t(project.titleKey)}</h3>
           <p>${t(project.descKey)}</p>
           ${tagsHtml}
-          <a href="${project.link}" class="project-link">${t('projects.viewDetail')}</a>
+          ${actionsHtml}
         </div>
-      `;
-      grid.appendChild(card);
-    });
-  }
-
-  function initOpenSource() {
-    const grid = qs('.opensource-grid');
-    if (!grid) return;
-    clear(grid);
-
-    OPEN_SOURCE_ITEMS.forEach((item) => {
-      const tags = t(`${item.key}.tags`) || [];
-      const tagsHtml = renderSpanTags(tags, 'os-tag');
-
-      let buttonsHtml = '';
-      if (item.linkCode) {
-        buttonsHtml += `<a href="${item.linkCode}" target="_blank" rel="noopener noreferrer" class="os-btn"><i class="fab fa-github"></i> ${t('opensource.btnCode')}</a>`;
-      }
-      if (item.linkDoc) {
-        buttonsHtml += `<a href="${item.linkDoc}" target="_blank" rel="noopener noreferrer" class="os-btn"><i class="fas fa-book"></i> ${t('opensource.btnDoc')}</a>`;
-      }
-
-      const card = document.createElement('div');
-      card.className = 'os-card';
-      card.innerHTML = `
-        <div class="os-header">
-          <div class="os-title">${t(`${item.key}.title`)}</div>
-          <i class="fas fa-code-branch" style="color:var(--primary); opacity:0.5;"></i>
-        </div>
-        <p class="os-desc">${t(`${item.key}.desc`)}</p>
-        <div class="os-tags">${tagsHtml}</div>
-        <div class="os-actions">${buttonsHtml}</div>
       `;
       grid.appendChild(card);
     });
@@ -360,9 +407,7 @@
 
   function initRevealMotion() {
     const targets = [
-      ...qsa('.project-detail-card'),
       ...qsa('.projects-grid .card'),
-      ...qsa('.opensource-grid .os-card'),
       ...qsa('.timeline-container .timeline-item'),
       ...qsa('.skills-wrapper .skill-category'),
     ];
@@ -406,7 +451,6 @@
   window.addEventListener('i18nLoaded', () => {
     console.log('[main] i18n loaded, rendering content...');
     initProjects();
-    initOpenSource();
     initTimeline();
     initTechStack();
     initContactLinks();
