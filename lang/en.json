@@ -25,6 +25,11 @@
       "mechanical": "Mechanical",
       "vision": "Vision"
     },
+    "item0": {
+      "title": "Questech Humanoid Robot",
+      "desc": "Participated in early-stage R&D and iteration of a humanoid robot at Qianxing Intelligence, focusing on motion-control algorithms, action-data processing, control-framework development, and real-hardware debugging. Work covered motion retargeting and motion-capture data flow, driver-layer collaboration, hierarchical policy validation in simulation training, and preprocessing optimization for perception detection.",
+      "tags": ["Humanoid Robotics", "Motion Control", "Reinforcement Learning", "Motion Capture", "Robot Perception"]
+    },
     "item1": {
       "title": "LocoWiki Robot Locomotion Resource Hub",
       "desc": "A one-stop resource hub for robot locomotion, built for ROBOCON preparation, research study, and engineering reference. It aggregates competition rules, university team technical talks, paper reading lists, and mainstream open-source project indexes, with a companion website and Feishu knowledge base.",

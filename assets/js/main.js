@@ -40,9 +40,25 @@
     RESUME: 'Resume',
     TEMPLATE: 'Template',
     PDF: 'PDF',
+    HUMANOID_ROBOTICS: 'Humanoid Robotics',
+    MOTION_CAPTURE: 'Motion Capture',
+    ROBOT_PERCEPTION: 'Robot Perception',
   };
 
   const PROJECTS = [
+    {
+      img: 'assets/images/qxzn-cover.png',
+      titleKey: 'projects.item0.title',
+      descKey: 'projects.item0.desc',
+      tags: [
+        PROJECT_TAG_LIBRARY.HUMANOID_ROBOTICS,
+        PROJECT_TAG_LIBRARY.MOTION_CONTROL,
+        PROJECT_TAG_LIBRARY.REINFORCEMENT_LEARNING,
+        PROJECT_TAG_LIBRARY.MOTION_CAPTURE,
+        PROJECT_TAG_LIBRARY.ROBOT_PERCEPTION,
+      ],
+      links: [],
+    },
     {
       img: 'assets/images/locowiki-cover.png',
       titleKey: 'projects.item1.title',

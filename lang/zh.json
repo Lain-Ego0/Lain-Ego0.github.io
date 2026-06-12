@@ -25,6 +25,11 @@
       "mechanical": "机械开源",
       "vision": "视觉开源"
     },
+    "item0": {
+      "title": "迁星智能人形机器人",
+      "desc": "参与迁星智能科技有限公司类人形机器人预研与迭代，作为运动控制方向成员推进动作数据处理、运控框架搭建与实机调试。工作覆盖动作重定向与动捕数据链路、驱动层协同、仿真训练中的分层策略验证，以及面向感知检测的预处理流程优化。",
+      "tags": ["Humanoid Robotics", "Motion Control", "Reinforcement Learning", "Motion Capture", "Robot Perception"]
+    },
     "item1": {
       "title": "LocoWiki 机器人运控资源仓库",
       "desc": "专为机器人运控学习打造的一站式资源整合仓库，面向ROBOCON备赛、科研学习与开发检索场景。汇总历届赛事规则、高校技术分享、论文学习清单及主流开源项目索引，配套项目网站与飞书知识库。",
