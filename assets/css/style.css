@@ -13,48 +13,72 @@
   --duration-fast: 180ms;
   --duration-base: 480ms;
   
-  /* [Light Mode] 默认日间模式变量 */
-  --bg-body: #f8fafc;
+  /* [Light Mode] VS Code 2026-inspired light theme */
+  --bg-body: #f3f3f3;
+  --bg-editor: #ffffff;
   --bg-card: #ffffff;
-  --bg-glass: rgba(255, 255, 255, 0.8);
-  --bg-hover: #f1f5f9;
+  --bg-panel: #f8f8f8;
+  --bg-sidebar: #f3f3f3;
+  --bg-toolbar: #f3f3f3;
+  --bg-glass: rgba(243, 243, 243, 0.94);
+  --bg-hover: #e8e8e8;
+  --bg-active: #e6f3ff;
+  --bg-terminal: #ffffff;
   
-  --text-main: #0f172a;
-  --text-muted: #64748b;
+  --text-main: #1f1f1f;
+  --text-muted: #616161;
+  --text-subtle: #8a8a8a;
   --text-invert: #ffffff;
   
-  --primary: #2563eb;       /* 核心蓝 */
-  --primary-glow: rgba(37, 99, 235, 0.2);
+  --primary: #0078d4;
+  --primary-hover: #005a9e;
+  --primary-glow: rgba(0, 120, 212, 0.18);
+  --selection: #add6ff;
+  --terminal-user: #0078d4;
+  --terminal-path: #795e26;
   
-  --border-light: rgba(0, 0, 0, 0.06);
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --border-light: #d0d0d0;
+  --border-strong: #b8b8b8;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 8px 18px rgba(0, 0, 0, 0.09);
+  --shadow-hover: 0 14px 30px rgba(0, 0, 0, 0.12);
   
-  --gradient-title: linear-gradient(135deg, #0f172a 0%, #3b82f6 100%);
-  --decoration-blob: #e2e8f0;
+  --gradient-title: linear-gradient(135deg, #1f1f1f 0%, #0078d4 100%);
+  --decoration-blob: #dcdcdc;
 }
 
-/* [Dark Mode] 深色模式变量覆盖 */
+/* [Dark Mode] VS Code 2026-inspired dark theme */
 [data-theme="dark"] {
-  --bg-body: #1b1b1d;       /* 纯净中性暗背景 */
-  --bg-card: #242526;       /* 轻微抬升层级 */
-  --bg-glass: rgba(27, 27, 29, 0.82);
-  --bg-hover: #2d2f31;
+  --bg-body: #1e1e1e;
+  --bg-editor: #1e1e1e;
+  --bg-card: #252526;
+  --bg-panel: #181818;
+  --bg-sidebar: #181818;
+  --bg-toolbar: #2d2d30;
+  --bg-glass: rgba(37, 37, 38, 0.9);
+  --bg-hover: #2d2d30;
+  --bg-active: #04395e;
+  --bg-terminal: #1e1e1e;
   
-  --text-main: #e8e9ea;
-  --text-muted: #b0b3b8;
+  --text-main: #cccccc;
+  --text-muted: #9d9d9d;
+  --text-subtle: #6f6f6f;
   
-  --primary: #78a8f8;
-  --primary-glow: rgba(120, 168, 248, 0.24);
+  --primary: #3794ff;
+  --primary-hover: #4fc1ff;
+  --primary-glow: rgba(55, 148, 255, 0.24);
+  --selection: #264f78;
+  --terminal-user: #4ec9b0;
+  --terminal-path: #dcdcaa;
   
-  --border-light: rgba(227, 227, 227, 0.14);
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.32);
-  --shadow-card: 0 8px 20px rgba(0, 0, 0, 0.22);
-  --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.30);
+  --border-light: #3c3c3c;
+  --border-strong: #5a5a5a;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-card: 0 10px 24px rgba(0, 0, 0, 0.28);
+  --shadow-hover: 0 16px 32px rgba(0, 0, 0, 0.36);
   
-  --gradient-title: linear-gradient(135deg, #f1f2f4 0%, #9abcf2 100%);
-  --decoration-blob: #2a2c2e;
+  --gradient-title: linear-gradient(135deg, #cccccc 0%, #3794ff 100%);
+  --decoration-blob: #333333;
 }
 
 /* =========================================
@@ -96,6 +120,16 @@ img {
 a { text-decoration: none; color: inherit; transition: var(--transition-base); }
 ul { list-style: none; }
 
+::selection {
+  background: var(--selection);
+  color: var(--text-main);
+}
+
+:focus-visible {
+  outline: 1px solid var(--primary);
+  outline-offset: 2px;
+}
+
 .container {
   width: 100%;
   max-width: var(--container-width);
@@ -109,8 +143,9 @@ ul { list-style: none; }
 
 /* 滚动条美化 */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--bg-body); }
-::-webkit-scrollbar-thumb { background: var(--text-muted); border-radius: 4px; opacity: 0.5; }
+::-webkit-scrollbar-track { background: var(--bg-sidebar); }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-subtle); }
 
 /* =========================================
    3. Navigation (Glassmorphism)
@@ -150,7 +185,7 @@ nav {
   padding: 0 8px;
   border: 1px solid var(--border-light);
   border-radius: 4px;
-  background: var(--bg-hover);
+  background: var(--bg-terminal);
   color: var(--text-main);
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   font-size: 0.75rem;
@@ -159,8 +194,8 @@ nav {
   box-shadow: inset 0 0 0 1px var(--primary-glow);
 }
 
-.terminal-user { color: var(--primary); }
-.terminal-path { color: var(--text-muted); }
+.terminal-user { color: var(--terminal-user); }
+.terminal-path { color: var(--terminal-path); }
 .terminal-symbol { color: var(--text-main); }
 
 .terminal-cursor {
@@ -199,7 +234,7 @@ nav {
 
 /* 按钮通用样式 */
 .control-btn {
-  background: transparent;
+  background: var(--bg-toolbar);
   border: 1px solid var(--border-light);
   color: var(--text-main);
   padding: 6px 14px;
@@ -214,7 +249,7 @@ nav {
 
 .control-btn:hover {
   background: var(--bg-hover);
-  border-color: var(--primary);
+  border-color: var(--border-strong);
   color: var(--primary);
 }
 
@@ -265,7 +300,7 @@ nav {
   height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid var(--bg-card);
+  border: 4px solid var(--bg-editor);
   position: relative;
   z-index: 2;
   flex-shrink: 0; /* 防止头像被挤压 */
@@ -319,7 +354,7 @@ nav {
   height: 42px;
   border-radius: 50%;
   border: 1px solid var(--border-light);
-  background: var(--bg-card);
+  background: var(--bg-editor);
   color: var(--text-muted);
   display: inline-flex;
   align-items: center;
@@ -332,6 +367,7 @@ nav {
 }
 
 .intro-contact-link:hover {
+  background: var(--bg-active);
   color: var(--primary);
   border-color: var(--primary);
   transform: translateY(-1px);
@@ -367,7 +403,7 @@ h2::after {
 }
 
 .card {
-  background: var(--bg-card);
+  background: var(--bg-editor);
   border-radius: var(--radius-md);
   border: 1px solid var(--border-light);
   overflow: hidden;
@@ -381,7 +417,7 @@ h2::after {
 .card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-card);
-  border-color: var(--primary-glow);
+  border-color: var(--primary);
 }
 
 /* 首页项目卡片缩略图 - 优化适配 */
@@ -393,14 +429,14 @@ h2::after {
   padding: 10px;
   border-bottom: 1px solid var(--border-light);
   transition: transform var(--duration-base) var(--ease-standard);
-  background-color: var(--bg-hover);
+  background-color: var(--bg-panel);
 }
 
 .card:hover .project-thumbnail { transform: scale(1.02); }
 
 .project-thumbnail-wrapper {
   overflow: hidden;
-  background: var(--bg-hover);
+  background: var(--bg-panel);
 }
 
 .project-info {
@@ -457,6 +493,7 @@ h2::after {
   margin: 32px auto;       /* 上下增加间距 */
   box-shadow: var(--shadow-card);
   border: 1px solid var(--border-light);
+  background: var(--bg-panel);
 }
 
 /* =========================================
@@ -469,7 +506,7 @@ h2::after {
   flex-wrap: wrap;
   gap: 16px;
   justify-content: center;
-  background: var(--bg-card);
+  background: var(--bg-panel);
   padding: 12px;
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-sm);
@@ -481,6 +518,7 @@ h2::after {
   border-radius: var(--radius-full);
   font-weight: 500;
   color: var(--text-muted);
+  border: 1px solid transparent;
   transition: transform var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard), background-color var(--duration-fast) var(--ease-standard);
   display: flex;
   align-items: center;
@@ -488,7 +526,8 @@ h2::after {
 }
 
 .publish-link:hover {
-  background: var(--bg-hover);
+  background: var(--bg-active);
+  border-color: var(--border-light);
   color: var(--primary);
   transform: translateY(-1px);
 }
@@ -514,7 +553,7 @@ footer {
   font-size: 0.9rem;
   color: var(--text-muted);
   border-top: 1px solid var(--border-light);
-  background: var(--bg-body);
+  background: var(--bg-sidebar);
 }
 
 /* =========================================
@@ -612,7 +651,7 @@ footer {
 }
 
 .os-card {
-  background: var(--bg-card);
+  background: var(--bg-editor);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   padding: 24px;
@@ -658,9 +697,10 @@ footer {
 .os-tag {
   font-size: 0.75rem;
   padding: 4px 10px;
-  background: var(--bg-hover);
+  background: var(--bg-panel);
   color: var(--text-muted);
   border-radius: 20px;
+  border: 1px solid var(--border-light);
 }
 
 .os-actions {
@@ -697,7 +737,7 @@ footer {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: var(--border-light);
+  background: var(--border-strong);
 }
 
 .timeline-item {
@@ -711,7 +751,7 @@ footer {
   top: 5px;
   width: 12px;
   height: 12px;
-  background: var(--bg-body);
+  background: var(--bg-editor);
   border: 2px solid var(--primary);
   border-radius: 50%;
   z-index: 1;
@@ -761,7 +801,7 @@ footer {
 
 .skill-badge {
   padding: 8px 16px;
-  background: var(--bg-card);
+  background: var(--bg-editor);
   border: 1px solid var(--border-light);
   border-radius: 8px;
   font-size: 0.9rem;
@@ -773,6 +813,7 @@ footer {
 }
 
 .skill-badge:hover {
+  background: var(--bg-active);
   border-color: var(--primary);
   color: var(--primary);
   transform: translateY(-1px);
@@ -849,7 +890,7 @@ nav {
 .project-tag {
   font-size: 0.75rem;
   padding: 3px 10px;
-  background: var(--bg-hover);
+  background: var(--bg-active);
   color: var(--primary);
   border-radius: 4px;
   font-weight: 500;
