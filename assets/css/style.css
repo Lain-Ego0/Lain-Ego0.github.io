@@ -407,7 +407,8 @@ h2::after {
   border-radius: 2px;
 }
 
-.projects-grid {
+.projects-grid,
+.documents-grid {
   display: flex;
   flex-direction: column;
   gap: 20px;

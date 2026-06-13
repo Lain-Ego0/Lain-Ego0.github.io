@@ -5,7 +5,7 @@
     "timeline": "时间轴",
     "skills": "技术栈",
     "contact": "联系我",
-    "documents": "文档"
+    "documents": "文章"
   },
   "intro": {
     "avatarAlt": "Lain-Ego的头像",
@@ -21,6 +21,7 @@
       "demo": "演示视频",
       "website": "项目网站",
       "feishu": "飞书知识库",
+      "zhihu": "知乎文章",
       "firmware": "固件开源",
       "mechanical": "机械开源",
       "vision": "视觉开源"
@@ -74,6 +75,21 @@
       "title": "Typst 中文简历模板库",
       "desc": "一个可直接修改和导出 PDF 的 Typst 中文简历模板库，包含基础模板与多套参考风格模板，保留对应 PDF、预览图和头像素材目录。推荐配合 VS Code 与 Tinymist Typst 插件使用，支持打开 typ 文件实时预览，并提供 Typst CLI 编译、批量导出和字体依赖安装说明。",
       "tags": ["Typst", "Resume", "Template", "PDF"]
+    }
+  },
+  "documents": {
+    "title": "文章",
+    "item0": {
+      "title": "机器人工程师学习计划（试读版） - Lain-Ego的文章 - 知乎",
+      "desc": "面向机器人工程师的系统化学习路径规划，涵盖运动控制、感知、嵌入式、SLAM 等核心方向，提供分阶段的学习建议与资源索引。"
+    },
+    "item1": {
+      "title": "写给高中生：机器人行业发展路线选择指南 - KKR Database的文章 - 知乎",
+      "desc": "为高中生梳理机器人行业各发展路线与细分领域，帮助理解大学专业选择与职业方向的关联，提供清晰的行业全景与入行建议。"
+    },
+    "item2": {
+      "title": "大学生机器人竞赛团队的组织度 - KKR Database的文章 - 知乎",
+      "desc": "探讨大学生机器人竞赛团队如何提升组织效率、知识传承与协作能力，从团队架构、文档管理到赛季规划实现可持续运营。"
     }
   },
   "timeline": {

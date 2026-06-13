@@ -198,6 +198,30 @@
     },
   ];
 
+  const DOCUMENTS = [
+    {
+      titleKey: 'documents.item0.title',
+      descKey: 'documents.item0.desc',
+      links: [
+        { href: 'https://zhuanlan.zhihu.com/p/2039380190334284614', labelKey: 'projects.links.zhihu', icon: 'fab fa-zhihu' },
+      ],
+    },
+    {
+      titleKey: 'documents.item1.title',
+      descKey: 'documents.item1.desc',
+      links: [
+        { href: 'https://zhuanlan.zhihu.com/p/2007616159604823171', labelKey: 'projects.links.zhihu', icon: 'fab fa-zhihu' },
+      ],
+    },
+    {
+      titleKey: 'documents.item2.title',
+      descKey: 'documents.item2.desc',
+      links: [
+        { href: 'https://zhuanlan.zhihu.com/p/2026559138700764315', labelKey: 'projects.links.zhihu', icon: 'fab fa-zhihu' },
+      ],
+    },
+  ];
+
   const TIMELINE_EVENTS = [
     'timeline.event11',
     'timeline.event10',
@@ -377,6 +401,29 @@
     });
   }
 
+  function initDocuments() {
+    const grid = qs('.documents-grid');
+    if (!grid) return;
+    clear(grid);
+
+    DOCUMENTS.forEach((doc) => {
+      const actionsHtml = renderProjectActions(doc.links);
+
+      const card = document.createElement('div');
+      card.className = 'card project-card project-card--text-only';
+      card.innerHTML = `
+        <div class="project-info">
+          <h3>${t(doc.titleKey)}</h3>
+          <p>${t(doc.descKey)}</p>
+          <div class="project-meta-row">
+            ${actionsHtml}
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
   function initTimeline() {
     const container = qs('.timeline-container');
     if (!container) return;
@@ -463,6 +510,7 @@
   function initRevealMotion() {
     const targets = [
       ...qsa('.projects-grid .card'),
+      ...qsa('.documents-grid .card'),
       ...qsa('.timeline-container .timeline-item'),
       ...qsa('.skills-wrapper .skill-category'),
     ];
@@ -506,6 +554,7 @@
   window.addEventListener('i18nLoaded', () => {
     console.log('[main] i18n loaded, rendering content...');
     initProjects();
+    initDocuments();
     initTimeline();
     initTechStack();
     initContactLinks();

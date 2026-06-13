@@ -5,7 +5,7 @@
     "timeline": "Timeline",
     "skills": "Tech Stack",
     "contact": "Contact",
-    "documents": "Docs"
+    "documents": "Articles"
   },
   "intro": {
     "avatarAlt": "Lain-Ego's avatar",
@@ -21,6 +21,7 @@
       "demo": "Demo",
       "website": "Website",
       "feishu": "Feishu Wiki",
+      "zhihu": "Zhihu Article",
       "firmware": "Firmware",
       "mechanical": "Mechanical",
       "vision": "Vision"
@@ -74,6 +75,21 @@
       "title": "Typst Chinese Resume Template Library",
       "desc": "A Typst resume template library that can be edited directly and exported to PDF. It includes basic resume layouts, multiple reference-style templates, exported PDFs, preview images, and optional avatar assets. The workflow is built around VS Code with the Tinymist Typst extension for live preview, with README notes covering Typst CLI compilation, batch export, and font dependency setup.",
       "tags": ["Typst", "Resume", "Template", "PDF"]
+    }
+  },
+  "documents": {
+    "title": "Articles",
+    "item0": {
+      "title": "Robotics Engineer Learning Roadmap (Preview) - Lain-Ego on Zhihu",
+      "desc": "A structured learning path for robotics engineers, covering core areas such as motion control, perception, embedded systems, and SLAM, with phased study suggestions and resource indexing."
+    },
+    "item1": {
+      "title": "A Guide to Career Paths in the Robotics Industry — for High School Students - KKR Database on Zhihu",
+      "desc": "An overview of development paths and subfields in the robotics industry for high school students, helping connect university major choices with career directions through a clear industry landscape."
+    },
+    "item2": {
+      "title": "On the Organizational Maturity of University Robotics Competition Teams - KKR Database on Zhihu",
+      "desc": "Exploring how university robotics competition teams can improve organizational efficiency, knowledge transfer, and collaboration — from team structure and document management to sustainable season planning."
     }
   },
   "timeline": {
