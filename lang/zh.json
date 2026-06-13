@@ -37,7 +37,7 @@
       "tags": ["Wiki", "Knowledge Base", "Robotics", "Open Source"]
     },
     "item2": {
-      "title": "高擎动力桌面四足",
+      "title": "高擎动力桌面级四足",
       "desc": "全栈开源四足机器人项目，覆盖机械结构与URDF建模、Isaac Gym强化学习训练到Sim-to-Real实机部署。以HTDW4438-OpenDog主仓为核心，并与HTDW4438-AMP、HTDW4438_HIMloco、HTDW4438_Isaacgym协同形成完整研发闭环。",
       "tags": ["Robotics", "Reinforcement Learning", "Sim-to-Real", "Deployment"]
     },
@@ -104,6 +104,11 @@
       "title": "创建 LocoWiki 资料站",
       "desc": "搭建 LocoWiki 资料站，面向机器人赛事备赛、科研学习与开发检索场景，系统整合赛事规则、技术分享、论文研读清单及优质开源项目等核心资料。"
     },
+    "event12": {
+      "date": "2025.11",
+      "title": "发起 OpenDoge 开源四足众筹",
+      "desc": "作为创始开发者参与OpenDoge四足机器人开发众筹发起，主导项目算法与硬件驱动部署层研发。项目预计2026年6月底交付。"
+    },
     "event1": {
       "date": "2024.05",
       "title": "开源 SliverWolf 桌面级四足机器人",
@@ -113,11 +118,6 @@
       "date": "2024.07",
       "title": "2024 ROBOCON 全国赛",
       "desc": "基于FreeRTOS完成R1机器人嵌入式控制系统开发，实现±5mm定位精度，球体发射、夹爪夹取功能。"
-    },
-    "event3": {
-      "date": "2024.08",
-      "title": "2024 福建省大学生电子设计大赛",
-      "desc": "基于MSPM0G3507开发自动驾驶小车系统，进入省测。"
     },
     "event4": {
       "date": "2024.11",

@@ -225,13 +225,13 @@
   const TIMELINE_EVENTS = [
     'timeline.event11',
     'timeline.event10',
+    'timeline.event12',
     'timeline.event9',
     'timeline.event8',
     'timeline.event7',
     'timeline.event6',
     'timeline.event5',
     'timeline.event4',
-    'timeline.event3',
     'timeline.event2',
     'timeline.event1',
   ];

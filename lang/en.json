@@ -37,7 +37,7 @@
       "tags": ["Wiki", "Knowledge Base", "Robotics", "Open Source"]
     },
     "item2": {
-      "title": "High Torque Desktop Quadruped",
+      "title": "High Torque Desktop-Class Quadruped",
       "desc": "A full-stack open-source quadruped project spanning mechanical design, URDF modeling, Isaac Gym RL training, and sim-to-real deployment. It centers on HTDW4438-OpenDog and works together with HTDW4438-AMP, HTDW4438_HIMloco, and HTDW4438_Isaacgym as one development pipeline.",
       "tags": ["Robotics", "Reinforcement Learning", "Sim-to-Real", "Deployment"]
     },
@@ -104,6 +104,11 @@
       "title": "Launched LocoWiki Resource Hub",
       "desc": "Launched the LocoWiki resource hub for robot competition preparation, research learning, and development reference, bringing together competition rules, technical sharing, paper reading lists, and high-quality open-source projects in one place."
     },
+    "event12": {
+      "date": "2025.11",
+      "title": "Launched OpenDoge Open-Source Quadruped Crowdfunding",
+      "desc": "Participated as a founding developer in the OpenDoge quadruped robot crowdfunding campaign, leading algorithm and hardware driver deployment layer R&D. Project delivery scheduled for late June 2026."
+    },
     "event1": {
       "date": "2024.05",
       "title": "Open-Sourced SliverWolf Desktop Serial-Link Quadruped",
@@ -113,11 +118,6 @@
       "date": "2024.07",
       "title": "2024 ROBOCON National Competition",
       "desc": "Developed the embedded control system for the R1 robot based on FreeRTOS, achieving ±5mm positioning accuracy, ball launching, and gripper functionalities."
-    },
-    "event3": {
-      "date": "2024.08",
-      "title": "2024 Fujian Undergraduate Electronics Design Contest",
-      "desc": "Developed an autonomous driving car system based on the MSPM0G3507, qualifying for the provincial testing stage."
     },
     "event4": {
       "date": "2024.11",
