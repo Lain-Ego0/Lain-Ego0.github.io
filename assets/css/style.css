@@ -614,6 +614,7 @@ footer {
     grid-row: 2;
     width: 100%;
     display: flex;
+    justify-content: center;
     gap: 14px;
     overflow-x: auto;
     padding: 2px 0 4px;
