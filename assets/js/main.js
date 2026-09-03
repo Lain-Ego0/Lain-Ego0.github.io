@@ -36,13 +36,20 @@
     RS485: 'RS485',
     ABSOLUTE_ENCODER: 'Absolute Encoder',
     POSITIONING: 'Positioning',
-    TYPST: 'Typst',
-    RESUME: 'Resume',
-    TEMPLATE: 'Template',
-    PDF: 'PDF',
     HUMANOID_ROBOTICS: 'Humanoid Robotics',
     MOTION_CAPTURE: 'Motion Capture',
     ROBOT_PERCEPTION: 'Robot Perception',
+    AMPLITUDE_MOTION_PRIORS: 'AMP',
+    PPO: 'PPO',
+    URDF: 'URDF',
+    EXOSKELETON: 'Exoskeleton',
+    MYOSUITE: 'MyoSuite',
+    TCN: 'TCN',
+    PYTHON: 'Python',
+    PYQT: 'PyQt',
+    ONNX: 'ONNX',
+    MUJOCO: 'MuJoCo',
+    TERRAIN_GENERATION: 'Terrain Generation',
   };
 
   const PROJECTS = [
@@ -58,6 +65,38 @@
         PROJECT_TAG_LIBRARY.ROBOT_PERCEPTION,
       ],
       links: [],
+    },
+    {
+      img: 'assets/images/sdog.jpeg',
+      titleKey: 'projects.item10.title',
+      descKey: 'projects.item10.desc',
+      tags: [
+        PROJECT_TAG_LIBRARY.LEGGED_ROBOT,
+        PROJECT_TAG_LIBRARY.REINFORCEMENT_LEARNING,
+        PROJECT_TAG_LIBRARY.AMPLITUDE_MOTION_PRIORS,
+        PROJECT_TAG_LIBRARY.SIM2REAL,
+        PROJECT_TAG_LIBRARY.MECHANICAL_DESIGN,
+      ],
+      links: [
+        { href: 'https://www.bilibili.com/video/BV1T5g66pEdT/', labelKey: 'projects.links.demo', icon: 'fab fa-bilibili' },
+      ],
+    },
+    {
+      img: 'assets/images/G-exo.jpeg',
+      imageFit: 'cover',
+      titleKey: 'projects.item11.title',
+      descKey: 'projects.item11.desc',
+      tags: [
+        PROJECT_TAG_LIBRARY.EXOSKELETON,
+        PROJECT_TAG_LIBRARY.PPO,
+        PROJECT_TAG_LIBRARY.MYOSUITE,
+        PROJECT_TAG_LIBRARY.TCN,
+        PROJECT_TAG_LIBRARY.URDF,
+      ],
+      links: [
+        { href: 'https://github.com/Lain-Ego0/G-Exo', labelKey: 'projects.links.code', icon: 'fab fa-github' },
+        { href: 'https://www.bilibili.com/video/BV1uuu36uEjx/', labelKey: 'projects.links.demo', icon: 'fab fa-bilibili' },
+      ],
     },
     {
       img: 'assets/images/locowiki-cover.png',
@@ -104,7 +143,7 @@
         PROJECT_TAG_LIBRARY.MECHANICAL_DESIGN,
       ],
       links: [
-        { href: 'https://github.com/Lain-Ego0/BRS-Parallel-Robot', labelKey: 'projects.links.code', icon: 'fab fa-github' },
+        { href: 'https://github.com/Lain-Ego0/ROBOCON-BRS_robot', labelKey: 'projects.links.code', icon: 'fab fa-github' },
         { href: 'https://lain-database.feishu.cn/wiki/MUtjwx2FzixM65kKYhlcxcxdnqg', labelKey: 'projects.links.docs', icon: 'fas fa-book' },
         { href: 'https://www.bilibili.com/video/BV15wu4zuEmf', labelKey: 'projects.links.demo', icon: 'fab fa-bilibili' },
       ],
@@ -156,16 +195,18 @@
       ],
     },
     {
+      img: 'https://raw.githubusercontent.com/Lain-Ego0/ArenaX/main/assets/Image/editor-overview.png',
       titleKey: 'projects.item9.title',
       descKey: 'projects.item9.desc',
       tags: [
-        PROJECT_TAG_LIBRARY.TYPST,
-        PROJECT_TAG_LIBRARY.RESUME,
-        PROJECT_TAG_LIBRARY.TEMPLATE,
-        PROJECT_TAG_LIBRARY.PDF,
+        PROJECT_TAG_LIBRARY.PYTHON,
+        PROJECT_TAG_LIBRARY.MUJOCO,
+        PROJECT_TAG_LIBRARY.PYQT,
+        PROJECT_TAG_LIBRARY.ONNX,
+        PROJECT_TAG_LIBRARY.TERRAIN_GENERATION,
       ],
       links: [
-        { href: 'https://github.com/Lain-Ego0/Typst-resume', labelKey: 'projects.links.code', icon: 'fab fa-github' },
+        { href: 'https://github.com/Lain-Ego0/ArenaX', labelKey: 'projects.links.code', icon: 'fab fa-github' },
       ],
     },
     {
@@ -224,6 +265,8 @@
 
   const TIMELINE_EVENTS = [
     'timeline.event11',
+    'timeline.event13',
+    'timeline.event14',
     'timeline.event10',
     'timeline.event12',
     'timeline.event9',
@@ -252,8 +295,6 @@
         { name: 'MCU', icon: 'fas fa-microchip' },
         { name: 'SBC', icon: 'fas fa-server' },
         { name: 'RTOS', icon: 'fas fa-cogs' },
-        { name: 'Keil MDK', icon: 'fas fa-screwdriver-wrench' },
-        { name: 'STM32CubeMX', icon: 'fas fa-cubes' },
         { name: 'C/C++', icon: 'fas fa-code' },
         { name: 'Rust', icon: 'fab fa-rust' },
       ],
@@ -261,11 +302,15 @@
     {
       category: 'skills.robotics',
       items: [
-        { name: 'ROS/ROS2', icon: 'fas fa-robot' },
+        { name: 'PPO / CTS', icon: 'fas fa-brain' },
+        { name: 'URDF', icon: 'fas fa-sitemap' },
         { name: 'MuJoCo', icon: 'fas fa-cube' },
         { name: 'Isaac Gym', icon: 'fas fa-dumbbell' },
         { name: 'Isaac Sim', icon: 'fas fa-vr-cardboard' },
-        { name: 'Webots', icon: 'fas fa-globe' },
+        { name: 'ROS 1 / ROS 2', icon: 'fas fa-robot' },
+        { name: 'System Identification', icon: 'fas fa-wave-square' },
+        { name: 'Actuator Modeling', icon: 'fas fa-sliders' },
+        { name: 'IMU Calibration', icon: 'fas fa-compass' },
       ],
     },
     {
@@ -274,9 +319,7 @@
         { name: 'Linux', icon: 'fab fa-linux' },
         { name: 'Git', icon: 'fab fa-git-alt' },
         { name: 'CMake', icon: 'fas fa-gears' },
-        { name: 'conda', icon: 'fas fa-box-open' },
         { name: 'Docker', icon: 'fab fa-docker' },
-        { name: 'GitLab CI', icon: 'fab fa-gitlab' },
       ],
     },
   ];
@@ -379,7 +422,7 @@
       const thumbnailHtml = project.img
         ? `
         <div class="project-thumbnail-wrapper">
-          <img src="${project.img}" alt="${t('projects.imgAlt')}" class="project-thumbnail">
+          <img src="${project.img}" alt="${t('projects.imgAlt')}" class="project-thumbnail${project.imageFit === 'cover' ? ' project-thumbnail--cover' : ''}">
         </div>
       `
         : '';

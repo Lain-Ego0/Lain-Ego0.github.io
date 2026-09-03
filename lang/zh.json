@@ -10,7 +10,7 @@
   "intro": {
     "avatarAlt": "Lain-Ego的头像",
     "title": "你好，我是Lain",
-    "desc": "机器人开发爱好者，大三在读，目前于人形机器人公司实习<br>擅长MCU与Linux应用层开发<br>持续钻研运动控制、强化学习及机器人感知技术"
+    "desc": "机器人开发爱好者，目前于人形机器人公司实习<br>擅长MCU与Linux应用层开发<br>持续钻研运动控制、强化学习及机器人感知技术"
   },
   "projects": {
     "title": "项目合集",
@@ -28,27 +28,27 @@
     },
     "item0": {
       "title": "迁星智能人形机器人",
-      "desc": "参与迁星智能科技有限公司类人形机器人预研与迭代，作为运动控制方向成员推进动作数据处理、运控框架搭建与实机调试。工作覆盖动作重定向与动捕数据链路、驱动层协同、仿真训练中的分层策略验证，以及面向感知检测的预处理流程优化。",
+      "desc": "作为运动控制核心成员参与多款人形机器人研发，负责动作数据处理与实机调试。使用自研逐帧 IK 重定向方法完成 BVH 动作映射，实现低延迟实时全身遥操作；基于 mjlab 训练底层运动与高层决策策略，构建双网络分层控制架构；并通过 URDF 生成、映射自遮挡掩码，降低机器人本体对视觉检测的干扰。",
       "tags": ["Humanoid Robotics", "Motion Control", "Reinforcement Learning", "Motion Capture", "Robot Perception"]
     },
     "item1": {
       "title": "LocoWiki 机器人运控资源仓库",
-      "desc": "专为机器人运控学习打造的一站式资源整合仓库，面向ROBOCON备赛、科研学习与开发检索场景。汇总历届赛事规则、高校技术分享、论文学习清单及主流开源项目索引，配套项目网站与飞书知识库。",
+      "desc": "专为机器人运控学习打造的一站式资源整合社区，面向 ROBOCON 备赛、科研学习与开发检索场景，汇总赛事规则、高校技术分享、论文学习清单及主流开源项目索引，累计浏览量超 12 万、成员超 1100 人。",
       "tags": ["Wiki", "Knowledge Base", "Robotics", "Open Source"]
     },
     "item2": {
-      "title": "高擎动力桌面级四足",
-      "desc": "全栈开源四足机器人项目，覆盖机械结构与URDF建模、Isaac Gym强化学习训练到Sim-to-Real实机部署。以HTDW4438-OpenDog主仓为核心，并与HTDW4438-AMP、HTDW4438_HIMloco、HTDW4438_Isaacgym协同形成完整研发闭环。",
+      "title": "高擎动力小型开源四足机器人",
+      "desc": "在高擎动力实习期间主导小型开源四足机器人项目，建立开发流程并推动各模块从原型验证向产品化迭代。基于 HIMLoco 完成运动策略训练、Sim-to-Real 部署与仿真—实机差异适配，复现 DreamWaQ、walk-these-ways 及分阶段奖励策略，并编写调试手册与用户说明。",
       "tags": ["Robotics", "Reinforcement Learning", "Sim-to-Real", "Deployment"]
     },
     "item3": {
-      "title": "ROBOCON 2025 足式机器人",
-      "desc": "2025赛季ROBOCON足式机器人全栈研发。负责从类植保无人机碳管装配工艺机械建模、力控制算法到3D雷达建图自主导航技术。带领团队在全国180余支队伍中取得竞速赛第30名、障碍赛第31名、越野赛34名的优异成绩。",
+      "title": "ROBOCON 并联力控机器人",
+      "desc": "主导 8 自由度并联四足机器人建模与运动控制开发，设计足端轨迹并在 Webots 中验证 VMC；部署 FAST-LIO 建图及基于 AMCL + move_base 的导航系统，实现结构化环境自主移动。带队获 2025 年 ROBOCON 仿生足式挑战赛速度、障碍与越野 3 项全国二等奖，项目获批省级大创。",
       "tags": ["Robotics", "Motion Control", "SLAM", "LiDAR", "Mechanical Design"]
     },
     "item4": {
       "title": "仿生波士顿大龙虾潜航机器人",
-      "desc": "浮力可控多自由度龙虾水下机器人。负责控制系统开发（步进蠕动泵、电机/舵机驱动、陀螺仪融合、I2C编码器闭环），设计异形多旋翼矢量推进模型实现全向移动。硬件方面负责驱动选型与防水设计。获福建省大学生智能海洋装备大赛特等奖。",
+      "desc": "负责浮力可调多自由度仿龙虾水下机器人的控制系统与嵌入式开发，完成步进蠕动泵、电机、舵机统一驱动及 IMU 数据采集，并针对异形多推进器布局建立矢量推进模型，实现全向运动控制。获 2024 年福建省大学生智能海洋装备设计制作大赛省特等奖，并获新华社、光明日报报道。",
       "tags": ["Underwater Robotics", "Embedded Systems", "Vectored Propulsion", "Waterproof Engineering"]
     },
     "item5": {
@@ -72,9 +72,19 @@
       "tags": ["STM32F103", "Positioning", "RS485", "Absolute Encoder", "IMU"]
     },
     "item9": {
-      "title": "Typst 中文简历模板库",
-      "desc": "一个可直接修改和导出 PDF 的 Typst 中文简历模板库，包含基础模板与多套参考风格模板，保留对应 PDF、预览图和头像素材目录。推荐配合 VS Code 与 Tinymist Typst 插件使用，支持打开 typ 文件实时预览，并提供 Typst CLI 编译、批量导出和字体依赖安装说明。",
-      "tags": ["Typst", "Resume", "Template", "PDF"]
+      "title": "ArenaX Robotics 场景与策略验证平台",
+      "desc": "面向机器人策略验证的 MuJoCo 程序化地形与场景工具。提供中英双语 PyQt 场地编辑器，可生成平地、斜坡、台阶、噪声与混合障碍等地形并导出 MuJoCo XML、高度图及 JSON；内嵌 MuJoCo 仿真页面，支持 M20、Go2 与 ONNX 运动策略的交互式测试及外部地形库加载。",
+      "tags": ["Python", "MuJoCo", "PyQt", "ONNX", "Terrain Generation"]
+    },
+    "item10": {
+      "title": "S-Dog 四足机器人",
+      "desc": "研发 12 自由度四足机器人，参与轻量化结构设计与整机集成，整机约 10.25 kg、可负载 5 kg。参考 RoboGauge 重构本体感知观测、动作空间与奖励函数，并引入 AMP 从动作捕捉数据学习运动先验；已实机部署越障、登台与自恢复策略，可跨越 20 cm 障碍、登上 40 cm 高台，并参展 WAIC 2026。",
+      "tags": ["Legged Robot", "Reinforcement Learning", "AMP", "Sim-to-Real", "Mechanical Design"]
+    },
+    "item11": {
+      "title": "G-Exo 消费级四自由度主动式下肢外骨骼",
+      "desc": "主导消费级四自由度主动式下肢外骨骼研发，负责机械、电控设计、URDF 建模与整机方案制定；参与构建 MyoSuite + MuJoCo + PPO 训练框架，使用 TCN 编码 IMU 与关节时序特征并输出辅助力矩。获首届 Physical AI 黑客松 alloop 赛道冠军及 3 万港元奖金。",
+      "tags": ["Exoskeleton", "PPO", "MyoSuite", "TCN", "URDF"]
     }
   },
   "documents": {
@@ -97,7 +107,17 @@
     "event11": {
       "date": "2026.03 - 至今",
       "title": "迁星智能实习",
-      "desc": "负责人形机器人的运动控制与人机交互研发。"
+      "desc": "作为运动控制算法工程师参与多款人形机器人研发，推进动作重定向、基于 mjlab 的分层运动策略训练、实机调试及视觉自遮挡预处理。"
+    },
+    "event13": {
+      "date": "2026.07 - 2026.08",
+      "title": "G-Exo 外骨骼与 Physical AI 黑客松",
+      "desc": "主导四自由度主动式下肢外骨骼整机研发，获首届 Physical AI 黑客松 alloop 赛道冠军。"
+    },
+    "event14": {
+      "date": "2026.06 - 至今",
+      "title": "S-Dog 四足机器人",
+      "desc": "完成强化学习运动策略实机部署，实现越障、登台与自恢复，并携项目参展 WAIC 2026。"
     },
     "event10": {
       "date": "2026.03",
@@ -107,7 +127,7 @@
     "event12": {
       "date": "2025.11",
       "title": "发起 OpenDoge 开源四足众筹",
-      "desc": "作为创始开发者参与OpenDoge四足机器人开发众筹发起，主导项目算法与硬件驱动部署层研发。项目预计2026年6月底交付。"
+      "desc": "作为创始开发者发起 OpenDoge 四足机器人众筹，主导项目运动策略训练、Sim-to-Real 部署与实机适配。"
     },
     "event1": {
       "date": "2024.05",
@@ -145,9 +165,9 @@
       "desc": "在GitHub开源BRS并联四足机器人的机械结构与控制代码。"
     },
     "event9": {
-      "date": "2025.10 - 2026.03",
-      "title": "高擎机电实习",
-      "desc": "负责HTDW4438仿生四足机器人的机械设计、控制算法开发与系统集成测试，分为开源版本与产品化版本。"
+      "date": "2025.11 - 2026.03",
+      "title": "高擎动力实习",
+      "desc": "担任运动控制算法实习生，主导小型开源四足机器人项目，并推动各模块从原型验证向产品化迭代。"
     }
   },
   "skills": {

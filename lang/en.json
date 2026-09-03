@@ -10,7 +10,7 @@
   "intro": {
     "avatarAlt": "Lain-Ego's avatar",
     "title": "Hello, I'm Lain",
-    "desc": "Robotics developer and junior undergraduate.<br>Currently interning at a humanoid robotics company.<br>Focused on MCU and Linux application development, motion control, RL deployment, and robot perception."
+    "desc": "Robotics developer.<br>Currently interning at a humanoid robotics company.<br>Focused on MCU and Linux application development, motion control, RL deployment, and robot perception."
   },
   "projects": {
     "title": "Projects",
@@ -27,28 +27,28 @@
       "vision": "Vision"
     },
     "item0": {
-      "title": "Questech Humanoid Robot",
-      "desc": "Participated in early-stage R&D and iteration of a humanoid robot at Qianxing Intelligence, focusing on motion-control algorithms, action-data processing, control-framework development, and real-hardware debugging. Work covered motion retargeting and motion-capture data flow, driver-layer collaboration, hierarchical policy validation in simulation training, and preprocessing optimization for perception detection.",
+      "title": "Qianxing Intelligence Humanoid Robots",
+      "desc": "Core motion-control contributor for multiple humanoid platforms, responsible for motion-data processing and hardware debugging. Built a frame-by-frame IK retargeting method for low-latency BVH-to-robot whole-body teleoperation, trained low-level motion and high-level decision policies in mjlab as a hierarchical dual-network controller, and created a URDF-driven self-occlusion mask pipeline to reduce robot-body interference in vision detection.",
       "tags": ["Humanoid Robotics", "Motion Control", "Reinforcement Learning", "Motion Capture", "Robot Perception"]
     },
     "item1": {
       "title": "LocoWiki Robot Locomotion Resource Hub",
-      "desc": "A one-stop resource hub for robot locomotion, built for ROBOCON preparation, research study, and engineering reference. It aggregates competition rules, university team technical talks, paper reading lists, and mainstream open-source project indexes, with a companion website and Feishu knowledge base.",
+      "desc": "A one-stop robot-locomotion community for ROBOCON preparation, research, and engineering reference. It curates competition rules, university technical talks, paper reading lists, and mainstream open-source projects, and has grown to 120,000+ views and 1,100+ members.",
       "tags": ["Wiki", "Knowledge Base", "Robotics", "Open Source"]
     },
     "item2": {
-      "title": "High Torque Desktop-Class Quadruped",
-      "desc": "A full-stack open-source quadruped project spanning mechanical design, URDF modeling, Isaac Gym RL training, and sim-to-real deployment. It centers on HTDW4438-OpenDog and works together with HTDW4438-AMP, HTDW4438_HIMloco, and HTDW4438_Isaacgym as one development pipeline.",
+      "title": "HighTorque Mini Open-Source Quadruped",
+      "desc": "Led a mini open-source quadruped project during my internship at HighTorque, establishing the development workflow and moving modules from prototype validation toward productization. Trained locomotion policies with HIMLoco, handled sim-to-real deployment and gap adaptation, reproduced DreamWaQ, walk-these-ways, and staged-reward strategies, and wrote debugging and user guides.",
       "tags": ["Robotics", "Reinforcement Learning", "Sim-to-Real", "Deployment"]
     },
     "item3": {
-      "title": "ROBOCON 2025 Legged Robot",
-      "desc": "Full-stack R&D for the 2025 ROBOCON legged robot. Responsible for carbon-tube mechanical modeling, force control algorithms, and 3D LiDAR SLAM navigation. Led the team to rank 30th in Speed, 31st in Obstacle, and 34th in Cross-Country among 180+ teams.",
+      "title": "ROBOCON Parallel Force-Control Robot",
+      "desc": "Led modeling and motion-control development for an 8-DOF parallel quadruped, designed foot trajectories, and validated VMC in Webots. Deployed FAST-LIO mapping and AMCL + move_base navigation for autonomous movement in structured environments. Led the team to three National Second Prizes in the 2025 ROBOCON bionic-legged Speed, Obstacle, and Cross-Country events; the project also received provincial innovation-program funding.",
       "tags": ["Robotics", "Motion Control", "SLAM", "LiDAR", "Mechanical Design"]
     },
     "item4": {
       "title": "Bionic Lobster Submersible",
-      "desc": "Buoyancy-controllable multi-DOF underwater robot. Developed the control system, including stepper peristaltic pumps, motor and servo drivers, gyroscope fusion, and I2C encoder closed-loop control. Designed a vectored propulsion model for omnidirectional movement and handled driver selection and waterproofing.",
+      "desc": "Developed the control and embedded systems for a buoyancy-adjustable multi-DOF lobster-inspired underwater robot, unifying stepper peristaltic pump, motor, and servo actuation with IMU acquisition. Built a vectored-thrust model for its irregular multi-thruster layout to achieve omnidirectional control. Won the 2024 Fujian provincial Grand Prize and was covered by Xinhua News Agency and Guangming Daily.",
       "tags": ["Underwater Robotics", "Embedded Systems", "Vectored Propulsion", "Waterproof Engineering"]
     },
     "item5": {
@@ -72,9 +72,19 @@
       "tags": ["STM32F103", "Positioning", "RS485", "Absolute Encoder", "IMU"]
     },
     "item9": {
-      "title": "Typst Chinese Resume Template Library",
-      "desc": "A Typst resume template library that can be edited directly and exported to PDF. It includes basic resume layouts, multiple reference-style templates, exported PDFs, preview images, and optional avatar assets. The workflow is built around VS Code with the Tinymist Typst extension for live preview, with README notes covering Typst CLI compilation, batch export, and font dependency setup.",
-      "tags": ["Typst", "Resume", "Template", "PDF"]
+      "title": "ArenaX Robotics Terrain & Policy Validation Environment",
+      "desc": "A MuJoCo procedural terrain and scene tool for robot-policy validation. Its bilingual PyQt editor generates flat, sloped, stair, noise, and mixed-obstacle terrains and exports MuJoCo XML, heightmaps, and JSON metadata. The embedded MuJoCo simulation page supports interactive testing of M20 and Go2 robots with ONNX locomotion policies, plus external terrain-library loading.",
+      "tags": ["Python", "MuJoCo", "PyQt", "ONNX", "Terrain Generation"]
+    },
+    "item10": {
+      "title": "S-Dog Quadruped Robot",
+      "desc": "Developing a 12-DOF quadruped and contributing to lightweight mechanical design and system integration. The 10.25 kg robot carries up to 5 kg. Reworked proprioceptive observations, action space, and rewards with reference to RoboGauge, and added AMP to learn motion priors from mocap data. Deployed obstacle-crossing, platform-climbing, and self-recovery policies on hardware: 20 cm obstacles and 40 cm platforms. Exhibited at WAIC 2026.",
+      "tags": ["Legged Robot", "Reinforcement Learning", "AMP", "Sim-to-Real", "Mechanical Design"]
+    },
+    "item11": {
+      "title": "G-Exo Consumer 4-DOF Active Lower-Limb Exoskeleton",
+      "desc": "Led development of a consumer-grade four-DOF active lower-limb exoskeleton, owning mechanical and electronics design, URDF modeling, and system architecture. Co-developed a MyoSuite + MuJoCo + PPO training pipeline using a TCN to encode IMU and joint time-series features and output assistive torque. Won the alloop track at the inaugural Physical AI Hackathon and HKD 30,000.",
+      "tags": ["Exoskeleton", "PPO", "MyoSuite", "TCN", "URDF"]
     }
   },
   "documents": {
@@ -97,7 +107,17 @@
     "event11": {
       "date": "2026.03 - Present",
       "title": "Internship at Qianxing Intelligence",
-      "desc": "Responsible for motion control and human-robot interaction R&D for humanoid robots."
+      "desc": "Working as a motion-control algorithm engineer across multiple humanoid platforms, covering motion retargeting, mjlab-based hierarchical policy training, hardware debugging, and visual self-occlusion preprocessing."
+    },
+    "event13": {
+      "date": "2026.07 - 2026.08",
+      "title": "G-Exo and the Physical AI Hackathon",
+      "desc": "Led full-system development of a four-DOF active lower-limb exoskeleton and won the alloop track at the inaugural Physical AI Hackathon."
+    },
+    "event14": {
+      "date": "2026.06 - Present",
+      "title": "S-Dog Quadruped Robot",
+      "desc": "Deployed RL locomotion policies for obstacle crossing, platform climbing, and self-recovery on hardware, and exhibited the project at WAIC 2026."
     },
     "event10": {
       "date": "2026.03",
@@ -107,7 +127,7 @@
     "event12": {
       "date": "2025.11",
       "title": "Launched OpenDoge Open-Source Quadruped Crowdfunding",
-      "desc": "Participated as a founding developer in the OpenDoge quadruped robot crowdfunding campaign, leading algorithm and hardware driver deployment layer R&D. Project delivery scheduled for late June 2026."
+      "desc": "Initiated the OpenDoge crowdfunding project as a founding developer, leading locomotion-policy training, sim-to-real deployment, and hardware adaptation."
     },
     "event1": {
       "date": "2024.05",
@@ -145,9 +165,9 @@
       "desc": "Open-sourced the mechanical structure and control code of the BRS parallel-link quadruped robot on GitHub."
     },
     "event9": {
-      "date": "2025.10 - 2026.03",
+      "date": "2025.11 - 2026.03",
       "title": "Internship at HighTorque Robotics",
-      "desc": "Responsible for mechanical design, control algorithm development, and system integration testing for the HTDW4438 bionic quadruped robot, covering both open-source and productized versions."
+      "desc": "Worked as a motion-control algorithm intern, leading a mini open-source quadruped project and moving modules from prototype validation toward productization."
     }
   },
   "skills": {
