@@ -195,7 +195,7 @@
       ],
     },
     {
-      img: 'https://raw.githubusercontent.com/Lain-Ego0/ArenaX/main/assets/Image/editor-overview.png',
+      img: 'assets/images/arenax-cover.png',
       titleKey: 'projects.item9.title',
       descKey: 'projects.item9.desc',
       tags: [
@@ -264,9 +264,9 @@
   ];
 
   const TIMELINE_EVENTS = [
-    'timeline.event11',
     'timeline.event13',
     'timeline.event14',
+    'timeline.event11',
     'timeline.event10',
     'timeline.event12',
     'timeline.event9',
