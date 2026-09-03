@@ -82,7 +82,7 @@
       ],
     },
     {
-      img: 'assets/images/G-exo.jpeg',
+      img: 'assets/images/G-exo.jpg',
       imageFit: 'cover',
       titleKey: 'projects.item11.title',
       descKey: 'projects.item11.desc',
