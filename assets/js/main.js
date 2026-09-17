@@ -330,6 +330,7 @@
     { icon: 'fab fa-github', key: 'contact.github', link: 'https://github.com/Lain-Ego0' },
     { icon: 'fab fa-twitter', key: 'contact.twitter', link: 'https://x.com/Lain_Ego0' },
     { icon: 'fab fa-zhihu', key: 'contact.zhihu', link: 'https://www.zhihu.com/people/hua-99-50-21' },
+    { icon: 'fas fa-robot', key: 'contact.playground', link: 'playground/' },
   ];
 
   function qs(selector, root = document) {
