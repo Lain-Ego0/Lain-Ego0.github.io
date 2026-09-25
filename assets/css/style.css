@@ -793,8 +793,8 @@ footer {
    ========================================= */
 .skills-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
 }
 
 .skill-category h3 {
@@ -808,19 +808,20 @@ footer {
 .skill-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .skill-badge {
-  padding: 8px 16px;
+  padding: 7px 12px;
   background: var(--bg-editor);
   border: 1px solid var(--border-light);
   border-radius: 8px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.2;
   color: var(--text-muted);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   transition: transform var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard);
 }
 
@@ -829,6 +830,24 @@ footer {
   border-color: var(--primary);
   color: var(--primary);
   transform: translateY(-1px);
+}
+
+@media (max-width: 1000px) {
+  .skills-wrapper {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .skills-wrapper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-wrapper {
+    grid-template-columns: 1fr;
+  }
 }
 
 .reveal {

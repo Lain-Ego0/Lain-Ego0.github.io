@@ -302,15 +302,19 @@
     {
       category: 'skills.robotics',
       items: [
-        { name: 'PPO / CTS', icon: 'fas fa-brain' },
         { name: 'URDF', icon: 'fas fa-sitemap' },
-        { name: 'MuJoCo', icon: 'fas fa-cube' },
-        { name: 'Isaac Gym', icon: 'fas fa-dumbbell' },
-        { name: 'Isaac Sim', icon: 'fas fa-vr-cardboard' },
         { name: 'ROS 1 / ROS 2', icon: 'fas fa-robot' },
         { name: 'System Identification', icon: 'fas fa-wave-square' },
         { name: 'Actuator Modeling', icon: 'fas fa-sliders' },
-        { name: 'IMU Calibration', icon: 'fas fa-compass' },
+      ],
+    },
+    {
+      category: 'skills.simulation',
+      items: [
+        { name: 'PPO / CTS', icon: 'fas fa-brain' },
+        { name: 'MuJoCo', icon: 'fas fa-cube' },
+        { name: 'Isaac Gym', icon: 'fas fa-dumbbell' },
+        { name: 'Isaac Sim', icon: 'fas fa-vr-cardboard' },
       ],
     },
     {
