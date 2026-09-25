@@ -1,146 +1,358 @@
-# Lain-Ego's Homepage
-这是一个轻量化、响应式的个人主页网站，支持暗黑/亮色主题切换、多语言切换，包含项目展示、开源贡献、时间线、技术栈、联系方式等核心模块。
-CSS由vibecoding实现。
+# Personal Homepage / Developer Portfolio Template
 
-## 目录
-- [源码构成](#源码构成)
-- [环境要求](#环境要求)
-- [使用指南](#使用指南)
-- [目录结构详解](#目录结构详解)
-- [核心功能说明](#核心功能说明)
-- [自定义配置](#自定义配置)
+[English](README.md) | [中文](README_zh.md)
 
-## 源码构成
-本项目为纯前端静态网站，无后端依赖，核心由 HTML 结构、CSS 样式、JavaScript 交互三部分组成，模块职责清晰：
+A pure front-end static single-page template suitable for personal homepages, portfolios, technical profiles, or project navigation pages.
+No backend and no build step are required. Download it, replace the copy and images, and it is ready to use.
 
-### 1. 核心 HTML（index.html）
-整个网站的骨架，包含：
-- 页面元信息（编码、视口、标题）
-- 主题初始化脚本（读取本地存储/系统偏好设置，设置亮色/暗黑主题）
-- 导航栏（Logo、导航链接、语言切换、主题切换按钮）
-- 核心板块（个人简介、项目、开源贡献、时间线、技术栈、联系方式）
-- 页脚
-- 外部/内部脚本/样式引入
+> The project entries, experiences, links, and images in this repository are demo content. Replace them with your own information before publishing.
 
-### 2. CSS 样式（assets/css/style.css）
-- 响应式布局（适配移动端/桌面端）
-- 主题样式（light/dark 两套主题变量）
-- 组件样式（导航栏、头像、各板块、按钮、网格布局等）
-- 动效样式（头像光晕、渐变文字、背景装饰等）
+## Preview
 
-### 3. JavaScript 交互
-#### (1) 国际化（assets/js/i18n.js）
-- 实现多语言切换（如示例中的中文/英文）
-- 基于 `data-i18n` 属性匹配语言文案，替换页面文本
+### Homepage
 
-#### (2) 核心交互（assets/js/main.js）
-- 主题切换（切换 `data-theme` 属性，同步 localStorage）
-- 动态渲染内容（项目列表、开源贡献、时间线、技能、联系方式等）
-- 导航交互、响应式适配等辅助逻辑
+![Homepage template preview](assets/images/screenshot-home.png)
 
-### 4. 静态资源
-- `assets/images/`：头像（Avatar.jpg）等图片资源
-- 第三方依赖：Font Awesome 图标库（CDN 引入）
+### Playground
 
-## 环境要求
-无需复杂环境，满足以下任一条件即可运行：
-- 现代浏览器（Chrome/Firefox/Safari/Edge 最新版）
-- 静态文件服务器（如 Nginx、Live Server 插件、Python SimpleHTTPServer）
-- GitHub Pages/Gitee Pages 等静态页面托管平台
+![Playground policy demo preview](assets/images/screenshot-playground.png)
 
-## 使用指南
-### 1. 源码拉取
+## Table of Contents
+
+- [Preview](#preview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Quick Start](#quick-start)
+- [Directory Structure](#directory-structure)
+- [Core Features and Files](#core-features-and-files)
+- [Customization Guide](#customization-guide)
+- [Deployment](#deployment)
+- [Playground](#playground)
+- [Checklist](#checklist)
+- [FAQ](#faq)
+
+## Features
+
+- **Pure static single page**: built only with HTML, CSS, and vanilla JavaScript. No Node.js, database, or server is required.
+- **Data-driven rendering**: projects, articles, timeline entries, tech stack items, and contact links are configured as arrays in `assets/js/main.js` for easy maintenance.
+- **Multi-language support**: English and Chinese language packs are included. Text is switched through `lang/*.json` files and `data-i18n` attributes, and more languages can be added.
+- **Light / dark theme**: implemented with CSS custom properties, switchable with one click, and remembered through `localStorage`.
+- **Responsive layout**: adapts to desktop, tablet, and mobile. The navigation bar reflows on narrow screens.
+- **Complete content modules**:
+  - Intro / Hero
+  - Project cards
+  - Articles or documents
+  - Timeline / experience
+  - Tech stack
+  - Contact and social links
+  - Footer
+- **Scroll reveal animation**: uses `IntersectionObserver` for content fade-in and respects the system "reduce motion" preference.
+- **Smooth anchor navigation**: clicking a navigation link scrolls smoothly to the matching section.
+- **Icon support**: Font Awesome is loaded from a CDN for social, project, and tech-stack icons.
+- **Optional Playground**: a prebuilt robot policy demo page is included as a standalone static subpage. It can simply be deleted if not needed.
+
+## Tech Stack
+
+| Layer | Technology |
+| --- | --- |
+| Page structure | HTML5 |
+| Styling | CSS3, CSS custom properties, Flexbox, Grid, media queries |
+| Interaction | Vanilla JavaScript (ES6+), DOM APIs |
+| Internationalization | Fetch API, JSON, `data-i18n` attributes |
+| State persistence | `localStorage` |
+| Animation and performance | `IntersectionObserver`, `prefers-reduced-motion` |
+| Icons | Font Awesome CDN |
+| Optional subpage | Prebuilt static assets, MuJoCo WASM, ONNX policy files |
+
+## Quick Start
+
+### 1. Get the Code
+
 ```bash
-# 克隆仓库
-git clone https://github.com/Lain-Ego0/Lain-Ego0.github.io.git
-cd Lain-Ego0.github.io
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
 ```
 
-### 2. 本地运行
-#### 方式1：直接打开（简单测试）
-双击 `index.html` 文件，通过浏览器直接打开（部分交互可能因跨域/本地路径问题受限）。
+### 2. Preview Locally
 
-#### 方式2：静态服务器运行（推荐）
+Use any static file server rather than opening `index.html` directly.
+The language packs are loaded as JSON through `fetch`, so local `file://` pages may be blocked by browser security policies.
+
 ```bash
-# 方法1：使用 Python 3 启动简易服务器
-python -m http.server 8080
+# Python 3
+python3 -m http.server 8080
 
-# 方法2：使用 Node.js http-server（需先安装：npm install -g http-server）
-http-server -p 8080
-
-# 方法3：VS Code 安装 Live Server 插件，右键 index.html → "Open with Live Server"
+# or Node.js
+npx serve .
 ```
-访问地址：`http://localhost:8080`
 
-### 3. 部署上线
-#### 方式1：GitHub Pages（推荐）
-1. 将代码推送到 GitHub 仓库（仓库名：`[用户名].github.io`）；
-2. 进入仓库 → Settings → Pages → 选择 `main` 分支 → 保存；
-3. 等待几分钟后，访问 `https://[用户名].github.io` 即可。
+Then open:
 
-#### 方式2：自定义服务器（Nginx）
-1. 将源码上传到服务器；
-2. 配置 Nginx 指向源码目录：
+```text
+http://localhost:8080
+```
+
+### 3. Start Customizing
+
+Recommended order:
+
+1. Replace the avatar and project cover images in `assets/images/`;
+2. Edit the copy in `lang/zh.json` and `lang/en.json`;
+3. Edit the project, article, timeline, tech-stack, and contact data in `assets/js/main.js`;
+4. Adjust the theme variables in `assets/css/style.css` as needed;
+5. Update the site title, description, and favicon in `index.html`.
+
+## Directory Structure
+
+```text
+.
+├── index.html                  # Single-page entry
+├── README.md                   # English documentation
+├── README_zh.md                # Chinese documentation
+├── assets/
+│   ├── css/
+│   │   └── style.css           # Design tokens, themes, layout, components, responsive rules
+│   ├── js/
+│   │   ├── i18n.js             # Language loading, switching, and text replacement
+│   │   └── main.js             # Theme toggle, content rendering, scroll animation
+│   └── images/                 # Avatar, project covers, screenshots, and other images
+├── lang/
+│   ├── zh.json                 # Chinese language pack
+│   └── en.json                 # English language pack
+└── playground/                 # Optional: prebuilt robot policy demo
+    ├── index.html
+    ├── assets/
+    ├── policies/
+    └── robot/
+```
+
+## Core Features and Files
+
+| Feature | Main Files | Description |
+| --- | --- | --- |
+| Theme toggle | `index.html`, `assets/js/main.js`, `assets/css/style.css` | Reads the saved theme on load; switches between `light` and `dark` and writes the choice to `localStorage`. |
+| Language switch | `assets/js/i18n.js`, `lang/*.json` | Loads the current language JSON through Fetch; elements marked with `data-i18n` are replaced by the corresponding text keys. |
+| Project list | `assets/js/main.js` | The `PROJECTS` array defines covers, title/description keys, tags, and action links. |
+| Articles / documents | `assets/js/main.js` | The `DOCUMENTS` array defines article card content and links. |
+| Timeline | `assets/js/main.js` | `TIMELINE_EVENTS` defines event order, while dates, titles, and descriptions live in the language packs. |
+| Tech stack | `assets/js/main.js` | `TECH_STACK` groups skills by category and provides icons. |
+| Contact links | `assets/js/main.js` | `CONTACT_LINKS` defines email, repository, social, or in-site subpage entries. |
+| Scroll reveal | `assets/js/main.js`, `assets/css/style.css` | Cards, timeline items, and skill groups fade in as they enter the viewport. The effect is disabled when the system prefers reduced motion. |
+| Responsive behavior | `assets/css/style.css` | Main breakpoints are `768px` and `360px`. |
+
+## Customization Guide
+
+### 1. Site Information
+
+Edit `index.html`:
+
+- `<title>`: browser tab title;
+- `<meta name="description">`: search and share summary;
+- `<link rel="icon">`: site icon;
+- Navigation logo and anchor links;
+- Static placeholder copy in each section.
+
+> After the page loads, multilingual copy is replaced by `assets/js/i18n.js`, so the final visible text should be maintained primarily in `lang/*.json`.
+
+### 2. Avatar and Project Images
+
+Put images in `assets/images/`, then:
+
+- When replacing the avatar, keep the avatar path in `index.html` correct;
+- To change project images, update the `img` field of each item in the `PROJECTS` array in `assets/js/main.js`;
+- Use consistent aspect ratios and compressed files to improve loading performance.
+
+### 3. Multilingual Copy
+
+Language packs are located at:
+
+```text
+lang/zh.json
+lang/en.json
+```
+
+Common copy keys:
+
+```text
+nav.*                 Navigation
+intro.*               Intro / Hero
+projects.itemN.*      Nth project
+documents.itemN.*     Nth article or document
+timeline.eventN.*     Nth timeline event
+skills.*              Tech-stack categories
+contact.*             Contact links
+footer.*              Footer
+```
+
+To add a language:
+
+1. Create a language file under `lang/`, for example `lang/ja.json`;
+2. Copy the full language-pack structure and translate the values;
+3. Extend the language-switching logic in `assets/js/i18n.js`. The template currently toggles between English and Chinese by default; for a multi-language dropdown, adjust the `.lang-toggle` interaction accordingly.
+
+### 4. Projects, Articles, Timeline, and Tech Stack
+
+Open `assets/js/main.js`. The main data structures are defined at the top:
+
+```js
+const PROJECTS = [];
+const DOCUMENTS = [];
+const TIMELINE_EVENTS = [];
+const TECH_STACK = [];
+const CONTACT_LINKS = [];
+```
+
+Field reference:
+
+| Data | Field | Description |
+| --- | --- | --- |
+| `PROJECTS` | `img` | Project cover path, optional |
+| `PROJECTS` | `titleKey` / `descKey` | Text keys in the language packs |
+| `PROJECTS` | `tags` | Project tags |
+| `PROJECTS` | `links` | Related links; supports `labelKey` or a fixed `label` |
+| `DOCUMENTS` | `titleKey` / `descKey` | Article card text keys |
+| `DOCUMENTS` | `links` | Article or document links |
+| `TIMELINE_EVENTS` | String array | Controls timeline display order |
+| `TECH_STACK` | `category` / `items` | Skill categories and items |
+| `CONTACT_LINKS` | `icon` / `key` / `link` | Social icon, text key, and target URL |
+
+When adding content, make sure:
+
+- Every `*Key` in `PROJECTS` and `DOCUMENTS` exists in both English and Chinese language packs;
+- Every key in `TIMELINE_EVENTS` has `date`, `title`, and `desc` fields in the language packs;
+- External links use `https://`, while in-site pages use relative paths such as `playground/`.
+
+### 5. Theme and Styles
+
+The `:root` and `[data-theme="dark"]` blocks at the top of `assets/css/style.css` define:
+
+- background, text, primary, and border colors;
+- shadows, radii, spacing, and transition durations;
+- title gradient and decoration colors.
+
+Changing these variables quickly updates the entire color scheme. Component styles, grid layouts, and media queries live in the same file.
+
+### 6. Adding a New Section
+
+To add a new section:
+
+1. Add a `<section>` with an `id` in `index.html`;
+2. Add a matching `href="#section-id"` to the navigation bar;
+3. Add `data-i18n` attributes to text that needs translation;
+4. Add the copy to every `lang/*.json` language pack;
+5. Add the corresponding data and render function in `assets/js/main.js`, then call it after the `i18nLoaded` event.
+
+## Deployment
+
+### GitHub Pages
+
+1. Create a repository and push it to GitHub;
+2. Open the repository `Settings` → `Pages`;
+3. Under `Build and deployment`, choose `Deploy from a branch`;
+4. Select the `main` branch and the `/` root directory, then save;
+5. After the deployment completes, visit the GitHub Pages URL.
+
+### Netlify / Vercel / Cloudflare Pages
+
+These platforms work well as static-site hosts:
+
+- Build command: leave empty;
+- Output / Publish directory: project root `/`;
+- No dependencies need to be installed.
+
+### Nginx Example
+
 ```nginx
 server {
     listen 80;
-    server_name your-domain.com; # 替换为你的域名
-    root /path/to/Lain-Ego0.github.io; # 替换为源码路径
+    server_name example.com;
+
+    root /path/to/your-site;
     index index.html;
 
-    # 支持 SPA 路由（如需）
     location / {
         try_files $uri $uri/ /index.html;
     }
 }
 ```
-3. 重启 Nginx：`nginx -s reload`。
 
-## 目录结构详解
-```
-Lain-Ego0.github.io/
-├── index.html               # 核心HTML页面（网站入口）
-├── assets/                  # 静态资源目录
-│   ├── css/                 # 样式目录
-│   │   └── style.css        # 全局样式（含主题、布局、组件样式）
-│   ├── js/                  # 脚本目录
-│   │   ├── i18n.js          # 多语言切换逻辑
-│   │   └── main.js          # 核心交互（主题切换、内容渲染等）
-│   └── images/              # 图片目录
-│       └── Avatar.jpg       # 个人头像
-└── README.md                # 项目说明
+Reload Nginx after changing the configuration:
+
+```bash
+nginx -s reload
 ```
 
-## 核心功能说明
-### 1. 主题切换
-- 初始化：读取 localStorage 中的主题偏好，无则匹配系统深色/亮色模式；
-- 切换逻辑：点击导航栏「月亮/太阳」图标，切换 `data-theme` 为 `dark/light`，并同步到 localStorage。
+Because the page uses relative asset paths, the template can also be deployed in a subdirectory.
 
-### 2. 多语言切换
-- 点击导航栏「中文/English」按钮，通过 `i18n.js` 替换所有带 `data-i18n` 属性的元素文本；
-- 需在 `i18n.js` 中配置对应语言的文案映射。
+## Playground
 
-### 3. 核心板块
-- 「Intro」：个人简介（头像、标题、描述）；
-- 「Projects」：项目展示（动态渲染，需在 `main.js` 中配置项目数据）；
-- 「Open Source」：开源贡献（动态渲染）；
-- 「Timeline」：时间线（经历/里程碑）；
-- 「Skills」：技术栈展示；
-- 「Contact」：联系方式（社交链接等）。
+`playground/` is a standalone prebuilt static page that can serve as an "online demo" or "policy playground" entry. Its main capabilities include:
 
-## 自定义配置
-### 1. 修改个人信息
-- 头像：替换 `assets/images/Avatar.jpg`；
-- 页面标题/简介：修改 `index.html` 中 `title`、`intro.title`、`intro.desc` 等 `data-i18n` 对应的文案（需同步修改 `i18n.js` 中的语言包）；
-- 页脚版权：修改 `index.html` 中 footer 的 `data-i18n` 文案。
+- loading robot models and ONNX policies;
+- running MuJoCo WASM simulation in the browser;
+- sending motion commands through virtual joysticks or the keyboard;
+- viewing telemetry such as joint actions, contact state, and body position;
+- creating, importing, and exporting scenes with the built-in terrain editor.
 
-### 2. 新增/修改板块内容
-- 项目/开源/时间线/技能/联系方式：在 `main.js` 中找到对应的数据数组，修改/新增条目即可。
+Usage:
 
-### 3. 自定义主题
-- 修改 `assets/css/style.css` 中的 `:root`（light 主题）和 `[data-theme="dark"]`（dark 主题）下的 CSS 变量（如颜色、字体、间距等）。
+- Deploy the entire `playground/` directory to a static server;
+- Keep the `playground/` link in `CONTACT_LINKS` in `assets/js/main.js`;
+- If the page is not needed, delete the `playground/` directory and remove the corresponding item from `CONTACT_LINKS` and the `contact.playground` copy from both language packs.
 
-### 4. 新增语言
-- 在 `i18n.js` 中新增语言包对象（如 `fr` 法语）；
-- 在语言切换按钮中新增对应选项，并绑定切换逻辑。
+> Playground is a prebuilt static artifact. Changing its UI usually requires rebuilding the original source project. Replace the demo links and branding in it with your own project information.
+
+## Checklist
+
+Before publishing, confirm the following:
+
+- [ ] Replace the site title, description, and favicon;
+- [ ] Replace the avatar and project covers;
+- [ ] Update the demo copy in both language packs;
+- [ ] Update the project data in `PROJECTS`;
+- [ ] Update the article data in `DOCUMENTS`;
+- [ ] Update the timeline order in `TIMELINE_EVENTS` and the language packs;
+- [ ] Update the skill categories and icons in `TECH_STACK`;
+- [ ] Update the email, repository, and social links in `CONTACT_LINKS`;
+- [ ] Adjust the CSS variables in `:root` and the dark theme;
+- [ ] Check mobile navigation and card layouts;
+- [ ] Decide whether to keep `playground/`;
+- [ ] Deploy to GitHub Pages or another static hosting platform.
+
+## FAQ
+
+### The language does not switch when I open `index.html` directly
+
+Use a local static server. `fetch` needs an HTTP environment to load `lang/*.json`.
+
+### I changed `lang/*.json` but the page did not update
+
+Check:
+
+- Whether the JSON is valid;
+- Whether the language keys match the `data-i18n` attributes or `*Key` values in `main.js`;
+- Whether the browser cached the old file; force-refresh if needed.
+
+### Theme selection does not persist
+
+The theme relies on `localStorage`. Check whether local storage is disabled or the browser is in private mode.
+
+### Images do not appear
+
+Make sure the images are in `assets/images/`, the path casing matches, and the paths in `main.js` / `index.html` are correct.
+
+### Playground fails to load
+
+Check:
+
+- The page is served over HTTP/HTTPS, not `file://`;
+- The `playground/`, `assets/`, `policies/`, and `robot/` directories are complete;
+- The server returns `.wasm`, `.onnx`, and other static files correctly.
+
+### Can I use it commercially?
+
+This is a general-purpose front-end project. Commercial use depends on the licenses of the images, fonts, icons, models, and third-party assets you use. Verify them yourself and replace any assets that do not have appropriate permission.
+
 ---
+
+If this template is useful, extend it as needed. Replace all personal content through `lang/*.json`, `assets/js/main.js`, and `assets/images/`.
