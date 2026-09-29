@@ -129,6 +129,7 @@
         { href: 'https://github.com/Lain-Ego0/HTDW4438-AMP', label: 'AMP', icon: 'fab fa-github' },
         { href: 'https://github.com/Lain-Ego0/HTDW4438_HIMloco', label: 'HIMloco', icon: 'fab fa-github' },
         { href: 'https://github.com/Lain-Ego0/HTDW4438_Isaacgym', label: 'Isaac Gym', icon: 'fab fa-github' },
+        { href: 'https://www.bilibili.com/video/BV1vraH6iEUz/?share_source=copy_web&vd_source=ba8eb7d61bec067d23f755ba4fb55f78', labelKey: 'projects.links.followup', icon: 'fab fa-bilibili' },
       ],
     },
     {
